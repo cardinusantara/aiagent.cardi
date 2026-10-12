@@ -1,10 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import AnnouncementBar from '../../components/AnnouncementBar.astro';
+import Nav from '../../components/Nav.astro';
+import TerminalHUD from '../../components/TerminalHUD.astro';
+import Footer from '../../components/Footer.astro';
+import MobileBar from '../../components/MobileBar.astro';
 
 const title = "Pusat Bantuan — Cardi Agent";
 const description = "Pusat bantuan Cardi Agent: panduan WhatsApp, agent, tagihan, coin, MoM, dan Loyal.";
 ---
 
 <Layout title={title} description={description} activeNav="bantuan">
+  <AnnouncementBar />
+  <Nav />
+  <TerminalHUD />
+  <main class="page-content">
 <section class="hero hero-dark"><div class="wrap"><div class="hero-copy"><span class="eyebrow">Pusat bantuan</span><h1>Ada yang bisa kami bantu?</h1><p class="lead">Panduan singkat untuk produk Cardi Agent. Tidak ketemu jawabannya? Chat kami di WhatsApp.</p><div class="btns"><a class="btn btn-primary" href="https://wa.me/6281289895646?text=Halo%20tim%20dukungan%20Cardi%20Agent%2C%20saya%20butuh%20bantuan.">Chat dukungan</a></div></div></div></section><section class="sec "><div class="wrap"><div class="sec-head"><span class=eyebrow>Topik</span><h2>Pilih topik.</h2></div><div class="grid g4 "><article class="card "><div class="card-top"></div><h3>Memulai</h3><p>Setup akun, koneksi WhatsApp, dan undang tim.</p></article><article class="card "><div class="card-top"></div><h3>Agent</h3><p>Mengatur tugas, persetujuan, dan laporan agent.</p></article><article class="card "><div class="card-top"></div><h3>Tagihan &amp; coin</h3><p>Paket, bonus per hasil, dan top-up coin.</p></article><article class="card "><div class="card-top"></div><h3>MoM &amp; Loyal</h3><p>Aktivasi kartu, plugin meeting, program poin.</p></article></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><span class=eyebrow>FAQ</span><h2>Pertanyaan umum.</h2></div><div class="faq"><details><summary>Bagaimana menghubungkan nomor WhatsApp?</summary><p>Tim onboarding kami membantu mendaftarkan nomor WhatsApp Business resmi milik bisnis kamu.</p></details><details><summary>Apakah sales perlu aplikasi baru?</summary><p>Tidak wajib. Sales bisa tetap chat dan kirim voice note seperti biasa.</p></details><details><summary>Bagaimana cara menyetujui pesan penagihan?</summary><p>Pesan dengan nominal atau nada tegas masuk antrean persetujuan sebelum terkirim.</p></details><details><summary>Bagaimana cara top-up coin?</summary><p>Pilih paket top-up 500, 1.000, atau 2.500 coin melalui tim kami.</p></details><details><summary>Kartu NFC saya tidak terbaca?</summary><p>Pastikan NFC ponsel aktif, atau gunakan QR di kartu. Bila tetap gagal, hubungi dukungan.</p></details><details><summary>Bagaimana data saya dilindungi?</summary><p>Data dienkripsi, akses berbasis peran, dan pemrosesan mengikuti UU PDP.</p></details></div></div></section>
+  </main>
+  <Footer />
+  <MobileBar />
 </Layout>
