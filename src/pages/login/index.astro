@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Masuk — Cardi Agent";
+const description = "Masuk ke aplikasi Cardi Agent.";
+---
+
+<Layout title={title} description={description} activeNav="login">
+<section class="sec"><div class="wrap" style="max-width:480px">
+<form class="form" onsubmit="event.preventDefault();document.getElementById('login-note').hidden=false;">
+<h1 style="font-size:30px">Masuk ke Cardi Agent</h1>
+<div class="field"><label for="lg-id">Email atau nomor WhatsApp</label><input id="lg-id" type="text" autocomplete="username" required></div>
+<div class="field"><label for="lg-pw">Kata sandi</label><input id="lg-pw" type="password" autocomplete="current-password" required></div>
+<button class="btn btn-primary btn-block" type="submit">Masuk</button>
+<p id="login-note" class="note" hidden style="color:#9A3A0E;font-weight:700">Aplikasi web sedang disiapkan. Untuk saat ini gunakan aplikasi Cardi Agent AI MoM atau hubungi tim kami.</p>
+<p class="note">Belum punya akun? <a href="/ai/pilot/">Daftar program pilot</a> · <a href="/bantuan/">Bantuan</a></p>
+</form></div></section>
+</Layout>

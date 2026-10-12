@@ -1,109 +1,133 @@
 ---
-import '../styles/global.css';
-
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  canonical?: string;
+  activeNav?: 'home' | 'ai' | 'cardimom' | 'cardiloyal' | 'harga' | 'bantuan' | 'login' | 'pilot';
+  bodyClass?: string;
 }
 
 const {
-  title = 'Cardi Agent AI — AI Agent untuk Operasional Bisnis Indonesia',
-  description = 'Cardi Agent AI membangun tim agen AI yang menangani penjualan, layanan pelanggan, penagihan, dan operasional harian — lintas WhatsApp, email, dan sistem internal Anda.',
-  image = '/og-banner.png',
+  title = 'Cardi Agent — Tim AI untuk Bisnis Indonesia',
+  description = 'Cardi Agent: Cardi Agent AI (AI CRM), Cardi Agent AI MoM (notulen), dan Cardi Agent AI Loyal (loyalty & review).',
+  canonical,
+  activeNav = 'home',
+  bodyClass = 't-agent',
 } = Astro.props;
 
-const canonicalURL = Astro.url.href;
-
-const schemaData = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Cardi Agent AI',
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: 'Web',
-  url: 'https://aiagent.cardi.co.id',
-  description,
-  brand: {
-    '@type': 'Brand',
-    name: 'Cardi Agent AI',
-    url: 'https://cardi.co.id',
-  },
-  offers: {
-    '@type': 'Offer',
-    priceCurrency: 'IDR',
-    price: '2999999',
-  },
-};
+const currentUrl = canonical || Astro.url.href;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href={canonicalURL} />
-
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#1E4FFF" />
-
-  <meta property="og:site_name" content="Cardi Agent AI" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalURL} />
+  <link rel="canonical" href={currentUrl} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={new URL(image, Astro.url)} />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={new URL(image, Astro.url)} />
-
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
-<body>
-  <div id="boot-screen">
-    <div id="boot-line" class="mono">&#9654; exec 00_boot cardi_agent_os v1.0 <span class="accent" id="boot-pct">00%</span></div>
+<body class={bodyClass}>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  
+  <div class="eco">
+    <div class="wrap eco-in">
+      <span class="eco-label">Bagian dari ekosistem Cardi</span>
+      <nav aria-label="Ekosistem Cardi">
+        <a href="https://cardi.co.id/">Cardi</a>
+        <a href="https://cardinusantara.com/">Cardi Nusantara</a>
+        <a href="/" aria-current="true">Cardi Agent</a>
+        <a href="https://cardi.co.id/toko/">Toko Cardi</a>
+      </nav>
+    </div>
   </div>
-  <slot />
-  <script>
-    (() => {
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const boot = document.getElementById('boot-screen');
-      const pct = document.getElementById('boot-pct');
-      if (!boot) return;
-      if (reduced || sessionStorage.getItem('ca_booted')) {
-        boot.classList.add('hidden');
-        return;
-      }
-      let n = 0;
-      const t = setInterval(() => {
-        n += Math.ceil(Math.random() * 22) + 8;
-        if (n >= 100) { n = 100; clearInterval(t); }
-        if (pct) pct.textContent = String(n).padStart(2, '0') + '%';
-        if (n >= 100) {
-          setTimeout(() => {
-            boot.classList.add('hidden');
-            sessionStorage.setItem('ca_booted', '1');
-          }, 160);
-        }
-      }, 60);
-      setTimeout(() => {
-        boot.classList.add('hidden');
-        sessionStorage.setItem('ca_booted', '1');
-      }, 1200);
-    })();
-  </script>
+
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <a class="logo" href="/">
+        <span class="logo-mark">CA</span>
+        <span class="logo-name">Cardi Agent</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainnav" class="nav" aria-label="Menu utama">
+        <a href="/ai/" aria-current={activeNav === 'ai' ? 'page' : undefined}>Cardi Agent AI</a>
+        <a href="/cardimom/" aria-current={activeNav === 'cardimom' ? 'page' : undefined}>MoM</a>
+        <a href="/cardiloyal/" aria-current={activeNav === 'cardiloyal' ? 'page' : undefined}>Loyal</a>
+        <a href="/ai/harga/" aria-current={activeNav === 'harga' ? 'page' : undefined}>Harga</a>
+        <a href="/bantuan/" aria-current={activeNav === 'bantuan' ? 'page' : undefined}>Bantuan</a>
+        <a class="nav-login" href="/login/">Masuk</a>
+        <a class="btn btn-primary btn-sm" href="/ai/pilot/">Rekrut agent</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap">
+      <div class="f-top">
+        <div class="f-brand">
+          <a class="logo logo-light" href="https://cardi.co.id/">
+            <span class="logo-mark">C</span>
+            <span class="logo-name">Cardi</span>
+          </a>
+          <p>Dilihat, diingat, dipercaya — lalu dibeli. Ekosistem pertumbuhan bisnis Indonesia.</p>
+          <a class="btn btn-ghost-light btn-sm" href="https://wa.me/6281289895646?text=Halo%20Cardi%2C%20saya%20ingin%20konsultasi.">WhatsApp 0812-8989-5646</a>
+        </div>
+        <div class="f-col">
+          <h3>Cardi</h3>
+          <a href="https://cardi.co.id/tentang/">Tentang</a>
+          <a href="https://cardi.co.id/ekosistem/">Ekosistem</a>
+          <a href="https://cardi.co.id/cek-brand/">Cek brand gratis</a>
+          <a href="https://cardi.co.id/insight/">Insight</a>
+          <a href="https://cardi.co.id/toko/">Toko Cardi</a>
+          <a href="https://cardi.co.id/karier/">Karier</a>
+          <a href="https://cardi.co.id/deo-cardi-nathanael-profile/">Founder</a>
+        </div>
+        <div class="f-col">
+          <h3>Cardi Nusantara</h3>
+          <a href="https://cardinusantara.com/branding/">Branding</a>
+          <a href="https://cardinusantara.com/digital/">Digital</a>
+          <a href="https://cardinusantara.com/gtm/">Go-to-Market</a>
+          <a href="https://cardinusantara.com/ipo-partner/">IPO Partner</a>
+          <a href="https://cardinusantara.com/portofolio/">Portofolio</a>
+          <a href="https://cardinusantara.com/brief/">Kirim brief</a>
+        </div>
+        <div class="f-col">
+          <h3>Cardi Agent</h3>
+          <a href="/ai/">Cardi Agent AI</a>
+          <a href="/cardimom/">Cardi Agent AI MoM</a>
+          <a href="/cardiloyal/">Cardi Agent AI Loyal</a>
+          <a href="/ai/harga/">Harga</a>
+          <a href="/ai/pilot/">Program pilot</a>
+          <a href="/bantuan/">Bantuan</a>
+        </div>
+      </div>
+      <div class="f-bot">
+        <span>© 2026 PT Digital Cardi Nusantara · Jakarta</span>
+        <span>cardi.co.id · cardinusantara.com · aiagent.cardi.co.id</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/6281289895646?text=Halo%20Cardi%2C%20saya%20ingin%20tanya." aria-label="Chat WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"></path>
+    </svg>
+  </a>
+
+  <script is:inline src="/assets/main.js"></script>
 </body>
 </html>
