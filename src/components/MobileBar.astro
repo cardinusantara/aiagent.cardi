@@ -1,11 +1,11 @@
 <div id="mobileBar">
   <div class="mob-bar-info">
-    <div class="price mono">Rp 26.946.000<span style="font-weight:500; color:var(--muted); font-size:11px;" data-i18n="checkout_unit">/bln</span></div>
-    <div class="seats mono" data-i18n="mob_seats_left">6 slot tersisa</div>
+    <div class="price mono" style="font-size:13px; font-weight:700; color:var(--ink);">Cardi Agent AI</div>
+    <div class="seats mono" style="font-size:11px; color:var(--muted);">Tim AI 24/7 Siap Rekrut</div>
   </div>
   <div class="mob-bar-actions">
-    <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20demo%20untuk%20bisnis%20saya.%20%F0%9F%98%81" target="_blank" rel="noopener" data-i18n="nav_demo_btn">Jadwalkan Demo</a>
-    <button type="button" class="mob-bar-close" id="mobBarClose" aria-label="Tutup Promo" onclick="window.closeMobileBar(event)">
+    <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20agent%20untuk%20bisnis%20saya.%20%F0%9F%A4%96" target="_blank" rel="noopener">Rekrut Agent</a>
+    <button type="button" class="mob-bar-close" id="mobBarClose" aria-label="Tutup Banner" onclick="window.closeMobileBar(event)">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -38,15 +38,15 @@
       }
     } catch (err) {}
 
-    bar.classList.add('ready');
-    var io = new IntersectionObserver(
-      function(entries) {
-        if (!bar.classList.contains('dismissed')) {
-          bar.classList.toggle('show', !entries[0].isIntersecting);
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) {
+          bar.classList.add('show');
+        } else {
+          bar.classList.remove('show');
         }
-      },
-      { threshold: 0 }
-    );
-    io.observe(hero);
+      });
+    }, { threshold: 0.1 });
+    obs.observe(hero);
   });
 </script>

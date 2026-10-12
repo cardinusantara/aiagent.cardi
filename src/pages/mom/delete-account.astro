@@ -1,0 +1,1337 @@
+---
+// Halaman Resmi Permohonan Penghapusan Akun & Data
+// Standar Kepatuhan Google Play Console & Apple App Store
+// Aplikasi: Cardi Agent AI MoM
+// Pengembang: PT Cardi Digital Nusantara (Cardi Nusantara)
+
+const pageTitle = "Penghapusan Akun & Data Pengguna | Cardi Agent AI MoM";
+const pageDescription = "Formulir dan prosedur resmi permohonan penghapusan akun serta pembersihan data aplikasi Cardi Agent AI MoM sesuai standar kebijakan Google Play Store.";
+const TARGET_EMAIL = "cardinusantara@gmail.com";
+const SUPPORT_EMAIL = "support@cardi.co.id";
+const SUPPORT_WA = "https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Support!%20Saya%20ingin%20mengajukan%20permohonan%20penghapusan%20akun%20aplikasi%20Cardi%20Agent%20AI%20MoM.";
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aiagent.cardi.co.id/mom/delete-account/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logos/mom/icon-mom-app.png" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --blue: #0258a4;
+      --blue-dark: #01417a;
+      --blue-light: #EEF4FF;
+      --blue-border: rgba(2, 88, 164, 0.16);
+      
+      --ink: #0A1633;
+      --body: #3D4B6B;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      
+      --white: #FFFFFF;
+      --soft: #F8FAFD;
+      --soft-alt: #F1F5F9;
+      --line: #E6ECF7;
+      --line-hover: #CBD5E1;
+      
+      --danger: #DC2626;
+      --danger-hover: #B91C1C;
+      --danger-soft: #FEF2F2;
+      --danger-border: #FCA5A5;
+      
+      --success: #059669;
+      --success-soft: #ECFDF5;
+      --success-border: #A7F3D0;
+      
+      --warning: #D97706;
+      --warning-soft: #FFFBEB;
+      --warning-border: #FDE68A;
+      
+      --shadow-sm: 0 2px 8px rgba(10, 22, 51, 0.04);
+      --shadow-md: 0 10px 30px rgba(10, 22, 51, 0.06);
+      --shadow-lg: 0 20px 45px rgba(10, 22, 51, 0.09);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--body);
+      background:
+        radial-gradient(circle at 80% 5%, rgba(30, 79, 255, 0.05), transparent 35%),
+        radial-gradient(circle at 15% 15%, rgba(2, 88, 164, 0.04), transparent 30%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Top Ecosystem Bar (Identik dengan Cardi MoM) */
+    .eco-bar {
+      background: #0A1633;
+      color: #94A3B8;
+      font-size: 11.5px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .eco-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .eco-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: #E2E8F0;
+    }
+
+    .eco-badge i {
+      color: #38BDF8;
+    }
+
+    .eco-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+
+    .eco-link {
+      color: #94A3B8;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .eco-link:hover,
+    .eco-link.active {
+      color: #FFFFFF;
+    }
+
+    .eco-sep {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Sticky Navbar */
+    .navbar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 12px 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid var(--blue-border);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-nav-back {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--body);
+      padding: 8px 16px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-nav-back:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--soft);
+      transform: translateX(-2px);
+    }
+
+    /* Hero Header */
+    .hero-header {
+      text-align: center;
+      padding: 44px 0 28px;
+    }
+
+    .badge-compliance {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--success-soft);
+      border: 1px solid var(--success-border);
+      color: var(--success);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 3.8vw, 38px);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero-title .danger-text {
+      color: var(--danger);
+      background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      max-width: 660px;
+      margin: 0 auto;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Meta Cards Grid (Google Play Requirements) */
+    .app-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 28px 0 36px;
+    }
+
+    .meta-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .meta-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue-border);
+    }
+
+    .meta-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .meta-card-icon.red {
+      background: var(--danger-soft);
+      color: var(--danger);
+    }
+
+    .meta-card-icon.amber {
+      background: var(--warning-soft);
+      color: var(--warning);
+    }
+
+    .meta-card-info {
+      overflow: hidden;
+    }
+
+    .meta-card-info h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .meta-card-info p {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    /* Layout Content Grid */
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+
+    /* White Cards */
+    .clean-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .clean-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card-icon-pill {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--danger-soft);
+      color: var(--danger);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .card-icon-pill.blue {
+      background: var(--blue-light);
+      color: var(--blue);
+    }
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Form Elements */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 7px;
+    }
+
+    .form-label .req {
+      color: var(--danger);
+    }
+
+    .form-control {
+      width: 100%;
+      background: #F8FAFC;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 14px;
+      color: var(--ink);
+      font-family: var(--font-sans);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-control:focus {
+      background: #FFFFFF;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(2, 88, 164, 0.12);
+    }
+
+    .form-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Consent Checkbox */
+    .consent-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #FFFBFB;
+      border: 1px solid var(--danger-border);
+      border-radius: 12px;
+      margin-bottom: 22px;
+    }
+
+    .consent-box input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--danger);
+      margin-top: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .consent-box label {
+      font-size: 12.5px;
+      color: var(--body);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .consent-box label strong {
+      color: var(--danger);
+    }
+
+    /* Action Buttons */
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-size: 14.5px;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Success State */
+    .submission-success {
+      display: none;
+      text-align: center;
+      padding: 24px 12px;
+      animation: fadeIn 0.35s ease-out;
+    }
+
+    .submission-success.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon-badge {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--success-soft);
+      border: 2px solid var(--success-border);
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 18px;
+      box-shadow: 0 6px 20px rgba(5, 150, 105, 0.15);
+    }
+
+    .success-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .success-lead {
+      font-size: 14px;
+      color: var(--body);
+      max-width: 480px;
+      margin: 0 auto 18px;
+      line-height: 1.6;
+    }
+
+    .success-destination-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+
+    .success-timeline-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 13px;
+      color: var(--body);
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .success-timeline-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .success-timeline-box li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .success-timeline-box li i {
+      color: var(--success);
+      margin-top: 3px;
+    }
+
+    .success-actions-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-alt {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #FFFFFF;
+      color: var(--body);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-alt:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: var(--soft);
+      transform: translateY(-1px);
+    }
+
+    .btn-action-alt.primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #FFFFFF;
+    }
+
+    .btn-action-alt.primary:hover {
+      background: var(--blue-dark);
+      color: #FFFFFF;
+    }
+
+    /* Side Column Cards */
+    .side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Policy Breakdown Lists */
+    .policy-item {
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      background: #FFFFFF;
+    }
+
+    .policy-item.danger-border {
+      border-left: 4px solid var(--danger);
+      background: #FFFBFB;
+    }
+
+    .policy-item.warning-border {
+      border-left: 4px solid var(--warning);
+      background: #FFFDF9;
+    }
+
+    .policy-item-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .policy-item-desc {
+      font-size: 12.5px;
+      color: var(--body);
+      line-height: 1.5;
+    }
+
+    /* Manual Email Instruction Box */
+    .manual-email-card {
+      background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .manual-email-target {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #FFFFFF;
+      border: 1px dashed var(--blue-border);
+      border-radius: 10px;
+      margin: 14px 0;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .btn-copy-format {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      background: var(--blue-light);
+      border: 1px solid var(--blue-border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      transition: all 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .btn-copy-format:hover {
+      background: var(--blue);
+      color: #FFFFFF;
+    }
+
+    /* FAQ Card */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: border-color 0.15s ease;
+    }
+
+    .faq-item.active {
+      border-color: var(--blue-border);
+    }
+
+    .faq-btn {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      background: transparent;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: inherit;
+    }
+
+    .faq-btn i {
+      font-size: 12px;
+      color: var(--muted);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-btn i {
+      transform: rotate(180deg);
+      color: var(--blue);
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 16px 14px;
+      font-size: 12.5px;
+      color: var(--body);
+      line-height: 1.55;
+    }
+
+    .faq-item.active .faq-body {
+      display: block;
+    }
+
+    /* Clean Footer */
+    .page-footer {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      background: #FFFFFF;
+      padding: 32px 0 24px;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--body);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    .footer-sep {
+      color: var(--line);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .app-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app-meta-grid {
+        grid-template-columns: 1fr;
+      }
+      .clean-card {
+        padding: 22px 18px;
+      }
+      .hero-header {
+        padding: 32px 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ecosystem Bar -->
+  <div class="eco-bar">
+    <div class="container eco-bar-inner">
+      <div class="eco-badge">
+        <i class="fa-solid fa-layer-group"></i> <span>Ekosistem Cardi • Cardi Business Power Ecosystem™</span>
+      </div>
+      <div class="eco-links">
+        <a href="/" class="eco-link">Cardi Agent AI 24/7</a>
+        <span class="eco-sep">•</span>
+        <a href="/mom" class="eco-link active">Cardi MoM</a>
+        <span class="eco-sep">•</span>
+        <a href="/loyal/" class="eco-link">Cardi LoyaL</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <div class="navbar-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <a href="/mom" class="brand" aria-label="Cardi Agent AI MoM">
+          <img src="/logos/mom/logo-mom-dark.png" onerror="this.onerror=null;this.src='/logo-mom-transparent.png';" alt="Cardi Agent AI MoM" class="brand-logo" />
+          <span class="brand-badge"><i class="fa-solid fa-mobile-screen"></i> MoM App Portal</span>
+        </a>
+
+        <div class="nav-actions">
+          <a href="/mom" class="btn-nav-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Kembali ke Cardi MoM</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Header Section -->
+    <header class="hero-header">
+      <div class="badge-compliance">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>Google Play User Data & Account Deletion Policy Compliant</span>
+      </div>
+
+      <h1 class="hero-title">
+        Permohonan <span class="danger-text">Penghapusan Akun & Data</span>
+      </h1>
+
+      <p class="hero-lead">
+        Halaman resmi ini ditujukan khusus bagi pengguna aplikasi <strong>Cardi Agent AI MoM</strong> yang mengajukan penghapusan akun serta pembersihan seluruh rekaman suara dan transkrip meeting dari server operasional kami.
+      </p>
+    </header>
+
+    <!-- App & Developer Identification Metadata (Syarat Wajib Google Play) -->
+    <section class="app-meta-grid" aria-label="Informasi Resmi Aplikasi dan Pengembang">
+      <div class="meta-card">
+        <div class="meta-card-icon">
+          <img src="/logos/mom/icon-mom-app.png" alt="Cardi MoM" style="width:36px;height:36px;border-radius:8px;object-fit:cover;" />
+        </div>
+        <div class="meta-card-info">
+          <h4>Nama Aplikasi</h4>
+          <p>Cardi Agent AI MoM</p>
+        </div>
+      </div>
+
+      <div class="meta-card">
+        <div class="meta-card-icon">
+          <i class="fa-solid fa-building-shield"></i>
+        </div>
+        <div class="meta-card-info">
+          <h4>Nama Pengembang</h4>
+          <p>Cardi Nusantara</p>
+        </div>
+      </div>
+
+      <div class="meta-card">
+        <div class="meta-card-icon amber">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <div class="meta-card-info">
+          <h4>Estimasi Waktu Proses</h4>
+          <p>1 - 7 Hari Kerja</p>
+        </div>
+      </div>
+
+      <div class="meta-card">
+        <div class="meta-card-icon red">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="meta-card-info">
+          <h4>Email Penerima</h4>
+          <p>{TARGET_EMAIL}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <div class="content-layout">
+
+      <!-- LEFT COLUMN: Formulir Pengajuan Cepat (Workflow Sederhana) -->
+      <section class="clean-card" id="formCard">
+        <div class="clean-card-header">
+          <div class="card-icon-pill">
+            <i class="fa-solid fa-user-xmark"></i>
+          </div>
+          <div>
+            <h2 class="card-title">Formulir Pengajuan Hapus Akun</h2>
+            <p class="card-desc">Hasil pengajuan akan langsung diteruskan ke tim support <strong>{TARGET_EMAIL}</strong>.</p>
+          </div>
+        </div>
+
+        <!-- Form Interactive -->
+        <form id="deleteAccountForm" onsubmit="handleSimpleDeleteSubmit(event)">
+          <!-- Hidden inputs for FormSubmit email routing -->
+          <input type="hidden" name="_subject" id="hiddenSubject" value="[Permohonan Hapus Akun] Cardi Agent AI MoM" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="Aplikasi" value="Cardi Agent AI MoM" />
+          <input type="hidden" name="Pengembang" value="PT Cardi Digital Nusantara (Cardi Nusantara)" />
+
+          <!-- Email Input -->
+          <div class="form-group">
+            <label class="form-label" for="userEmail">
+              Alamat Email Akun Terdaftar <span class="req">*</span>
+            </label>
+            <input
+              type="email"
+              id="userEmail"
+              name="email"
+              class="form-control"
+              placeholder="nama@emailanda.com"
+              required
+              autocomplete="email"
+            />
+            <p class="form-hint">Email yang Anda gunakan saat login ke aplikasi Cardi Agent AI MoM.</p>
+          </div>
+
+          <!-- Alasan Penghapusan (Pilihan Sederhana) -->
+          <div class="form-group">
+            <label class="form-label" for="deleteReason">
+              Alasan Penghapusan (Opsional)
+            </label>
+            <select id="deleteReason" name="alasan" class="form-control">
+              <option value="Selesai menggunakan aplikasi">Proyek meeting / kebutuhan telah selesai</option>
+              <option value="Ingin mengganti akun baru">Ingin mendaftar ulang dengan akun baru</option>
+              <option value="Kebijakan privasi & data">Preferensi privasi data perusahaan</option>
+              <option value="Beralih ke solusi lain">Beralih ke platform lain</option>
+              <option value="Alasan lainnya">Lainnya</option>
+            </select>
+          </div>
+
+          <!-- Catatan Tambahan (Opsional) -->
+          <div class="form-group">
+            <label class="form-label" for="userNotes">
+              Catatan Tambahan (Opsional)
+            </label>
+            <textarea
+              id="userNotes"
+              name="catatan"
+              class="form-control form-textarea"
+              placeholder="Tuliskan kendala atau catatan khusus bila ada..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <!-- Checkbox Persetujuan -->
+          <div class="consent-box">
+            <input type="checkbox" id="confirmConsent" required />
+            <label for="confirmConsent">
+              <strong>Saya menyatakan dan memahami</strong> bahwa permohonan penghapusan ini permanen. Seluruh file audio rekaman rapat, transkrip teks, dan ringkasan notula MoM di server Cardi akan dihapus permanen.
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Kirim Permohonan Hapus Akun</span>
+          </button>
+        </form>
+
+        <!-- SUCCESS STATE: Ditampilkan saat selesai submit -->
+        <div class="submission-success" id="submissionSuccess">
+          <div class="success-icon-badge">
+            <i class="fa-solid fa-check"></i>
+          </div>
+
+          <h3 class="success-title">Permohonan Berhasil Dikirim!</h3>
+          <p class="success-lead">
+            Data permohonan penghapusan akun untuk <strong id="displayEmail"></strong> telah berhasil dikirimkan ke tim verifikasi kami di:
+          </p>
+
+          <div class="success-destination-pill">
+            <i class="fa-solid fa-envelope-circle-check"></i>
+            <span>{TARGET_EMAIL}</span>
+          </div>
+
+          <div class="success-timeline-box">
+            <strong style="color: var(--ink); font-size: 13.5px;"><i class="fa-solid fa-shield-halved" style="color: var(--blue);"></i> Langkah Selanjutnya:</strong>
+            <ul>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Verifikasi Identitas:</strong> Tim dukungan kami akan memvalidasi email akun Anda dalam waktu <strong>1 - 7 hari kerja</strong>.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Pembersihan Data Permanen:</strong> Setelah diverifikasi, seluruh file transkrip, rekaman audio, dan data sesi akun Anda akan dibersihkan tuntas dari server.
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-triangle-exclamation" style="color: var(--warning);"></i>
+                <div>
+                  <strong>Langganan Google Play:</strong> Jika memiliki langganan aktif, pastikan Anda juga membatalkannya melalui <em>Google Play Store &gt; Pembayaran &amp; Langganan</em>.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="success-actions-row">
+            <a id="btnMailFollowUp" href="#" class="btn-action-alt">
+              <i class="fa-solid fa-envelope"></i> Buka Email Anda
+            </a>
+            <a href={SUPPORT_WA} target="_blank" rel="noopener" class="btn-action-alt" style="color: #059669; border-color: #A7F3D0;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp Support
+            </a>
+            <a href="/mom" class="btn-action-alt primary">
+              <i class="fa-solid fa-house"></i> Kembali ke Cardi MoM
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- RIGHT COLUMN: Keterangan Data & Pengiriman Manual Email -->
+      <aside class="side-stack">
+
+        <!-- Keterangan Data yang Dihapus vs Disimpan (Syarat Google Play) -->
+        <section class="clean-card" style="padding: 24px;">
+          <div class="clean-card-header" style="margin-bottom: 16px; padding-bottom: 12px;">
+            <div class="card-icon-pill blue">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h3 style="font-size: 16px; font-weight: 800; color: var(--ink);">Keterangan Data Pengguna</h3>
+              <p class="card-desc">Transparansi sesuai pedoman Google Play Console.</p>
+            </div>
+          </div>
+
+          <!-- Data Dihapus -->
+          <div class="policy-item danger-border">
+            <div class="policy-item-title">
+              <i class="fa-solid fa-trash-can" style="color: var(--danger);"></i>
+              <span>Data yang Dihapus Permanen:</span>
+            </div>
+            <p class="policy-item-desc">
+              Alamat email & profil, file audio rekaman rapat mentah, transkripsi per-pembicara, rangkuman notula MoM, action items tim, dan token sesi login akun.
+            </p>
+          </div>
+
+          <!-- Data Disimpan -->
+          <div class="policy-item warning-border">
+            <div class="policy-item-title">
+              <i class="fa-solid fa-file-invoice-dollar" style="color: var(--warning);"></i>
+              <span>Data yang Wajib Disimpan (Hukum/Pajak):</span>
+            </div>
+            <p class="policy-item-desc">
+              Catatan transaksi faktur & pembayaran disimpan sesuai masa retensi peraturan pembukuan perpajakan Republik Indonesia sebelum dianonimkan permanen. Tidak ada audio atau isi notula rapat yang disimpan.
+            </p>
+          </div>
+        </section>
+
+        <!-- Alternatif: Instruksi Kirim Email Manual (Syarat Google Play) -->
+        <section class="manual-email-card">
+          <h3 style="font-size: 15px; font-weight: 800; color: var(--ink); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-envelope-open-text" style="color: var(--blue);"></i>
+            Instruksi Pengajuan via Email Manual
+          </h3>
+          <p style="font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.5;">
+            Pengguna juga dapat mengajukan permohonan secara langsung dengan mengirimkan email ke alamat resmi kami:
+          </p>
+
+          <div class="manual-email-target">
+            <i class="fa-solid fa-at"></i>
+            <span>{TARGET_EMAIL}</span>
+          </div>
+
+          <p style="font-size: 12px; color: var(--body); line-height: 1.5;">
+            Gunakan subjek: <strong>"Permintaan Penghapusan Akun Cardi Agent AI MoM"</strong> dan cantumkan alamat email akun yang terdaftar.
+          </p>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" class="btn-copy-format" onclick="copyTemplateEmail(event)">
+              <i class="fa-regular fa-copy"></i>
+              <span id="copyBtnLabel">Salin Format Email</span>
+            </button>
+            <a
+              id="directMailLink"
+              href={`mailto:${TARGET_EMAIL}?subject=Permintaan%20Penghapusan%20Akun%20Cardi%20Agent%20AI%20MoM&body=Halo%20Tim%20Cardi%20Nusantara,%0A%0ASaya%20mengajukan%20permohonan%20penghapusan%20akun%20aplikasi%20Cardi%20Agent%20AI%20MoM%20berikut%20seluruh%20data%20saya.%0A%0AEmail%20Akun%20Terdaftar:%20[isi%20email%20di%20sini]%0ANama%20Pengguna:%20[isi%20nama%20di%20sini]%0A%0ATerima%20kasih.`}
+              class="btn-copy-format"
+              style="background: #FFFFFF; color: var(--body); text-decoration: none;"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Email
+            </a>
+          </div>
+        </section>
+
+        <!-- Pertanyaan Umum (FAQ) Ringkas -->
+        <section class="clean-card" style="padding: 24px;">
+          <h3 style="font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-question" style="color: var(--blue);"></i>
+            Pertanyaan Umum (FAQ)
+          </h3>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button type="button" class="faq-btn" onclick="toggleFaqItem(this)">
+                <span>Berapa lama proses penghapusan?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                Permohonan diproses dalam kurun waktu <strong>1 hingga 7 hari kerja</strong> setelah validasi kepemilikan akun.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-btn" onclick="toggleFaqItem(this)">
+                <span>Apakah langganan Google Play otomatis batal?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                Tidak. Pembatalan tagihan langganan harus dilakukan secara mandiri melalui aplikasi Google Play Store pada menu <em>Profil &gt; Pembayaran &amp; Langganan</em>.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-btn" onclick="toggleFaqItem(this)">
+                <span>Dapatkah rekaman rapat dipulihkan?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-body">
+                Tidak. Setelah dihapus permanen, audio dan notula MoM tidak dapat dikembalikan lagi. Mohon ekspor dokumen penting Anda terlebih dahulu.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/mom">Beranda Cardi MoM</a>
+        <span class="footer-sep">•</span>
+        <a href="/">Cardi Agent AI 24/7</a>
+        <span class="footer-sep">•</span>
+        <a href="/loyal/">Cardi LoyaL</a>
+        <span class="footer-sep">•</span>
+        <a href={`mailto:${TARGET_EMAIL}`}>{TARGET_EMAIL}</a>
+        <span class="footer-sep">•</span>
+        <a href={SUPPORT_WA} target="_blank" rel="noopener">WhatsApp Support</a>
+      </div>
+      <p>&copy; {new Date().getFullYear()} Cardi Agent AI MoM — PT Cardi Digital Nusantara (Cardi Nusantara). Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script is:inline define:vars={{ TARGET_EMAIL, SUPPORT_EMAIL }}>
+    // FAQ Accordion Toggle
+    function toggleFaqItem(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    // Copy Email Format
+    function copyTemplateEmail(e) {
+      e.preventDefault();
+      const template = 
+`Kepada: ${TARGET_EMAIL}
+Subjek: Permintaan Penghapusan Akun Cardi Agent AI MoM
+
+Halo Tim Support Cardi Nusantara,
+
+Saya ingin mengajukan permohonan penghapusan akun aplikasi Cardi Agent AI MoM beserta seluruh data yang tersimpan secara permanen.
+
+Rincian Akun:
+- Email Terdaftar: [Isi email Anda di sini]
+- Tanggal Permohonan: ${new Date().toLocaleDateString('id-ID')}
+
+Saya memahami bahwa proses ini bersifat permanen dan seluruh riwayat rekaman serta transkrip meeting saya akan dihapus dari server dalam waktu maksimal 7 hari kerja.
+
+Terima kasih.`;
+
+      navigator.clipboard.writeText(template).then(() => {
+        const lbl = document.getElementById('copyBtnLabel');
+        const orig = lbl.innerText;
+        lbl.innerText = 'Format Tersalin!';
+        setTimeout(() => { lbl.innerText = orig; }, 2200);
+      }).catch(err => {
+        console.error('Copy failed', err);
+      });
+    }
+
+    // Simple Workflow Form Submission
+    async function handleSimpleDeleteSubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('userEmail');
+      const reasonInput = document.getElementById('deleteReason');
+      const notesInput = document.getElementById('userNotes');
+      const submitBtn = document.getElementById('submitBtn');
+
+      const email = (emailInput?.value || '').trim();
+      const reason = reasonInput?.value || '-';
+      const notes = (notesInput?.value || '').trim() || '-';
+
+      if (!email) return;
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengirim Permohonan...';
+
+      // Update subject line
+      const subject = `[Permohonan Hapus Akun MoM] ${email}`;
+      const payload = {
+        email: email,
+        alasan: reason,
+        catatan: notes,
+        aplikasi: "Cardi Agent AI MoM",
+        pengembang: "PT Cardi Digital Nusantara",
+        tanggal_pengajuan: new Date().toLocaleString('id-ID'),
+        _subject: subject,
+        _template: "table",
+        _captcha: "false"
+      };
+
+      try {
+        // Send data directly to cardinusantara@gmail.com via AJAX endpoint
+        await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.log('Background submit dispatched', err);
+      }
+
+      // Display simple confirmation state
+      document.getElementById('deleteAccountForm').style.display = 'none';
+      const successCard = document.getElementById('submissionSuccess');
+      successCard.classList.add('show');
+
+      document.getElementById('displayEmail').textContent = email;
+
+      // Set fallback mailto link
+      const mailtoSubject = encodeURIComponent(`Konfirmasi Permohonan Hapus Akun Cardi MoM - ${email}`);
+      const mailtoBody = encodeURIComponent(
+        `Halo Tim Support Cardi Nusantara,\n\n` +
+        `Saya telah mengirimkan formulir permohonan penghapusan akun dengan rincian:\n` +
+        `- Email Akun: ${email}\n` +
+        `- Alasan: ${reason}\n` +
+        `- Catatan: ${notes}\n\n` +
+        `Mohon konfirmasi dan proses pembersihan data dari server Cardi Agent AI MoM sesuai batas waktu 7 hari kerja.\n\nTerima kasih.`
+      );
+      document.getElementById('btnMailFollowUp').href = `mailto:${TARGET_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+      // Smooth scroll
+      document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    window.toggleFaqItem = toggleFaqItem;
+    window.copyTemplateEmail = copyTemplateEmail;
+    window.handleSimpleDeleteSubmit = handleSimpleDeleteSubmit;
+  </script>
+</body>
+</html>

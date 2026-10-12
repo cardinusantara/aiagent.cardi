@@ -1,10 +1,1267 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import AnnouncementBar from '../../components/AnnouncementBar.astro';
+import Nav from '../../components/Nav.astro';
+import TerminalHUD from '../../components/TerminalHUD.astro';
+import Footer from '../../components/Footer.astro';
+import MobileBar from '../../components/MobileBar.astro';
 
-const title = "Cardi Agent AI Loyal — Loyalty &amp; Google Review — Cardi Agent";
-const description = "Cardi Agent AI Loyal: program poin, member, hadiah ulang tahun, dan kartu Google Review NFC.";
+const WA_LOYAL = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Loyal!%20Saya%20tertarik%20dengan%20program%20loyalitas%20dan%20kartu%20Google%20Review%20NFC.%20%E2%AD%90';
+const ACTIVATION_URL = 'https://aiagent.cardi.co.id/loyal/activation/';
 ---
 
-<Layout title={title} description={description} activeNav="cardiloyal">
-<section class="hero hero-dark"><div class="wrap"><div class="hero-copy"><span class="eyebrow">Cardi Agent AI Loyal</span><h1>Pelanggan kembali, ulasan bertambah.</h1><p class="lead">Program poin dan member untuk F&amp;B, retail, barbershop, dan salon — terhubung ke kartu Google Review NFC.</p><div class="btns"><a class="btn btn-primary" href="https://wa.me/6281289895646?text=Halo%2C%20saya%20ingin%20mencoba%20Cardi%20Loyal.">Coba Cardi Loyal</a><a class="btn btn-outline" href="/cardiloyal/card/">Lihat kartu Google Review</a></div></div></div></section><section class="sec "><div class="wrap"><div class="sec-head"><span class=eyebrow>Fitur</span><h2>Loyalty yang sederhana untuk dijalankan.</h2></div><div class="grid g4 "><article class="card "><div class="card-top"></div><h3>Poin sesuai jenis bisnis</h3><p>Berbasis nominal untuk F&amp;B dan retail, berbasis kunjungan (punch card) untuk barbershop dan salon.</p></article><article class="card "><div class="card-top"></div><h3>Hadiah ulang tahun</h3><p>Poin dan ucapan otomatis di hari ulang tahun pelanggan.</p></article><article class="card "><div class="card-top"></div><h3>Ajakan ulasan Google</h3><p>Setelah mengumpulkan poin atau naik level, pelanggan diajak memberi ulasan.</p></article><article class="card "><div class="card-top"></div><h3>Android &amp; iOS</h3><p>Aplikasi untuk merchant dan pelanggan.</p></article></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><span class=eyebrow>Alur</span><h2>Dari kunjungan ke pelanggan setia.</h2></div><ol class="steps"><li><span class="step-n">01</span><div><h3>Pelanggan bertransaksi</h3><p>Poin tercatat otomatis.</p></div></li><li><span class="step-n">02</span><div><h3>Naik level</h3><p>Hadiah dan benefit member.</p></div></li><li><span class="step-n">03</span><div><h3>Diajak ulasan</h3><p>Lewat aplikasi atau tap kartu NFC.</p></div></li><li><span class="step-n">04</span><div><h3>Kembali lagi</h3><p>Pengingat dan promo personal.</p></div></li></ol></div></section><section class="sec "><div class="wrap"><div class="grid g2 "><article class="card "><div class="card-top"></div><h3>Kartu Google Review NFC</h3><p>Tap atau scan, langsung ke halaman ulasan Google bisnis kamu.</p><a class="card-link" href="/cardiloyal/card/">Lihat kartu →</a></article><article class="card "><div class="card-top"></div><h3>Sudah punya kartu?</h3><p>Hubungkan kartu ke halaman Google bisnis kamu.</p><a class="card-link" href="/cardiloyal/activation/">Aktivasi →</a></article></div></div></section>
+<Layout
+  title="Cardi Agent AI Loyal — Loyalty & Google Review NFC — Cardi Agent"
+  description="Cardi Agent AI Loyal: program poin, member, hadiah ulang tahun, dan kartu Google Review NFC. Pelanggan kembali, ulasan bintang 5 bertambah."
+>
+  <AnnouncementBar />
+  <Nav activeNav="loyal" />
+  <TerminalHUD />
+
+  <main id="main" class="loyal-main-page">
+    <!-- HERO SECTION -->
+    <section class="hero-loyal grid-bg">
+      <div class="wrap hero-loyal-wrap">
+        <div class="hero-loyal-copy">
+          <div class="eyebrow-pill mono">
+            <span class="dot-live"></span>
+            <span>Cardi Agent AI Loyal</span>
+          </div>
+
+          <h1 class="loyal-title">
+            Pelanggan kembali, <span class="gradient-text">ulasan bertambah.</span>
+          </h1>
+
+          <p class="loyal-lead">
+            Program poin dan member untuk F&amp;B, retail, barbershop, dan salon — terhubung ke kartu Google Review NFC.
+          </p>
+
+          <div class="loyal-btn-group">
+            <a class="btn btn-primary" href={WA_LOYAL} target="_blank" rel="noopener">
+              <span>Daftar / Konsultasi</span>
+            </a>
+            <a class="btn btn-activation" href={ACTIVATION_URL}>
+              <span>Aktivasi Kartu Fisik</span>
+            </a>
+            <a class="btn btn-affiliate" href="/loyal/affiliate/">
+              <span>Program Affiliate</span>
+              <span class="badge-comm">Komisi 30%</span>
+            </a></div>
+
+          <div class="loyal-quick-stats">
+            <div class="stat-pill">
+              <span class="stat-icon">⭐</span>
+              <div>
+                <strong>+300% Ulasan</strong>
+                <span>Rating Google Maps</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-icon">🔄</span>
+              <div>
+                <strong>Repeat Order</strong>
+                <span>Member otomatis</span>
+              </div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-icon">📲</span>
+              <div>
+                <strong>NFC 1-Tap</strong>
+                <span>Tanpa instal aplikasi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Interactive NFC Card Preview -->
+        <div class="hero-card-visual">
+          <div class="nfc-card-mockup">
+            <div class="nfc-chip-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 18h12M6 14h12M6 10h12M6 6h12"/>
+                <circle cx="18" cy="18" r="2" fill="#8FA6FF"/>
+              </svg>
+            </div>
+            <div class="nfc-brand-badge">CARDI LOYAL NFC</div>
+            <div class="nfc-stars">⭐⭐⭐⭐⭐</div>
+            <div class="nfc-tap-prompt">
+              <span class="tap-wave"></span>
+              <span>TAP SMARTPHONE DI SINI</span>
+            </div>
+            <div class="nfc-card-footer">
+              <span>Google Review & Stamp Stand</span>
+              <a href={ACTIVATION_URL} class="nfc-card-act-link">Hubungkan Kartu →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01. FITUR SECTION (GRID 4) -->
+    <section class="sec-loyal-features">
+      <div class="wrap">
+        <div class="sec-head-center">
+          <span class="mono eyebrow-tag">Fitur Utama</span>
+          <h2>Loyalty yang Sederhana untuk Dijalankan.</h2>
+          <p class="sec-subtitle">Kasir tidak terbebani, tamu senang mengumpulkan poin dan memberikan ulasan.</p>
+        </div>
+
+        <div class="loyal-grid-4">
+          <!-- Card 1 -->
+          <article class="loyal-feature-card">
+            <div class="card-icon-header">
+              <div class="icon-circle">🪙</div>
+              <span class="badge-feature mono">Kustom</span>
+            </div>
+            <h3>Poin Sesuai Jenis Bisnis</h3>
+            <p>Berbasis nominal belanja untuk F&amp;B dan retail, atau berbasis jumlah kunjungan (punch card digital) untuk barbershop dan salon.</p>
+            <div class="card-highlight">Otomatis hitung cashback & tier</div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="loyal-feature-card">
+            <div class="card-icon-header">
+              <div class="icon-circle">🎂</div>
+              <span class="badge-feature mono">Retensi</span>
+            </div>
+            <h3>Hadiah Ulang Tahun</h3>
+            <p>Poin reward dan ucapan selamat personal terkirim otomatis di hari ulang tahun pelanggan melalui WhatsApp resmi.</p>
+            <div class="card-highlight">Pelanggan merasa dihargai & datang lagi</div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="loyal-feature-card spotlight-card">
+            <div class="card-icon-header">
+              <div class="icon-circle">⭐</div>
+              <span class="badge-feature mono">Reputasi</span>
+            </div>
+            <h3>Ajakan Ulasan Google</h3>
+            <p>Setelah mengumpulkan poin atau naik level ke member VIP, pelanggan diajak memberi ulasan bintang 5 dengan insentif instan.</p>
+            <div class="card-highlight">Menaikkan SEO Google Maps Anda</div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="loyal-feature-card">
+            <div class="card-icon-header">
+              <div class="icon-circle">📱</div>
+              <span class="badge-feature mono">Mobile</span>
+            </div>
+            <h3>Android &amp; iOS</h3>
+            <p>Aplikasi cepat untuk kasir merchant scan barcode/nomor, dan portal web responsif untuk pelanggan tanpa wajib instal aplikasi berat.</p>
+            <div class="card-highlight">Cukup nomor HP atau tap kartu</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. ALUR SECTION (STEPS 01 - 04) -->
+    <section class="sec-loyal-flow">
+      <div class="wrap">
+        <div class="sec-head-center">
+          <span class="mono eyebrow-tag">Alur Pengalaman</span>
+          <h2>Dari Kunjungan ke Pelanggan Setia.</h2>
+          <p class="sec-subtitle">Empat langkah mulus yang mengubah pembeli satu kali menjadi duta brand Anda.</p>
+        </div>
+
+        <div class="steps-flow-grid">
+          <div class="step-card-box">
+            <span class="step-num mono">01</span>
+            <h3>Pelanggan Bertransaksi</h3>
+            <p>Kasir memasukkan nomor HP atau tap kartu. Poin dan riwayat belanja tercatat otomatis dalam 2 detik.</p>
+          </div>
+
+          <div class="step-card-box">
+            <span class="step-num mono">02</span>
+            <h3>Naik Level Member</h3>
+            <p>Pelanggan mendapat notifikasi kenaikan tier, voucher diskon khusus, dan hadiah kejutan berkala.</p>
+          </div>
+
+          <div class="step-card-box spotlight-step">
+            <span class="step-num mono">03</span>
+            <h3>Diajak Beri Ulasan</h3>
+            <p>Lewat link WhatsApp atau sekali tap kartu Google Review NFC di meja kasir langsung menuju form bintang 5.</p>
+          </div>
+
+          <div class="step-card-box">
+            <span class="step-num mono">04</span>
+            <h3>Kembali Lagi</h3>
+            <p>Pengingat ramah dan promo personal membawa mereka kembali sebelum beralih ke kompetitor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. NFC CARD & ACTIVATION SECTION (GRID 2) -->
+    <section class="sec-loyal-activation-banner" id="aktivasi">
+      <div class="wrap">
+        <div class="grid-card-action">
+          <!-- Card A: NFC Hardware -->
+          <div class="action-card-box">
+            <div class="action-badge mono">HARDWARE STAND & KARTU</div>
+            <h3>Kartu Google Review NFC</h3>
+            <p>Tap atau scan QR, pelanggan langsung diarahkan ke halaman ulasan Google Bisnis (Google Maps) Anda dalam 3 detik tanpa repot cari nama toko.</p>
+            <ul class="check-list-act">
+              <li>Akrilik tebal premium anti gores</li>
+              <li>Dual chip NFC + Dynamic QR Code cadangan</li>
+              <li>Cocok untuk meja kasir, cafe table, & reception</li>
+            </ul>
+            <div class="act-btn-row">
+              <a class="btn btn-outline" href={WA_LOYAL} target="_blank" rel="noopener">
+                Pesan Kartu NFC →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card B: Activation Link to /loyal/activation/ -->
+          <div class="action-card-box active-portal">
+            <div class="action-badge mono glow-badge">⚡ PORTAL AKTIVASI RESMI</div>
+            <h3>Sudah Punya Kartu NFC?</h3>
+            <p>Hubungkan kartu fisik Anda ke profil Google Business Profile bisnis Anda sekarang. Setup selesai dalam waktu kurang dari 2 menit!</p>
+            
+            <div class="act-steps-mini">
+              <div class="mini-step">
+                <span class="mini-num">1</span> Masukkan ID Kartu
+              </div>
+              <div class="mini-step">
+                <span class="mini-num">2</span> Masukkan Link Google Maps
+              </div>
+              <div class="mini-step">
+                <span class="mini-num">3</span> Kartu Langsung Aktif!
+              </div>
+            </div>
+
+            <div class="act-btn-row">
+              <a class="btn btn-primary" href={ACTIVATION_URL}>
+                Mulai Aktivasi Kartu Sekarang →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. PAKET INVESTASI -->
+    
+    <!-- ========================================================
+         AFFILIATE PARTNERSHIP PROMO BANNER
+         ======================================================== -->
+    <section class="sec-loyal-affiliate-banner" id="affiliate">
+      <div class="wrap">
+        <div class="affiliate-banner-box">
+          <div class="affiliate-copy">
+            <div class="action-badge mono glow-orange">★ PROGRAM KEMITRAAN RESMI</div>
+            <h2>Raih Penghasilan Tambahan Menjadi Official Affiliate Partner</h2>
+            <p>
+              Rekomendasikan Plakat Akrilik Smart NFC Google Review & Cardi Loyal Card kepada pemilik bisnis, kafe, salon, dan resto di sekitar Anda. Dapatkan komisi hingga 30% per transaksi tanpa modal awal dan tanpa perlu stok barang.
+            </p>
+            <div class="aff-highlights">
+              <span class="aff-check">✓ 0 Modal & 0 Risiko</span>
+              <span class="aff-check">✓ Komisi s/d 30% Tiap Unit</span>
+              <span class="aff-check">✓ Materi Promosi Siap Pakai</span>
+              <span class="aff-check">✓ Pengiriman Diurus 100%</span>
+            </div>
+          </div>
+          <div class="affiliate-cta-col">
+            <div class="affiliate-commission-pill">
+              <span class="comm-label mono">SKEMA KOMISI</span>
+              <span class="comm-val">Hingga 30%</span>
+              <span class="comm-sub">Per Closing Plakat & Kartu</span>
+            </div>
+            <a class="btn btn-primary btn-aff-cta" href="/loyal/affiliate/">
+              <span>Pelajari & Daftar Affiliate</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="sec-loyal-pricing">
+      <div class="wrap">
+        <div class="sec-head-center">
+          <span class="mono eyebrow-tag">Paket Langganan</span>
+          <h2>Investasi Terjangkau, Hasil Langsung Terasa.</h2>
+          <p class="sec-subtitle">Pilih paket yang sesuai dengan jumlah cabang dan skala operasional outlet Anda.</p>
+        </div>
+
+        <div class="pricing-grid-loyal">
+          <!-- Starter -->
+          <div class="price-box">
+            <div class="price-title">Starter Outlet</div>
+            <div class="price-target mono">1 OUTLET / KASIR</div>
+            <div class="price-val">Rp 299.000<span class="period">/bln</span></div>
+            <ul class="price-items">
+              <li>✓ 1 Unit Kartu NFC Google Review Stand</li>
+              <li>✓ Sistem Stamp Digital WhatsApp</li>
+              <li>✓ Hingga 500 member aktif</li>
+              <li>✓ Portal Aktivasi Mandiri</li>
+            </ul>
+            <a class="btn btn-outline" href={WA_LOYAL} target="_blank" rel="noopener">Pilih Starter</a>
+          </div>
+
+          <!-- Growth -->
+          <div class="price-box popular">
+            <div class="popular-ribbon mono">PALING DIMINATI</div>
+            <div class="price-title">Growth Multi-Outlet</div>
+            <div class="price-target mono">HINGGA 5 OUTLET</div>
+            <div class="price-val">Rp 799.000<span class="period">/bln</span></div>
+            <ul class="price-items">
+              <li>✓ <strong>5 Unit Kartu NFC Google Review</strong></li>
+              <li>✓ AI Re-Engagement & Broadcast Promo</li>
+              <li>✓ Hingga 5.000 member aktif</li>
+              <li>✓ Analisis RFM & Segmentasi VIP</li>
+              <li>✓ Integrasi POS Kasir Moka, Kaspin, Olsera</li>
+            </ul>
+            <a class="btn btn-primary" href={WA_LOYAL} target="_blank" rel="noopener">Pilih Growth Multi-Outlet</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="price-box">
+            <div class="price-title">Enterprise Chain</div>
+            <div class="price-target mono">&gt; 5 OUTLET / FRANCHISE</div>
+            <div class="price-val">Custom</div>
+            <ul class="price-items">
+              <li>✓ Kustomisasi Kartu NFC Full Branding</li>
+              <li>✓ Unlimited Member & Cabang</li>
+              <li>✓ Integrasi API Khusus ERP</li>
+              <li>✓ Dedicated Account Manager</li>
+            </ul>
+            <a class="btn btn-outline" href={WA_LOYAL} target="_blank" rel="noopener">Hubungi Tim Enterprise</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="sec-loyal-cta">
+      <div class="wrap">
+        <div class="loyal-cta-glass">
+          <div class="cta-copy">
+            <span class="mono cta-tag">MULAI HARI INI</span>
+            <h2>Tingkatkan Repeat Order & Ulasan Bintang 5 Sekarang.</h2>
+            <p>Jaga kesetiaan pelanggan Anda dengan sistem otomatisasi terbaik dari ekosistem Cardi Agent AI.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href={ACTIVATION_URL}>
+              Aktivasi Kartu Google Review →
+            </a>
+            <a class="btn btn-outline" href={WA_LOYAL} target="_blank" rel="noopener">
+              Konsultasi WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <MobileBar />
 </Layout>
+
+<style>
+  .loyal-main-page {
+    background: #FFFFFF;
+    color: #1E293B;
+    overflow-x: hidden;
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .hero-loyal {
+    padding: 120px 0 80px;
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30, 79, 255, 0.06), rgba(255, 255, 255, 0)), #FFFFFF;
+  }
+
+  .hero-loyal-wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 960px) {
+    .hero-loyal-wrap {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .hero-loyal-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #EEF4FF;
+    color: #1E4FFF;
+    border: 1px solid #BFD5FE;
+    padding: 5px 14px;
+    border-radius: 100px;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .dot-live {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #16A34A;
+    box-shadow: 0 0 8px rgba(22, 163, 74, 0.5);
+  }
+
+  .loyal-title {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #0A1633;
+    margin: 0;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1E4FFF 0%, #002BB8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .loyal-lead {
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.6;
+    color: #475569;
+    max-width: 560px;
+    margin: 0;
+  }
+
+  .loyal-btn-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-activation {
+    background: #EEF4FF;
+    color: #1E4FFF;
+    border: 1px solid #BFD5FE;
+    box-shadow: 0 2px 10px rgba(30, 79, 255, 0.08);
+  }
+
+  .btn-activation:hover {
+    background: #1E4FFF;
+    color: #FFFFFF;
+    border-color: #1E4FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 79, 255, 0.25);
+  }
+
+  .loyal-quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    margin-top: 12px;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  @media (max-width: 640px) {
+    .loyal-quick-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stat-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    font-size: 24px;
+  }
+
+  .stat-pill strong {
+    display: block;
+    font-size: 14px;
+    color: #0A1633;
+  }
+
+  .stat-pill span {
+    font-size: 11px;
+    color: #64748B;
+  }
+
+  /* NFC Card Mockup - Light Premium Frosted Look */
+  .hero-card-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nfc-card-mockup {
+    background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 60%, #EEF4FF 100%);
+    border: 1px solid #D6E4FF;
+    border-radius: 20px;
+    padding: 36px 30px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 45px rgba(10, 22, 51, 0.08), 0 0 30px rgba(30, 79, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nfc-chip-icon {
+    color: #1E4FFF;
+  }
+
+  .nfc-brand-badge {
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-weight: 700;
+    color: #1E4FFF;
+    letter-spacing: 0.1em;
+  }
+
+  .nfc-stars {
+    font-size: 26px;
+    letter-spacing: 4px;
+  }
+
+  .nfc-tap-prompt {
+    background: rgba(30, 79, 255, 0.06);
+    border: 1.5px dashed rgba(30, 79, 255, 0.35);
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1E4FFF;
+    letter-spacing: 0.05em;
+  }
+
+  .nfc-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #64748B;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 14px;
+  }
+
+  .nfc-card-act-link {
+    color: #1E4FFF;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .nfc-card-act-link:hover {
+    color: #002BB8;
+    text-decoration: underline;
+  }
+
+  /* HEADERS */
+  .sec-head-center {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
+  }
+
+  .sec-head-center h2 {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800;
+    color: #0A1633;
+    margin: 12px 0;
+    line-height: 1.25;
+  }
+
+  .sec-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .eyebrow-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E4FFF;
+    background: #EEF4FF;
+    border: 1px solid #BFD5FE;
+    padding: 4px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+  /* FEATURES GRID 4 */
+  .sec-loyal-features {
+    padding: 90px 0;
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .loyal-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .loyal-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .loyal-grid-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .loyal-feature-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(10, 22, 51, 0.02);
+  }
+
+  .loyal-feature-card:hover {
+    border-color: #BFD5FE;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 79, 255, 0.08);
+  }
+
+  .loyal-feature-card.spotlight-card {
+    border-color: rgba(30, 79, 255, 0.35);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%);
+  }
+
+  .card-icon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .icon-circle {
+    font-size: 28px;
+  }
+
+  .badge-feature {
+    font-size: 10px;
+    font-weight: 600;
+    color: #1E4FFF;
+    background: #EEF4FF;
+    border: 1px solid #D6E4FF;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+
+  .loyal-feature-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0A1633;
+    margin: 0 0 10px;
+  }
+
+  .loyal-feature-card p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    flex-grow: 1;
+  }
+
+  .card-highlight {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1E4FFF;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 12px;
+  }
+
+  /* ALUR / FLOW SECTION */
+  .sec-loyal-flow {
+    padding: 80px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .steps-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 960px) {
+    .steps-flow-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 580px) {
+    .steps-flow-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .step-card-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 26px;
+    transition: all 0.2s ease;
+  }
+
+  .step-card-box:hover {
+    border-color: #BFD5FE;
+    background: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(30, 79, 255, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .step-card-box.spotlight-step {
+    border-color: #BFD5FE;
+    background: linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 100%);
+  }
+
+  .step-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1E4FFF;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .step-card-box h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0A1633;
+    margin: 0 0 10px;
+  }
+
+  .step-card-box p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ACTIVATION BANNER GRID 2 */
+  .sec-loyal-activation-banner {
+    padding: 90px 0;
+    background: #F8FAFC;
+  }
+
+  .grid-card-action {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  @media (max-width: 860px) {
+    .grid-card-action {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .action-card-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(10, 22, 51, 0.03);
+  }
+
+  .action-card-box.active-portal {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F8FF 100%);
+    border: 1px solid rgba(30, 79, 255, 0.35);
+    box-shadow: 0 16px 40px rgba(30, 79, 255, 0.08);
+  }
+
+  .action-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .glow-badge {
+    color: #16A34A;
+  }
+
+  .action-card-box h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0A1633;
+    margin: 0 0 12px;
+  }
+
+  .action-card-box p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+
+  .check-list-act {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: #334155;
+  }
+
+  .check-list-act li::before {
+    content: "✓ ";
+    color: #1E4FFF;
+    font-weight: bold;
+  }
+
+  .act-steps-mini {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .mini-step {
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+  }
+
+  .mini-num {
+    background: #1E4FFF;
+    color: #FFFFFF;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .act-btn-row {
+    margin-top: auto;
+  }
+
+  /* PRICING */
+  .sec-loyal-pricing {
+    padding: 90px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .pricing-grid-loyal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .pricing-grid-loyal {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .price-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(10, 22, 51, 0.02);
+    transition: all 0.2s ease;
+  }
+
+  .price-box:hover {
+    border-color: #BFD5FE;
+    box-shadow: 0 10px 30px rgba(30, 79, 255, 0.08);
+  }
+
+  .price-box.popular {
+    border-color: #1E4FFF;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%);
+    box-shadow: 0 8px 30px rgba(30, 79, 255, 0.1);
+  }
+
+  .popular-ribbon {
+    position: absolute;
+    top: -12px;
+    left: 32px;
+    background: #1E4FFF;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  .price-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0A1633;
+    margin-bottom: 4px;
+  }
+
+  .price-target {
+    font-size: 11px;
+    color: #64748B;
+    margin-bottom: 20px;
+  }
+
+  .price-val {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0A1633;
+    margin-bottom: 24px;
+  }
+
+  .price-val .period {
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 400;
+  }
+
+  .price-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    color: #475569;
+    flex-grow: 1;
+  }
+
+  .price-items li strong {
+    color: #0A1633;
+  }
+
+  /* BOTTOM CTA */
+  .sec-loyal-cta {
+    padding: 80px 0 120px;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .loyal-cta-glass {
+    background: linear-gradient(135deg, #1E4FFF 0%, #002BB8 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 20px 50px rgba(30, 79, 255, 0.25);
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 860px) {
+    .loyal-cta-glass {
+      flex-direction: column;
+      padding: 36px 24px;
+      text-align: center;
+    }
+  }
+
+  .cta-copy {
+    max-width: 600px;
+  }
+
+  .cta-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #86EFAC;
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.05em;
+  }
+
+  .cta-copy h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+
+  .cta-copy p {
+    font-size: 15px;
+    color: #E2E8F0;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 260px;
+  }
+
+  .loyal-cta-glass .btn-primary {
+    background: #FFFFFF;
+    color: #1E4FFF;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .loyal-cta-glass .btn-primary:hover {
+    background: #F1F5F9;
+    color: #002BB8;
+    transform: translateY(-2px);
+  }
+
+  .loyal-cta-glass .btn-outline {
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+  .loyal-cta-glass .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #1E4FFF;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(30, 79, 255, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: #1842DF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 79, 255, 0.4);
+  }
+
+  .btn-outline {
+    background: #FFFFFF;
+    color: #0A1633;
+    border: 1px solid #CBD5E1;
+  }
+
+  .btn-outline:hover {
+    background: #F8FAFC;
+    border-color: #94A3B8;
+  }
+
+  .back-link-row {
+    margin-bottom: 1rem;
+  }
+  .back-link-aiagent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: #64748B;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .back-link-aiagent:hover {
+    color: #0A1633;
+    background: #E2E8F0;
+    border-color: #CBD5E1;
+    transform: translateX(-3px);
+  }
+
+  .btn-affiliate {
+    background: #FFF7ED;
+    color: #EA580C;
+    border: 1px solid #FFEDD5;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-affiliate:hover {
+    background: #EA580C;
+    color: #FFFFFF;
+    border-color: #EA580C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(234, 88, 12, 0.25);
+  }
+  .btn-affiliate .badge-comm {
+    background: #EA580C;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-affiliate:hover .badge-comm {
+    background: #FFFFFF;
+    color: #EA580C;
+  }
+
+  /* Affiliate Banner */
+  .sec-loyal-affiliate-banner {
+    padding: 70px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+  }
+  .affiliate-banner-box {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 50%, #FEF3C7 100%);
+    border: 1.5px solid #FDBA74;
+    border-radius: 24px;
+    padding: 44px 48px;
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 12px 36px rgba(234, 88, 12, 0.08);
+  }
+  @media (max-width: 900px) {
+    .affiliate-banner-box {
+      grid-template-columns: 1fr;
+      padding: 32px 24px;
+      gap: 28px;
+    }
+  }
+  .glow-orange {
+    color: #EA580C;
+    font-weight: 800;
+  }
+  .affiliate-copy h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    color: #0A1633;
+    margin: 8px 0 14px;
+    line-height: 1.25;
+  }
+  .affiliate-copy p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 20px;
+  }
+  .aff-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+  .aff-check {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9A3412;
+    background: rgba(234, 88, 12, 0.08);
+    border: 1px solid rgba(234, 88, 12, 0.2);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+  .affiliate-cta-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1px solid #FED7AA;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.06);
+  }
+  .affiliate-commission-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .comm-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #EA580C;
+  }
+  .comm-val {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0A1633;
+    line-height: 1.1;
+  }
+  .comm-sub {
+    font-size: 12px;
+    color: #64748B;
+  }
+  .btn-aff-cta {
+    background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+    color: #FFFFFF;
+    width: 100%;
+    padding: 14px 20px;
+    gap: 8px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+  }
+  .btn-aff-cta:hover {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+    box-shadow: 0 10px 24px rgba(234, 88, 12, 0.4);
+    transform: translateY(-2px);
+  }
+
+</style>

@@ -32,10 +32,10 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
         </p>
         <div class="heroCta">
           <a class="btn" href={WA} target="_blank" rel="noopener" data-i18n="hero_cta_btn">Jadwalkan Demo Gratis →</a>
-          <a class="link-arrow" href="#cara-kerja" data-i18n="hero_cta_sub">Lihat sistemnya jalan ↓</a>
+          <a class="btn btn-outline" href="#harga" data-i18n="hero_cta_sub">Lihat sistemnya jalan ↓</a>
         </div>
         <div class="hero-note mono">
-          <span data-i18n="hero_note">Belum yakin? <a href={WA} target="_blank" rel="noopener">Minta audit alur kerja gratis 30 menit →</a></span>
+          <span data-i18n="hero_note">Belum yakin? <a href={WA} target="_blank" rel="noopener">Minta audit alur kerja gratis 30 menit via WhatsApp →</a></span>
         </div>
       </div>
 
@@ -45,74 +45,47 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
     </div>
   </section>
 
-  <!-- 02.5. SHOWCASE & WORKFORCE -->
-  <section id="showcase" class="grid-bg soft" data-exec="00b_showcase.render">
+  <!-- PRODUK -->
+  <section id="produk" class="sec grid-bg soft">
     <div class="wrap">
-      <div class="eyebrow" data-i18n="cases_eyebrow">Dunia Nyata</div>
-      <h2 class="h2" data-i18n="cases_h2">Apa yang dikerjakan Cardi Agent <span class="dim">24/7 di bisnis nyata.</span></h2>
-      <p class="sub" data-i18n="cases_sub">Lihat bentuk asli sistem yang sedang berjalan menangani operasional harian.</p>
+      <div class="sec-head">
+        <span class="eyebrow">Produk</span>
+        <h2 class="h2">Tiga produk, satu tujuan: <span class="dim">brand kamu dibeli, dan dibeli lagi.</span></h2>
+      </div>
 
-      <div class="showcase-grid reveal">
-        <!-- Atas: Workforce Animasi -->
-        <div class="showcase-col">
-          <div class="showcase-card">
-            <img src="/cases/preview%20djeonail.jpeg" alt="AI Agent Workspace" style="width: 100%; height: auto; display: block; border-radius: 12px 12px 0 0;">
-            <div class="office-caption mono" style="background: #000; padding: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: rgba(255,255,255,0.5); text-align: right;">cardi-agent-os · ai workforce online</div>
+      <div class="grid g3 reveal">
+        <!-- 1. Cardi Agent AI -->
+        <article class="card dark">
+          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="tag live">Utama</span>
+            <img src="/logos/agent-ai/icon-agent-ai.png" alt="Cardi Agent AI" style="width:36px;height:36px;border-radius:8px;object-fit:contain;" />
           </div>
-          <p class="showcase-note" style="text-align: center;">
-            <b>Setiap bisnis dikirim sebagai satu tim.</b> Bukan satu bot serba bisa, tapi beberapa agen AI yang bekerja di foldernya masing-masing menangani penjualan, laporan, dan tagihan.
-          </p>
-        </div>
+          <h3>Cardi Agent AI</h3>
+          <p>AI CRM untuk Marketing, Sales, dan Retensi. CRM yang tidak perlu diisi.</p>
+          <a class="card-link" href="/ai/">Pelajari →</a>
+        </article>
 
-        <!-- Kanan: Real Cases -->
-        <div class="showcase-col">
-          <div class="cases-container showcase-card">
-            <div class="cases-tabs">
-              <button class="case-tab active" data-target="case-surya">
-                <span class="mono">01</span> Surya Painting
-              </button>
-              <button class="case-tab" data-target="case-mbg">
-                <span class="mono">02</span> MBG
-              </button>
-            </div>
-
-            <div class="case-content active" id="case-surya">
-              <div class="case-metrics">
-                <div class="metric"><span class="val">4.9</span>Rating CS</div>
-                <div class="metric"><span class="val">12</span>Antrean Mobil</div>
-                <div class="metric"><span class="val">100%</span>Auto-Follow Up</div>
-              </div>
-              <div class="case-views-nav">
-                <button class="view-btn active" data-view="surya-backend">Backend</button>
-                <button class="view-btn" data-view="surya-wa">WhatsApp</button>
-                <button class="view-btn" data-view="surya-mobile">Mobile</button>
-              </div>
-              <div class="case-view-display">
-                <img src="/cases/surya-dashboard.png" class="case-img active" id="surya-backend" alt="Surya Painting Dashboard" loading="lazy">
-                <img src="/cases/surya-wa.png" class="case-img" id="surya-wa" alt="Surya Painting WhatsApp" loading="lazy">
-                <img src="/cases/surya-mobile.png" class="case-img" id="surya-mobile" alt="Surya Painting Mobile" loading="lazy">
-              </div>
-            </div>
-
-            <div class="case-content" id="case-mbg">
-              <div class="case-metrics">
-                <div class="metric"><span class="val">0%</span>Human Error PO</div>
-                <div class="metric"><span class="val">&lt;10s</span>Waktu Respon</div>
-                <div class="metric"><span class="val">180+</span>Invoice Harian</div>
-              </div>
-              <div class="case-views-nav">
-                <button class="view-btn active" data-view="mbg-backend">Web Dashboard</button>
-                <button class="view-btn" data-view="mbg-operations">MBG Operations</button>
-                <button class="view-btn" data-view="mbg-sync">Alur Sinkronisasi</button>
-              </div>
-              <div class="case-view-display">
-                <img src="/cases/Web%20Dashboard%20MBG.png" class="case-img active" id="mbg-backend" alt="MBG Web Dashboard" loading="lazy">
-                <img src="/cases/MBG%20Operations.png" class="case-img" id="mbg-operations" alt="MBG Operations" loading="lazy">
-                <img src="/cases/Alur%20Sinkronisasi.png" class="case-img" id="mbg-sync" alt="Alur Sinkronisasi MBG" loading="lazy">
-              </div>
-            </div>
+        <!-- 2. Cardi Agent AI MoM -->
+        <article class="card">
+          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="tag live">Tersedia</span>
+            <img src="/logos/mom/icon-mom-app.png" alt="Cardi MoM" style="width:36px;height:36px;border-radius:8px;object-fit:contain;" />
           </div>
-        </div>
+          <h3>Cardi Agent AI MoM</h3>
+          <p>Notulen meeting otomatis: rekam, ringkas, bagikan ke WhatsApp. Mulai Rp 99rb.</p>
+          <a class="card-link" href="/cardimom/">Pelajari →</a>
+        </article>
+
+        <!-- 3. Cardi Agent AI Loyal -->
+        <article class="card">
+          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="tag live">Tersedia</span>
+            <img src="/logos/loyal/icon-loyal-badge.png" alt="Cardi Loyal" style="width:36px;height:36px;border-radius:8px;object-fit:contain;" />
+          </div>
+          <h3>Cardi Agent AI Loyal</h3>
+          <p>Program loyalty dan kartu Google Review NFC untuk repeat order dan ulasan.</p>
+          <a class="card-link" href="/cardiloyal/">Pelajari →</a>
+        </article>
       </div>
     </div>
   </section>
@@ -633,104 +606,154 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
             <div class="roi-track"><div class="roi-fill" style="width:100%; background:#EF4444;"></div></div>
           </div>
           <div class="roi-row">
-            <div class="roi-row-label"><span data-i18n="roi_agent_title">Cardi Agent (Starter)</span><span>Rp 35.999.988</span></div>
-            <div class="roi-track"><div class="roi-fill" id="roiAgentBar" style="width:60%; background:#4ADE80;"></div></div>
+            <div class="roi-row-label"><span data-i18n="roi_agent_title">Cardi Agent (Starter: Rp 1,5jt/bln)</span><span>Rp 18.000.000</span></div>
+            <div class="roi-track"><div class="roi-fill" id="roiAgentBar" style="width:30%; background:#4ADE80;"></div></div>
           </div>
           <div class="roi-row" style="padding-top:8px; border-top:1px solid rgba(255,255,255,.1);">
-            <div class="roi-row-label" style="margin-bottom:0;"><span style="color:#6E7DA6;" data-i18n="roi_diff_title">Selisih per tahun</span><span id="roiDiff" style="color:#4ADE80; font-weight:700;">Rp 24.000.012</span></div>
+            <div class="roi-row-label" style="margin-bottom:0;"><span style="color:#6E7DA6;" data-i18n="roi_diff_title">Selisih per tahun</span><span id="roiDiff" style="color:#4ADE80; font-weight:700;">Rp 42.000.000</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 16. PRICING -->
+  <!-- 16. PRICING (4-TIER TRANSPARENT MODEL) -->
   <section id="harga" class="grid-bg soft" data-exec="14_harga.quote">
     <div class="wrap">
-      <div class="eyebrow" data-i18n="harga_eyebrow">Harga</div>
-      <h2 class="h2" data-i18n="harga_h2">Dua cara mulai, <span class="dim">tergantung seberapa besar bisnis Anda.</span></h2>
+      <div class="eyebrow" data-i18n="harga_eyebrow">Harga Transparan</div>
+      <h2 class="h2" data-i18n="harga_h2">Gaji agent bulanan. <span class="dim">Bonus hanya kalau ada hasil nyata.</span></h2>
+      <p class="sub" data-i18n="harga_sub">Transparan dari awal. Tanpa kontrak kaku, bayar sesuai kapasitas tim dan hasil closing sesungguhnya.</p>
 
-      <div class="pricing-grid">
-        <div class="price-card card featured reveal">
-          <div class="price-badge" data-i18n="starter_badge">PALING BANYAK DIPILIH</div>
-          <div class="price-tier">Starter</div>
-          <div class="price-strike mono">Rp 35.946.000</div>
-          <div class="price-tag"><span class="price-big">Rp 26.946.000</span><span class="price-unit" data-i18n="checkout_unit">/bulan</span></div>
-          <div class="price-save" data-i18n="starter_save">HEMAT 25%</div>
-
-          <div class="price-sub-block">
-            <h5 data-i18n="pricing_starter_title">Apa yang Anda dapat</h5>
-            <ul class="price-list">
-              <li data-i18n="starter_f1">Sampai 3 agen aktif (sales, support, billing)</li>
-              <li data-i18n="starter_f2">2 kanal terhubung — WhatsApp resmi + 1 lainnya</li>
-              <li data-i18n="starter_f3">Basis pengetahuan dari data Anda sendiri</li>
-              <li data-i18n="starter_f4">Dashboard &amp; laporan otomatis harian</li>
-              <li data-i18n="starter_f5">Integrasi ke spreadsheet atau CRM Anda</li>
-              <li data-i18n="starter_f6">Onboarding 6 tahap didampingi tim</li>
-              <li data-i18n="starter_f7">Priority support jam kerja</li>
-            </ul>
+      <div class="pricing-grid-4">
+        <!-- 01. Starter -->
+        <div class="tier-card reveal">
+          <div class="tier-title">Starter</div>
+          <div class="tier-sub mono">KAPASITAS ≤ 5 SALES</div>
+          <div class="tier-price-wrap">
+            <div class="tier-price">Rp 1.500.000<span class="tier-unit">/bln</span></div>
           </div>
-
-          <div class="price-sub-block">
-            <h5 data-i18n="pricing_why_title">Kenapa ini sepadan</h5>
-            <p class="rationale" data-i18n="starter_r1">Satu staf operasional saja sudah lebih mahal dari ini per bulan — dan tetap butuh tidur.</p>
-            <p class="rationale" data-i18n="starter_r2">Agen bekerja 24 jam, tidak cuti, dan tidak pernah lupa follow-up.</p>
-          </div>
-
-          <div class="price-spacer"></div>
-          <div class="price-scarcity" data-i18n="starter_scarcity">▸ 6 dari 15 slot onboarding tersisa bulan ini</div>
-          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center;" data-i18n="starter_btn">Mulai dengan Starter →</a>
+          <ul class="tier-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Admin Sales (WhatsApp 24/7)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Supervisor (Quality &amp; SLA check)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Review (Analisis chat mingguan)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Setup SOP 1x &amp; onboarding tim</span>
+            </li>
+          </ul>
+          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center; width:100%;">Pilih Starter →</a>
         </div>
 
-        <div class="price-card card reveal">
-          <div class="price-tier">Enterprise</div>
-          <div class="price-tag"><span class="price-big">Custom</span></div>
-          <div class="price-save" style="background:var(--accent-soft); color:var(--accent);" data-i18n="ent_badge">PROGRAM BERBEDA</div>
-
-          <div class="price-sub-block">
-            <h5 data-i18n="ent_subtitle">Ini bukan Starter yang lebih mahal</h5>
-            <p class="rationale" data-i18n="ent_desc">Infrastruktur private, dipasang langsung oleh tim senior kami, dengan SLA dan standar keamanan setara audit korporat. Cocok untuk bisnis multi-divisi, multi-cabang, atau yang sedang bersiap menuju IPO.</p>
+        <!-- 02. Growth (Featured) -->
+        <div class="tier-card featured reveal">
+          <div class="tier-badge">PALING POPULER</div>
+          <div class="tier-title">Growth</div>
+          <div class="tier-sub mono">KAPASITAS 6–20 SALES</div>
+          <div class="tier-price-wrap">
+            <div class="tier-price">Rp 4.000.000<span class="tier-unit">/bln</span></div>
           </div>
+          <ul class="tier-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Semua fitur Starter</b></span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Konten &amp; Broadcast cerdas</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Ads Reporter (Meta &amp; Google Ads)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Penagih (Invoice &amp; follow-up piutang)</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Reaktivasi (Pelanggan lama repeat order)</span>
+            </li>
+          </ul>
+          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center; width:100%;">Pilih Growth →</a>
+        </div>
 
-          <div class="price-sub-block">
-            <h5 data-i18n="pricing_ent_title">Apa yang Anda dapat</h5>
-            <ul class="price-list">
-              <li data-i18n="ent_f1">Agen dan kanal tanpa batas, lintas divisi</li>
-              <li data-i18n="ent_f2">Custom flow engine sesuai SOP internal</li>
-              <li data-i18n="ent_f3">Integrasi ke ERP dan sistem internal Anda</li>
-              <li data-i18n="ent_f4">SLA kecepatan &amp; uptime 99.99%</li>
-              <li data-i18n="ent_f5">Jejak audit lengkap untuk kepatuhan</li>
-            </ul>
+        <!-- 03. Scale -->
+        <div class="tier-card reveal">
+          <div class="tier-title">Scale</div>
+          <div class="tier-sub mono">KAPASITAS 21–50 SALES</div>
+          <div class="tier-price-wrap">
+            <div class="tier-price">Rp 9.000.000<span class="tier-unit">/bln</span></div>
           </div>
+          <ul class="tier-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><b>Semua agent Marketing, Sales &amp; Retensi</b></span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Integrasi Accurate / Jurnal / CRM internal</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Multi-cabang &amp; multi-nomor WhatsApp</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Prioritas respon &amp; dedicated account manager</span>
+            </li>
+          </ul>
+          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center; width:100%;">Pilih Scale →</a>
+        </div>
 
-          <div class="price-spacer"></div>
-          <div class="price-scarcity" data-i18n="ent_scarcity">▸ Butuh scoping call dulu sebelum kami kutip harga</div>
-          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center;" data-i18n="enterprise_btn">Bicara dengan Tim Enterprise →</a>
+        <!-- 04. Enterprise -->
+        <div class="tier-card reveal">
+          <div class="tier-title">Enterprise</div>
+          <div class="tier-sub mono">KAPASITAS &gt; 50 SALES</div>
+          <div class="tier-price-wrap">
+            <div class="tier-price">Custom</div>
+          </div>
+          <ul class="tier-features">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom AI model sesuai SOP korporat</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Integrasi sistem ERP, SAP, Oracle / API</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>SLA uptime 99.99% &amp; audit trail lengkap</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Private cloud / on-premise deployment</span>
+            </li>
+          </ul>
+          <a class="btn" href={WA} target="_blank" rel="noopener" style="justify-content:center; width:100%;">Bicara dengan Tim →</a>
         </div>
       </div>
 
-      <div class="countdown-wrap">
-        <div class="countdown" id="countdown">
-          <div class="count-box"><b id="cdD">00</b><span data-i18n="cd_d_label">Hari</span></div>
-          <div class="count-box"><b id="cdH">00</b><span data-i18n="cd_h_label">Jam</span></div>
-          <div class="count-box"><b id="cdM">00</b><span data-i18n="cd_m_label">Menit</span></div>
-          <div class="count-box"><b id="cdS">00</b><span data-i18n="cd_s_label">Detik</span></div>
+      <!-- Bonus Berbasis Hasil Nyata -->
+      <div class="bonus-box reveal">
+        <div style="flex: 1; min-width: 280px;">
+          <div class="bonus-title">Transparansi Skema Bonus Hasil</div>
+          <p class="bonus-desc">
+            Bonus hanya dibayar jika hasil nyata tercapai — misalnya: <b>0,75%</b> dari nilai piutang yang berhasil ditagih lunas, atau <b>Rp 25.000</b> per repeat order yang terkonfirmasi. Adil untuk semua, tanpa risiko biaya sia-sia.
+          </p>
         </div>
-        <div class="seats-line" data-i18n="seats_line">Batch onboarding berikutnya ditutup dalam waktu di atas · 6 dari 15 slot tersisa</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 17. CHECKOUT -->
-  <section data-exec="15_checkout.open">
-    <div class="wrap">
-      <div class="checkout-box reveal">
-        <div class="price-tier" style="margin-bottom:0;" data-i18n="checkout_tier">Paket Starter</div>
-        <div class="checkout-price">Rp 26.946.000<span style="font-size:15px; color:var(--muted); font-weight:500;" data-i18n="checkout_unit">/bulan</span></div>
-        <div class="price-save" data-i18n="checkout_save">HEMAT 25% dari harga normal Rp 35.946.000</div>
-        <div class="seats-line" style="margin:16px 0;" data-i18n="seats_line">6 dari 15 slot onboarding tersisa bulan ini</div>
-        <a class="btn" href={WA} target="_blank" rel="noopener" data-i18n="checkout_btn">Mulai Sekarang via WhatsApp →</a>
-        <div class="checkout-trust" data-i18n="checkout_trust">🔒 Konsultasi gratis · tanpa kontrak jangka panjang · bisa berhenti kapan saja</div>
+        <div>
+          <a class="btn" href={WA} target="_blank" rel="noopener">Konsultasi Kebutuhan Agent →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -782,353 +805,5 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
 
   <script is:inline src="/scripts/i18n-sales.js"></script>
   <script is:inline src="/scripts/interactions.js"></script>
-  <script is:inline>
-    // Case Studies Tabs Logic
-    document.addEventListener('DOMContentLoaded', () => {
-      const caseTabs = document.querySelectorAll('.case-tab');
-      const caseContents = document.querySelectorAll('.case-content');
-
-      caseTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          // Reset tabs
-          caseTabs.forEach(t => t.classList.remove('active'));
-          caseContents.forEach(c => c.classList.remove('active'));
-          
-          // Activate clicked
-          tab.classList.add('active');
-          const targetId = tab.getAttribute('data-target');
-          document.getElementById(targetId).classList.add('active');
-        });
-      });
-
-      const caseContentsList = document.querySelectorAll('.case-content');
-      caseContentsList.forEach(content => {
-        const viewBtns = content.querySelectorAll('.view-btn');
-        const viewImgs = content.querySelectorAll('.case-img, .case-html-mockup');
-
-        viewBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            // Reset buttons and elements in this specific case block
-            viewBtns.forEach(b => b.classList.remove('active'));
-            viewImgs.forEach(img => img.classList.remove('active'));
-
-            // Activate clicked
-            btn.classList.add('active');
-            const targetView = btn.getAttribute('data-view');
-            const targetEl = content.querySelector('#' + targetView);
-            if(targetEl) targetEl.classList.add('active');
-          });
-        });
-      });
-    });
-  </script>
-  <style is:global>
-    /* SHOWCASE */
-    .showcase-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-      margin-top: 40px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .showcase-card {
-      background: #0E1223;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .showcase-col {
-      display: flex;
-      flex-direction: column;
-    }
-    .showcase-note {
-      margin-top: 16px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-      padding: 0 8px;
-    }
-    .showcase-note b { color: #fff; }
-
-    /* CASE STUDIES */
-    .cases-container {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .cases-tabs {
-      display: flex;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      background: rgba(0,0,0,0.2);
-    }
-    .case-tab {
-      flex: 1;
-      padding: 16px 20px;
-      background: transparent;
-      border: none;
-      color: rgba(255,255,255,0.5);
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.2s;
-      border-bottom: 2px solid transparent;
-    }
-    @media (max-width: 600px) {
-      .cases-tabs { flex-direction: column; }
-      .case-tab { border-left: 2px solid transparent; border-bottom: none; }
-      .case-tab.active { border-bottom: none; border-left: 2px solid var(--accent, #8FA6FF); }
-    }
-    .case-tab:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.02);
-    }
-    .case-tab.active {
-      color: #fff;
-      border-bottom: 2px solid var(--accent, #8FA6FF);
-      background: rgba(255,255,255,0.05);
-    }
-    .case-tab .mono {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      opacity: 0.6;
-      margin-right: 8px;
-    }
-    .case-content {
-      display: none;
-      padding: 30px;
-    }
-    @media (max-width: 600px) {
-      .case-content { padding: 20px; }
-    }
-    .case-content.active {
-      display: block;
-    }
-    .case-views-nav {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .view-btn {
-      padding: 8px 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px;
-      color: #ccc;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .view-btn:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-    }
-    .view-btn.active {
-      background: var(--accent, #8FA6FF);
-      color: #000;
-      border-color: var(--accent, #8FA6FF);
-      font-weight: 600;
-    }
-    .case-view-display {
-      position: relative;
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #000;
-      height: 450px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    @media (max-width: 600px) {
-      .case-view-display { height: 350px; }
-    }
-    .case-img {
-      display: none;
-      max-width: 100%;
-      max-height: 70vh;
-      object-fit: contain;
-      animation: fade-in 0.3s ease;
-    }
-    .case-img.active {
-      display: block;
-    }
-
-    /* Metrics */
-    .case-metrics {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .metric {
-      flex: 1;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 12px;
-      color: #94A3B8;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .metric .val {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      font-family: var(--font-mono);
-      text-shadow: 0 0 10px rgba(143, 166, 255, 0.3);
-    }
-    @media (max-width: 600px) {
-      .case-metrics { flex-direction: column; gap: 8px; padding-bottom: 16px; margin-bottom: 16px; }
-      .metric { flex-direction: row; align-items: baseline; justify-content: space-between; }
-    }
-
-    /* HTML Mockups */
-    .case-html-mockup {
-      display: none;
-      width: 100%;
-      height: 100%;
-      padding: 24px;
-      overflow-y: auto;
-      background: #0B0F17;
-      animation: fade-in 0.3s ease;
-    }
-    .case-html-mockup.active {
-      display: block;
-    }
-    
-    /* Kanban Mockup */
-    .mock-kanban {
-      display: flex;
-      gap: 16px;
-      height: 100%;
-      overflow-x: auto;
-    }
-    .mock-col {
-      flex: 1;
-      min-width: 200px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 8px;
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .mock-col-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #cbd5e1;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-    .mock-col-title .badge {
-      background: rgba(143,166,255,0.1);
-      color: var(--accent, #8FA6FF);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-    }
-    .mock-card {
-      background: #1E293B;
-      border-left: 3px solid #334155;
-      padding: 10px;
-      border-radius: 4px;
-      font-size: 12px;
-      color: #f8fafc;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    .mock-card.active {
-      border-left-color: var(--accent, #8FA6FF);
-      background: #1e293b;
-      box-shadow: 0 0 0 1px rgba(143,166,255,0.2);
-    }
-    .mock-card.done {
-      border-left-color: #22c55e;
-      opacity: 0.7;
-    }
-
-    /* Chat Mockup */
-    .mock-chat {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .mock-msg {
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 85%;
-    }
-    .mock-msg.bot {
-      background: #1E293B;
-      color: #f8fafc;
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-    }
-    .mock-msg.user {
-      background: rgba(143, 166, 255, 0.15);
-      color: #8FA6FF;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-      border: 1px solid rgba(143, 166, 255, 0.3);
-    }
-
-    /* OFFICE ANIMATION */
-    .office-anim-wrap {
-      border: none;
-      border-radius: 0;
-      background: #000;
-      margin: 0;
-    }
-    .office-scene {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-      overflow: hidden;
-    }
-    .office-bg, .office-people {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .office-people {
-      animation: float 4s ease-in-out infinite;
-    }
-    .office-caption {
-      padding: 12px;
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 11px;
-      color: rgba(255,255,255,0.5);
-      text-align: right;
-    }
-
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0px); }
-    }
-  </style>
+  
 </Layout>
