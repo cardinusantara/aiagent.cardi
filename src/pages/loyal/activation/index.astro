@@ -11,7 +11,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
 <Layout
   title="Aktivasi Kartu Fisik | Cardi LoyaL — Smart Review & Loyalty NFC"
   description="Hubungkan kartu pintar NFC & QR Cardi LoyaL Anda langsung ke profil Google Maps & Review bisnis Anda secara instan dan tanpa ribet."
-  image="/logo-cardi-loyal.png"
+  image="/logos/loyal/icon-loyal-square.png"
 >
   <TerminalHUD />
   <Nav />
@@ -22,6 +22,16 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
 
     <section class="activation-hero">
       <div class="wrap">
+        <div class="back-nav-bar">
+          <a href="/loyal/" class="back-pill mono">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+            <span>Kembali ke Cardi LoyaL</span>
+          </a>
+          <a href="/" class="back-pill subtle mono">
+            <span>Cardi Agent AI</span>
+          </a>
+        </div>
+
         <div class="hero-top-badge mono">
           <span class="live-dot"></span>
           <span>CARDI_LOYAL // NFC_HARDWARE_ACTIVATION_v2.4</span>
@@ -31,7 +41,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
           <!-- SISI KIRI / HEADER INFORMASI -->
           <div class="activation-info">
             <div class="brand-badge">
-              <img src="/logo-cardi-loyal.png" alt="Cardi LoyaL" class="loyal-brand-logo" width="36" height="36" />
+              <img src="/logos/loyal/icon-loyal-square.png" alt="Cardi LoyaL" class="loyal-brand-logo" width="36" height="36" style="border-radius:8px;object-fit:contain;" />
               <div class="brand-text">
                 <span class="brand-name">Cardi LoyaL</span>
                 <span class="brand-sub">NFC & QR Smart Review Card</span>
@@ -60,7 +70,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
                 </div>
 
                 <div class="card-brand-row">
-                  <img src="/logo-cardi-loyal.png" alt="Cardi LoyaL" class="card-logo-sm" />
+                  <img src="/logos/loyal/icon-loyal-square.png" alt="Cardi LoyaL" class="card-logo-sm" />
                   <span class="card-logo-text">Cardi LoyaL</span>
                 </div>
 
@@ -337,8 +347,8 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     padding-top: calc(var(--nav-height, 72px) + 32px);
     padding-bottom: 96px;
     min-height: 100vh;
-    background: #0B0F19;
-    color: #F8FAFC;
+    background: #F8FAFC;
+    color: #1E293B;
     overflow: hidden;
   }
 
@@ -355,14 +365,14 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     right: -80px;
     width: 480px;
     height: 480px;
-    background: radial-gradient(circle, rgba(234, 88, 12, 0.22) 0%, rgba(234, 88, 12, 0) 70%);
+    background: radial-gradient(circle, rgba(234, 88, 12, 0.08) 0%, rgba(234, 88, 12, 0) 70%);
   }
   .orb-2 {
     bottom: -120px;
     left: -120px;
     width: 520px;
     height: 520px;
-    background: radial-gradient(circle, rgba(30, 79, 255, 0.18) 0%, rgba(30, 79, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(30, 79, 255, 0.07) 0%, rgba(30, 79, 255, 0) 70%);
   }
 
   /* Wrap */
@@ -379,20 +389,21 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     align-items: center;
     gap: 8px;
     padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: 999px;
     font-size: 11px;
     letter-spacing: 0.05em;
-    color: #94A3B8;
+    color: #64748B;
     margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   }
   .live-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: #EA580C;
-    box-shadow: 0 0 10px #EA580C;
+    box-shadow: 0 0 10px rgba(234, 88, 12, 0.5);
     animation: pulse 2s infinite ease-in-out;
   }
 
@@ -423,8 +434,10 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     height: 38px;
     border-radius: 10px;
     object-fit: contain;
-    background: rgba(255, 255, 255, 0.06);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     padding: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   .brand-text {
     display: flex;
@@ -433,7 +446,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .brand-name {
     font-size: 18px;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #0A1633;
     letter-spacing: -0.02em;
   }
   .brand-sub {
@@ -447,7 +460,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     font-weight: 900;
     line-height: 1.15;
     letter-spacing: -0.03em;
-    color: #FFFFFF;
+    color: #0A1633;
     margin-bottom: 16px;
   }
   .gradient-text {
@@ -459,7 +472,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .hero-desc {
     font-size: 15px;
     line-height: 1.65;
-    color: #94A3B8;
+    color: #475569;
     margin-bottom: 28px;
   }
 
@@ -473,9 +486,9 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     max-width: 380px;
     aspect-ratio: 1.586 / 1;
     border-radius: 20px;
-    background: linear-gradient(135deg, #182033 0%, #0F1626 60%, #151D2F 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(234, 88, 12, 0.15);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 60%, #EEF4FF 100%);
+    border: 1px solid #D6E4FF;
+    box-shadow: 0 20px 45px rgba(10, 22, 51, 0.08), 0 0 30px rgba(234, 88, 12, 0.06);
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -484,7 +497,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   }
   .nfc-card-mockup:hover {
     transform: translateY(-4px) rotate(-0.5deg);
-    box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.7), 0 0 40px rgba(234, 88, 12, 0.25);
+    box-shadow: 0 24px 50px rgba(10, 22, 51, 0.12), 0 0 40px rgba(234, 88, 12, 0.12);
   }
 
   .card-chip-row {
@@ -497,7 +510,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     height: 32px;
     border-radius: 6px;
     background: linear-gradient(135deg, #D97706 0%, #FBBF24 50%, #B45309 100%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     position: relative;
   }
   .chip-metal::after {
@@ -508,7 +521,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     border-radius: 3px;
   }
   .nfc-symbol {
-    color: rgba(255, 255, 255, 0.6);
+    color: #64748B;
   }
 
   .card-brand-row {
@@ -525,7 +538,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .card-logo-text {
     font-size: 15px;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #0A1633;
     letter-spacing: -0.01em;
   }
 
@@ -534,7 +547,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     justify-content: space-between;
     align-items: flex-end;
     padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid #E2E8F0;
   }
   .card-label {
     font-size: 9px;
@@ -546,12 +559,12 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .card-code {
     font-size: 13px;
     font-weight: 700;
-    color: #F97316;
+    color: #EA580C;
   }
   .card-biz {
     font-size: 12px;
     font-weight: 600;
-    color: #E2E8F0;
+    color: #0A1633;
     max-width: 160px;
     white-space: nowrap;
     overflow: hidden;
@@ -574,8 +587,8 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     font-size: 12px;
     font-weight: 800;
     color: #EA580C;
-    background: rgba(234, 88, 12, 0.1);
-    border: 1px solid rgba(234, 88, 12, 0.2);
+    background: #FFF7ED;
+    border: 1px solid #FFEDD5;
     border-radius: 8px;
     padding: 4px 8px;
     flex-shrink: 0;
@@ -587,22 +600,21 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   }
   .step-text strong {
     font-size: 13px;
-    color: #FFFFFF;
+    color: #0A1633;
   }
   .step-text span {
     font-size: 12px;
-    color: #94A3B8;
+    color: #64748B;
     line-height: 1.5;
   }
 
   /* Right Column / Form Box */
   .activation-form-card {
-    background: rgba(18, 26, 44, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: 24px;
     padding: 36px 32px;
-    box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(10, 22, 51, 0.06);
   }
 
   @media (max-width: 600px) {
@@ -617,14 +629,14 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     gap: 14px;
     margin-bottom: 24px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #E2E8F0;
   }
   .form-icon-wrap {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(234, 88, 12, 0.2) 0%, rgba(234, 88, 12, 0.05) 100%);
-    border: 1px solid rgba(234, 88, 12, 0.3);
+    background: #FFF7ED;
+    border: 1px solid #FFEDD5;
     color: #EA580C;
     display: flex;
     align-items: center;
@@ -634,13 +646,13 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .form-title {
     font-size: 20px;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #0A1633;
     letter-spacing: -0.01em;
     margin: 0;
   }
   .form-subtitle {
     font-size: 13px;
-    color: #94A3B8;
+    color: #64748B;
     margin-top: 2px;
   }
 
@@ -661,12 +673,12 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     align-items: center;
     font-size: 13px;
     font-weight: 600;
-    color: #E2E8F0;
+    color: #0A1633;
   }
   .required-badge {
     font-size: 11px;
     font-weight: 500;
-    color: #F97316;
+    color: #EA580C;
   }
   .label-row {
     display: flex;
@@ -675,7 +687,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   }
   .pin-count {
     font-size: 12px;
-    color: #94A3B8;
+    color: #64748B;
   }
 
   .input-wrap {
@@ -686,7 +698,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .input-icon {
     position: absolute;
     left: 14px;
-    color: #64748B;
+    color: #94A3B8;
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -697,21 +709,21 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     width: 100%;
     height: 48px;
     padding: 0 16px 0 42px;
-    background: rgba(11, 15, 25, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
     border-radius: 12px;
-    color: #FFFFFF;
+    color: #0A1633;
     font-size: 14px;
     transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
   }
   .form-input:focus {
     outline: none;
     border-color: #EA580C;
-    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.18);
-    background: rgba(11, 15, 25, 1);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+    background: #FFFFFF;
   }
   .form-input::placeholder {
-    color: #475569;
+    color: #94A3B8;
   }
 
   .pin-input {
@@ -724,7 +736,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     right: 12px;
     background: transparent;
     border: none;
-    color: #64748B;
+    color: #94A3B8;
     cursor: pointer;
     padding: 6px;
     display: flex;
@@ -733,7 +745,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     transition: color 0.2s;
   }
   .pin-toggle-btn:hover {
-    color: #E2E8F0;
+    color: #0A1633;
   }
 
   .field-hint {
@@ -749,9 +761,9 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .helper-btn {
     background: transparent;
     border: none;
-    color: #38BDF8;
+    color: #0284C7;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     padding: 0;
     display: inline-flex;
@@ -761,16 +773,16 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     text-underline-offset: 3px;
   }
   .helper-btn:hover {
-    color: #7DD3FC;
+    color: #0369A1;
   }
   .tip-box {
     margin-top: 10px;
     padding: 12px 16px;
-    background: rgba(56, 189, 248, 0.08);
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    background: #F0F9FF;
+    border: 1px solid #BAE6FD;
     border-radius: 10px;
     font-size: 12px;
-    color: #BAE6FD;
+    color: #0369A1;
     line-height: 1.6;
   }
   .tip-box ol {
@@ -802,13 +814,13 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 12px 28px -6px rgba(234, 88, 12, 0.4);
+    box-shadow: 0 12px 28px -6px rgba(234, 88, 12, 0.35);
     transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
   }
   .submit-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 16px 32px -6px rgba(234, 88, 12, 0.5);
-    filter: brightness(1.08);
+    box-shadow: 0 16px 32px -6px rgba(234, 88, 12, 0.45);
+    filter: brightness(1.06);
   }
   .submit-btn:active {
     transform: translateY(0);
@@ -848,14 +860,14 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     line-height: 1.5;
   }
   .status-alert.error {
-    background: rgba(239, 68, 68, 0.12);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: #FCA5A5;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #DC2626;
   }
   .status-alert.success {
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: #86EFAC;
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #16A34A;
   }
 
   /* Success View */
@@ -867,9 +879,9 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background: rgba(34, 197, 94, 0.15);
-    border: 2px solid rgba(34, 197, 94, 0.4);
-    color: #22C55E;
+    background: #F0FDF4;
+    border: 2px solid #86EFAC;
+    color: #16A34A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -879,19 +891,19 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
   .success-title {
     font-size: 22px;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #0A1633;
     margin-bottom: 8px;
   }
   .success-desc {
     font-size: 14px;
-    color: #94A3B8;
+    color: #475569;
     line-height: 1.6;
     margin-bottom: 24px;
   }
 
   .success-details {
-    background: rgba(11, 15, 25, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
     border-radius: 14px;
     padding: 16px;
     margin-bottom: 24px;
@@ -910,12 +922,12 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     color: #64748B;
   }
   .detail-row strong {
-    color: #F8FAFC;
+    color: #0A1633;
   }
   .active-pill {
-    background: rgba(34, 197, 94, 0.15);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: #4ADE80;
+    background: #DCFCE7;
+    border: 1px solid #86EFAC;
+    color: #16A34A;
     padding: 2px 8px;
     border-radius: 999px;
     font-weight: 700;
@@ -931,7 +943,7 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     width: 100%;
     height: 48px;
     border-radius: 12px;
-    background: #2563EB;
+    background: #1E4FFF;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: 700;
@@ -940,28 +952,28 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     justify-content: center;
     gap: 8px;
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 8px 20px rgba(30, 79, 255, 0.25);
     transition: background 0.2s;
   }
   .test-review-btn:hover {
-    background: #1D4ED8;
+    background: #1842DF;
   }
   .reset-link-btn {
     background: transparent;
     border: none;
-    color: #94A3B8;
+    color: #64748B;
     font-size: 13px;
     cursor: pointer;
     text-decoration: underline;
   }
   .reset-link-btn:hover {
-    color: #FFFFFF;
+    color: #0A1633;
   }
 
   .form-footer-note {
     margin-top: 24px;
     padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid #E2E8F0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -994,191 +1006,41 @@ const WA_SUPPORT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
   }
+
+  .back-nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+  .back-pill:hover {
+    color: #0A1633;
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+    transform: translateX(-2px);
+  }
+  .back-pill.subtle {
+    color: #64748B;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  .back-pill.subtle:hover {
+    color: #0A1633;
+    background: #F1F5F9;
+  }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('activationForm') as HTMLFormElement | null;
-    const cardIdInput = document.getElementById('inputCardId') as HTMLInputElement | null;
-    const bizNameInput = document.getElementById('inputBusinessName') as HTMLInputElement | null;
-    const reviewUrlInput = document.getElementById('inputReviewUrl') as HTMLInputElement | null;
-    const pinInput = document.getElementById('inputPin') as HTMLInputElement | null;
-    const pinCounter = document.getElementById('pinDigitCounter');
-    const togglePinBtn = document.getElementById('btnTogglePin');
-    const eyeShow = document.getElementById('eyeShowIcon');
-    const eyeHide = document.getElementById('eyeHideIcon');
-    const submitBtn = document.getElementById('btnSubmitActivation') as HTMLButtonElement | null;
-    const btnText = document.getElementById('btnText');
-    const btnSpinner = document.getElementById('btnSpinner');
-    const statusAlert = document.getElementById('statusAlert');
-    const alertText = document.getElementById('alertText');
-    const tipBtn = document.getElementById('btnShowTip');
-    const tipBox = document.getElementById('tipBox');
-
-    // Visual Preview elements
-    const previewCardId = document.getElementById('previewCardId');
-    const previewBizName = document.getElementById('previewBizName');
-
-    // Success State elements
-    const successView = document.getElementById('successView');
-    const resCardId = document.getElementById('resCardId');
-    const resBizName = document.getElementById('resBizName');
-    const btnTestReview = document.getElementById('btnTestReview') as HTMLAnchorElement | null;
-    const btnReset = document.getElementById('btnResetActivation');
-
-    // 1. Check URL parameters for card_id or id
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramId = urlParams.get('card_id') || urlParams.get('card') || urlParams.get('id') || '';
-    if (paramId && cardIdInput) {
-      cardIdInput.value = paramId.trim();
-      if (previewCardId) previewCardId.textContent = `#${paramId.trim()}`;
-    }
-
-    // 2. Dynamic card preview listener
-    cardIdInput?.addEventListener('input', () => {
-      const val = cardIdInput.value.trim();
-      if (previewCardId) {
-        previewCardId.textContent = val ? `#${val}` : '#SCAN-READY';
-      }
-    });
-
-    bizNameInput?.addEventListener('input', () => {
-      const val = bizNameInput.value.trim();
-      if (previewBizName) {
-        previewBizName.textContent = val || 'Profil Bisnis Anda';
-      }
-    });
-
-    // 3. PIN logic & formatting (4 digits only)
-    pinInput?.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
-      target.value = target.value.replace(/\D/g, '').slice(0, 4);
-      if (pinCounter) {
-        pinCounter.textContent = `${target.value.length}/4`;
-      }
-    });
-
-    // 4. Toggle PIN Visibility
-    let isPinVisible = false;
-    togglePinBtn?.addEventListener('click', () => {
-      isPinVisible = !isPinVisible;
-      if (pinInput) {
-        pinInput.type = isPinVisible ? 'text' : 'password';
-      }
-      eyeShow?.classList.toggle('hidden', isPinVisible);
-      eyeHide?.classList.toggle('hidden', !isPinVisible);
-    });
-
-    // 5. Toggle Tip Box
-    tipBtn?.addEventListener('click', () => {
-      tipBox?.classList.toggle('hidden');
-    });
-
-    // 6. Handle Form Submit
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const cardId = cardIdInput?.value.trim();
-      const businessName = bizNameInput?.value.trim();
-      let reviewUrl = reviewUrlInput?.value.trim();
-      const pin = pinInput?.value.trim();
-
-      // Client validation
-      if (!cardId) {
-        showAlert('Silakan masukkan ID atau kode kartu Anda.', 'error');
-        cardIdInput?.focus();
-        return;
-      }
-      if (!businessName) {
-        showAlert('Silakan masukkan nama tempat bisnis Anda.', 'error');
-        bizNameInput?.focus();
-        return;
-      }
-      if (!reviewUrl) {
-        showAlert('Silakan masukkan tautan Google Review bisnis Anda.', 'error');
-        reviewUrlInput?.focus();
-        return;
-      }
-      if (!pin || pin.length !== 4) {
-        showAlert('PIN keamanan wajib terdiri dari 4 digit angka.', 'error');
-        pinInput?.focus();
-        return;
-      }
-
-      // Pastikan URL memiliki format http/https
-      if (!/^https?:\/\//i.test(reviewUrl)) {
-        reviewUrl = `https://${reviewUrl}`;
-      }
-
-      // Loading State
-      if (submitBtn) submitBtn.disabled = true;
-      btnText?.classList.add('hidden');
-      btnSpinner?.classList.remove('hidden');
-      hideAlert();
-
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 800));
-
-        // Simpan ke localStorage
-        try {
-          const cardKey = `cardi_loyal_card_${cardId}`;
-          const cardData = {
-            cardId,
-            businessName,
-            reviewUrl,
-            pin,
-            activatedAt: new Date().toISOString(),
-          };
-          localStorage.setItem(cardKey, JSON.stringify(cardData));
-        } catch {
-          // ignore
-        }
-
-        // Show Success
-        form?.classList.add('hidden');
-        if (successView) {
-          successView.classList.remove('hidden');
-          if (resCardId) resCardId.textContent = `#${cardId}`;
-          if (resBizName) resBizName.textContent = businessName;
-          if (btnTestReview) btnTestReview.href = reviewUrl;
-        }
-
-        // Update preview card badge to active
-        const cardMockup = document.getElementById('cardMockupVisual');
-        if (cardMockup) {
-          cardMockup.style.boxShadow = '0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 35px rgba(34, 197, 94, 0.4)';
-          cardMockup.style.borderColor = 'rgba(34, 197, 94, 0.4)';
-        }
-      } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : 'Terjadi kendala saat aktivasi.';
-        showAlert(msg, 'error');
-      } finally {
-        if (submitBtn) submitBtn.disabled = false;
-        btnText?.classList.remove('hidden');
-        btnSpinner?.classList.add('hidden');
-      }
-    });
-
-    // Reset button to activate another
-    btnReset?.addEventListener('click', () => {
-      form?.reset();
-      if (pinCounter) pinCounter.textContent = '0/4';
-      if (previewCardId) previewCardId.textContent = '#SCAN-READY';
-      if (previewBizName) previewBizName.textContent = 'Profil Bisnis Anda';
-      successView?.classList.add('hidden');
-      form?.classList.remove('hidden');
-      hideAlert();
-    });
-
-    function showAlert(msg: string, type: 'error' | 'success') {
-      if (!statusAlert || !alertText) return;
-      statusAlert.className = `status-alert ${type}`;
-      alertText.textContent = msg;
-      statusAlert.classList.remove('hidden');
-    }
-
-    function hideAlert() {
-      if (statusAlert) statusAlert.classList.add('hidden');
-    }
-  });
-</script>

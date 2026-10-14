@@ -1,19 +1,25 @@
+---
+interface Props {
+  activeNav?: string;
+}
+const { activeNav = 'crm' } = Astro.props;
+---
 <nav id="mainNav">
   <div class="wrap navIn">
-    <a class="brand" href="/">
-      <img src="/logo.png" alt="cardi agent." width="1151" height="368" />
+    <a class="brand" href="/" aria-label="Cardi Agent Beranda">
+      <img src="/logos/agent-ai/logo-agent-ai-dark.png" alt="cardi agent." width="1151" height="368" />
     </a>
 
-    <div class="menu">
-      <a href="#fitur" data-i18n="nav_fitur">Yang Kamu Dapat</a>
-      <a href="#cara-kerja" data-i18n="nav_cara_kerja">Cara Kerja</a>
-      <a href="#harga" data-i18n="nav_harga">Harga</a>
-      <a href="#faq" data-i18n="nav_faq">FAQ</a>
-      <a href="/blog/">Blog</a>
+    <!-- Main Navigation Menu (CRM, MoM, Loyal, Harga) -->
+    <div class="menu" role="menubar">
+      <a href="/crm/" class={activeNav === 'crm' ? 'active' : ''} role="menuitem">CRM</a>
+      <a href="/mom/" class={activeNav === 'mom' || activeNav === 'cardimom' ? 'active' : ''} role="menuitem">MoM</a>
+      <a href="/loyal/" class={activeNav === 'loyal' || activeNav === 'cardiloyal' ? 'active' : ''} role="menuitem">Loyal</a>
+      <a href="/#harga" class={activeNav === 'harga' ? 'active' : ''} role="menuitem">Harga</a>
     </div>
 
     <div class="navR">
-      <!-- 1. 3-Language Switcher (ID, EN, ZH) -->
+      <!-- Bahasa Switcher (ID, EN, ZH) -->
       <div class="lang-dropdown-wrapper" id="langDropdownWrap">
         <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-expanded="false" aria-label="Pilih Bahasa" onclick="window.toggleLangDropdown(event)">
           <img id="currentLangFlag" src="/flags/id.svg" alt="ID" class="lang-flag-img" />
@@ -53,88 +59,13 @@
         </div>
       </div>
 
-      <!-- 2. Ekosistem Dropdown Menu (Centered between Language and Schedule Demo) -->
-      <div class="nav-eco-dropdown" id="navEcoDropdown">
-        <button type="button" class="nav-eco-trigger" id="navEcoTrigger" aria-expanded="false" aria-haspopup="true" onclick="window.toggleEcoDropdown(event)">
-          <svg class="eco-btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
-          </svg>
-          <span class="eco-btn-label" data-i18n="nav_eco">Ekosistem</span>
-          <svg class="eco-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <!-- Dropdown Card -->
-        <div class="nav-eco-panel" id="navEcoPanel">
-          <div class="eco-accent-bar"></div>
-          <div class="eco-panel-inner">
-            <div class="eco-panel-header">
-              <span class="eco-panel-tag" data-i18n="eco_badge">Ekosistem Cardi</span>
-            </div>
-            <div class="eco-panel-list">
-              <!-- Cardi Agent AI 24/7 (Current) -->
-              <a href="/" class="eco-card-item active">
-                <div class="eco-card-icon icon-agent">
-                  <img src="/logo-agent-app.png" alt="Cardi Agent AI 24/7" class="eco-card-img" width="38" height="38" />
-                </div>
-                <div class="eco-card-text">
-                  <div class="eco-card-top">
-                    <strong class="eco-card-title" data-i18n="eco_agent_title">Cardi Agent AI 24/7</strong>
-                    <span class="eco-pill live" data-i18n="eco_pill_active">Active</span>
-                  </div>
-                  <p class="eco-card-sub" data-i18n="eco_agent_sub">AI Agent Workforce & Business OS</p>
-                </div>
-              </a>
-
-              <!-- Cardi MoM -->
-              <a href="/mom" class="eco-card-item">
-                <div class="eco-card-icon icon-mom">
-                  <img src="/logo-mom-app.png" alt="Cardi MoM" class="eco-card-img" width="38" height="38" />
-                </div>
-                <div class="eco-card-text">
-                  <div class="eco-card-top">
-                    <strong class="eco-card-title" data-i18n="eco_mom_title">Cardi MoM</strong>
-                    <span class="eco-pill live" data-i18n="eco_pill_live">Live</span>
-                  </div>
-                  <p class="eco-card-sub" data-i18n="eco_mom_sub">AI Meeting Intelligence & Notula Rapat</p>
-                </div>
-              </a>
-
-              <!-- Cardi LoyaL -->
-              <a href="/loyal/activation/" class="eco-card-item">
-                <div class="eco-card-icon icon-loyal">
-                  <img src="/logo-cardi-loyal.png" alt="Cardi LoyaL" class="eco-card-img" width="38" height="38" />
-                </div>
-                <div class="eco-card-text">
-                  <div class="eco-card-top">
-                    <strong class="eco-card-title" data-i18n="eco_loyal_title">Cardi LoyaL</strong>
-                    <span class="eco-pill loyal" data-i18n="eco_pill_app">App</span>
-                  </div>
-                  <p class="eco-card-sub" data-i18n="eco_loyal_sub">Platform Loyalitas, Rewards & Stempel</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="eco-panel-footer">
-              <div class="eco-panel-foot-text">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C2D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                <span data-i18n="ft_tagline">Cardi Business Power Ecosystem™ • Scale to IPO</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Jadwalkan Demo Button -->
-      <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20demo%20untuk%20bisnis%20saya.%20%F0%9F%98%81" target="_blank" rel="noopener" data-i18n="nav_demo_btn">
-        Jadwalkan Demo
+      <!-- Rekrut Agent CTA Button -->
+      <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20agent%20untuk%20bisnis%20saya.%20%F0%9F%A4%96" target="_blank" rel="noopener">
+        Rekrut Agent
       </a>
     </div>
 
-    <!-- Mobile Right Actions (Language Switcher + Hamburger) -->
+    <!-- Mobile Nav Actions (Language + Hamburger) -->
     <div class="mobile-nav-actions">
       <div class="lang-dropdown-wrapper mob-lang-header" id="mobLangDropdownWrap">
         <button type="button" class="lang-toggle-btn mob-lang-header-btn" id="mobLangToggleBtn" aria-expanded="false" aria-label="Pilih Bahasa" onclick="window.toggleMobLangDropdown(event)">
@@ -184,111 +115,23 @@
   </div>
 </nav>
 
+<!-- Mobile Navigation Drawer -->
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
-  <!-- Mobile Ecosystem Section (Interactive Accordion on Tap) -->
-  <div class="mobile-eco-accordion open" id="mobEcoAccordion">
-    <button type="button" class="mobile-eco-accordion-btn" id="mobEcoAccordionBtn" aria-expanded="true" onclick="window.toggleMobEcoAccordion(event)">
-      <div class="mobile-eco-accordion-left">
-        <svg class="eco-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C2D1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-          <polyline points="2 17 12 22 22 17"></polyline>
-          <polyline points="2 12 12 17 22 12"></polyline>
-        </svg>
-        <span class="mobile-eco-accordion-title" data-i18n="eco_badge">Ekosistem Cardi</span>
-      </div>
-      <svg class="mob-eco-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <div class="mobile-eco-content" id="mobEcoContent">
-      <div class="mobile-eco-list">
-        <!-- Cardi Agent AI 24/7 (Active) -->
-        <a href="/" class="mobile-eco-card active">
-          <div class="mobile-eco-left">
-            <div class="eco-card-icon icon-agent">
-              <img src="/logo-agent-app.png" alt="Cardi Agent AI 24/7" class="eco-card-img" width="38" height="38" />
-            </div>
-            <div class="mobile-eco-info">
-              <div class="mobile-eco-top">
-                <strong class="mobile-eco-badge" data-i18n="eco_agent_title">Cardi Agent AI 24/7</strong>
-                <span class="eco-pill live" data-i18n="eco_pill_active">Active</span>
-              </div>
-              <span class="mobile-eco-sub" data-i18n="eco_agent_sub">AI Agent Workforce & Business OS</span>
-            </div>
-          </div>
-          <svg class="mob-eco-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </a>
-
-        <!-- Cardi MoM (Live) -->
-        <a href="/mom" class="mobile-eco-card">
-          <div class="mobile-eco-left">
-            <div class="eco-card-icon icon-mom">
-              <img src="/logo-mom-app.png" alt="Cardi MoM" class="eco-card-img" width="38" height="38" />
-            </div>
-            <div class="mobile-eco-info">
-              <div class="mobile-eco-top">
-                <strong class="mobile-eco-badge" data-i18n="eco_mom_title">Cardi MoM</strong>
-                <span class="eco-pill live" data-i18n="eco_pill_live">Live</span>
-              </div>
-              <span class="mobile-eco-sub" data-i18n="eco_mom_sub">AI Meeting Intelligence & Notula Rapat</span>
-            </div>
-          </div>
-          <svg class="mob-eco-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </a>
-
-        <!-- Cardi LoyaL (App) -->
-        <a href="/loyal/activation/" class="mobile-eco-card">
-          <div class="mobile-eco-left">
-            <div class="eco-card-icon icon-loyal">
-              <img src="/logo-cardi-loyal.png" alt="Cardi LoyaL" class="eco-card-img" width="38" height="38" />
-            </div>
-            <div class="mobile-eco-info">
-              <div class="mobile-eco-top">
-                <strong class="mobile-eco-badge" data-i18n="eco_loyal_title">Cardi LoyaL</strong>
-                <span class="eco-pill loyal" data-i18n="eco_pill_app">App</span>
-              </div>
-              <span class="mobile-eco-sub" data-i18n="eco_loyal_sub">Platform Loyalitas, Rewards & Stempel</span>
-            </div>
-          </div>
-          <svg class="mob-eco-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <div class="mobile-nav-links-wrap">
-    <a href="#fitur" class="mobile-nav-link" data-i18n="nav_fitur">Yang Kamu Dapat</a>
-    <a href="#cara-kerja" class="mobile-nav-link" data-i18n="nav_cara_kerja">Cara Kerja</a>
-    <a href="#harga" class="mobile-nav-link" data-i18n="nav_harga">Harga</a>
-    <a href="#faq" class="mobile-nav-link" data-i18n="nav_faq">FAQ</a>
-    <a href="/blog/" class="mobile-nav-link">Blog</a>
+    <a href="/crm/" class={activeNav === 'crm' ? 'mobile-nav-link active' : 'mobile-nav-link'}>CRM</a>
+    <a href="/mom/" class={activeNav === 'mom' || activeNav === 'cardimom' ? 'mobile-nav-link active' : 'mobile-nav-link'}>MoM</a>
+    <a href="/loyal/" class={activeNav === 'loyal' || activeNav === 'cardiloyal' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Loyal</a>
+    <a href="/#harga" class={activeNav === 'harga' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Harga</a>
   </div>
 
-  <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20demo%20untuk%20bisnis%20saya.%20%F0%9F%98%81" target="_blank" rel="noopener" style="width:100%; justify-content:center; margin-top:12px;" data-i18n="nav_demo_btn">
-    Jadwalkan Demo
+  <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20agent%20untuk%20bisnis%20saya.%20%F0%9F%A4%96" target="_blank" rel="noopener" style="width:100%; justify-content:center; margin-top:16px;">
+    Rekrut Agent
   </a>
 </div>
 
 <script is:inline>
-  window.toggleEcoDropdown = function(e) {
-    if (e) e.stopPropagation();
-    var langWrap = document.getElementById("langDropdownWrap");
-    if (langWrap) langWrap.classList.remove("open");
-    var mobLangWrap = document.getElementById("mobLangDropdownWrap");
-    if (mobLangWrap) mobLangWrap.classList.remove("open");
-    var ecoWrap = document.getElementById("navEcoDropdown");
-    var ecoBtn = document.getElementById("navEcoTrigger");
-    if (ecoWrap) {
-      var isOpen = ecoWrap.classList.toggle("open");
-      if (ecoBtn) ecoBtn.setAttribute("aria-expanded", String(isOpen));
-    }
-  };
-
   window.toggleLangDropdown = function(e) {
     if (e) e.stopPropagation();
-    var ecoWrap = document.getElementById("navEcoDropdown");
-    if (ecoWrap) ecoWrap.classList.remove("open");
     var mobLangWrap = document.getElementById("mobLangDropdownWrap");
     if (mobLangWrap) mobLangWrap.classList.remove("open");
     var langWrap = document.getElementById("langDropdownWrap");
@@ -301,8 +144,6 @@
 
   window.toggleMobLangDropdown = function(e) {
     if (e) e.stopPropagation();
-    var ecoWrap = document.getElementById("navEcoDropdown");
-    if (ecoWrap) ecoWrap.classList.remove("open");
     var langWrap = document.getElementById("langDropdownWrap");
     if (langWrap) langWrap.classList.remove("open");
     var mobLangWrap = document.getElementById("mobLangDropdownWrap");
@@ -313,119 +154,36 @@
     }
   };
 
-  window.toggleMobEcoAccordion = function(e) {
-    if (e) e.stopPropagation();
-    var acc = document.getElementById("mobEcoAccordion");
-    var btn = document.getElementById("mobEcoAccordionBtn");
-    if (acc) {
-      var isOpen = acc.classList.toggle("open");
-      if (btn) btn.setAttribute("aria-expanded", String(isOpen));
+  document.addEventListener("click", function(e) {
+    var langWrap = document.getElementById("langDropdownWrap");
+    if (langWrap && !langWrap.contains(e.target)) {
+      langWrap.classList.remove("open");
+      var langBtn = document.getElementById("langToggleBtn");
+      if (langBtn) langBtn.setAttribute("aria-expanded", "false");
     }
-  };
+    var mobLangWrap = document.getElementById("mobLangDropdownWrap");
+    if (mobLangWrap && !mobLangWrap.contains(e.target)) {
+      mobLangWrap.classList.remove("open");
+      var mobLangBtn = document.getElementById("mobLangToggleBtn");
+      if (mobLangBtn) mobLangBtn.setAttribute("aria-expanded", "false");
+    }
+  });
 
   document.addEventListener("DOMContentLoaded", function() {
-    var burgerBtn = document.getElementById("burgerBtn");
+    var burger = document.getElementById("burgerBtn");
     var drawer = document.getElementById("mobileNavDrawer");
-    var ecoWrap = document.getElementById("navEcoDropdown");
-    var langWrap = document.getElementById("langDropdownWrap");
-    var mobLangWrap = document.getElementById("mobLangDropdownWrap");
-    var mainNav = document.getElementById("mainNav");
-
-    function lockScroll(lock) {
-      if (lock) {
-        document.documentElement.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
-        document.body.style.touchAction = "none";
-      } else {
-        document.documentElement.style.overflow = "";
-        document.body.style.overflow = "";
-        document.body.style.touchAction = "";
-      }
-    }
-
-    if (burgerBtn && drawer) {
-      burgerBtn.addEventListener("click", function() {
-        var open = burgerBtn.classList.toggle("active");
-        drawer.classList.toggle("open", open);
-        if (open) {
-          if (mainNav) {
-            var rect = mainNav.getBoundingClientRect();
-            drawer.style.top = Math.max(0, Math.round(rect.bottom)) + "px";
-            drawer.style.height = "calc(100dvh - " + Math.max(0, Math.round(rect.bottom)) + "px)";
-          }
-          lockScroll(true);
-        } else {
-          lockScroll(false);
-        }
-        if (mobLangWrap) mobLangWrap.classList.remove("open");
+    if (burger && drawer) {
+      burger.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var isOpen = drawer.classList.toggle("open");
+        burger.classList.toggle("open", isOpen);
       });
-
-      drawer.querySelectorAll("a").forEach(function(a) {
-        a.addEventListener("click", function() {
-          burgerBtn.classList.remove("active");
+      drawer.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", function() {
           drawer.classList.remove("open");
-          lockScroll(false);
+          burger.classList.remove("open");
         });
       });
     }
-
-    window.addEventListener("resize", function() {
-      if (window.innerWidth > 900 && drawer && drawer.classList.contains("open")) {
-        burgerBtn.classList.remove("active");
-        drawer.classList.remove("open");
-        lockScroll(false);
-      }
-    });
-
-    // Desktop Hover support for Eco dropdown
-    if (ecoWrap) {
-      var hoverTimeout;
-      ecoWrap.addEventListener("mouseenter", function() {
-        if (window.innerWidth > 900) {
-          clearTimeout(hoverTimeout);
-          if (langWrap) langWrap.classList.remove("open");
-          ecoWrap.classList.add("open");
-          var btn = document.getElementById("navEcoTrigger");
-          if (btn) btn.setAttribute("aria-expanded", "true");
-        }
-      });
-      ecoWrap.addEventListener("mouseleave", function() {
-        if (window.innerWidth > 900) {
-          hoverTimeout = setTimeout(function() {
-            ecoWrap.classList.remove("open");
-            var btn = document.getElementById("navEcoTrigger");
-            if (btn) btn.setAttribute("aria-expanded", "false");
-          }, 150);
-        }
-      });
-    }
-
-    // Close on outside click
-    document.addEventListener("click", function(e) {
-      if (ecoWrap && !ecoWrap.contains(e.target)) {
-        ecoWrap.classList.remove("open");
-        var btn = document.getElementById("navEcoTrigger");
-        if (btn) btn.setAttribute("aria-expanded", "false");
-      }
-      if (langWrap && !langWrap.contains(e.target)) {
-        langWrap.classList.remove("open");
-        var lbtn = document.getElementById("langToggleBtn");
-        if (lbtn) lbtn.setAttribute("aria-expanded", "false");
-      }
-      if (mobLangWrap && !mobLangWrap.contains(e.target)) {
-        mobLangWrap.classList.remove("open");
-        var mlbtn = document.getElementById("mobLangToggleBtn");
-        if (mlbtn) mlbtn.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    // Close on Escape key
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        if (ecoWrap) ecoWrap.classList.remove("open");
-        if (langWrap) langWrap.classList.remove("open");
-        if (mobLangWrap) mobLangWrap.classList.remove("open");
-      }
-    });
   });
 </script>

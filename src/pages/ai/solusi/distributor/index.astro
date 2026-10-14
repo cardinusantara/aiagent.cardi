@@ -1,0 +1,22 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import AnnouncementBar from '../../../../components/AnnouncementBar.astro';
+import Nav from '../../../../components/Nav.astro';
+import TerminalHUD from '../../../../components/TerminalHUD.astro';
+import Footer from '../../../../components/Footer.astro';
+import MobileBar from '../../../../components/MobileBar.astro';
+
+const title = "Cardi Agent AI untuk Distributor &amp; Grosir — Cardi Agent";
+const description = "AI CRM untuk distributor dan grosir B2B dengan sales lapangan: laporan voice note, Owner Brief, dan penagihan piutang.";
+---
+
+<Layout title={title} description={description} activeNav="ai">
+  <AnnouncementBar />
+  <Nav />
+  <TerminalHUD />
+  <main class="page-content">
+<section class="hero hero-dark"><div class="wrap"><div class="hero-copy"><span class="eyebrow">Solusi · Distributor &amp; grosir B2B</span><h1>Sales di jalan, laporan beres, piutang terkendali.</h1><p class="lead">Untuk distributor dan grosir dengan 5–50 sales lapangan: bahan bangunan, FMCG, farmasi &amp; alkes, sparepart, pertanian.</p><div class="btns"><a class="btn btn-primary" href="/ai/pilot/">Daftar pilot distributor</a><a class="btn btn-outline" href="/ai/harga/">Lihat harga</a></div></div></div></section><section class="sec "><div class="wrap"><div class="sec-head"><span class=eyebrow>Masalah khas</span><h2>Yang biasa terjadi di distributor.</h2></div><div class="grid g3 "><article class="card "><div class="card-top"><span class="num">01</span></div><h3>Laporan tercecer di grup WA</h3><p>Admin rekap ulang ke Excel. Owner baru tahu angka di akhir bulan.</p></article><article class="card "><div class="card-top"><span class="num">02</span></div><h3>Piutang tempo menumpuk</h3><p>Tempo diberikan tanpa melihat riwayat bayar. Menagih sungkan.</p></article><article class="card "><div class="card-top"><span class="num">03</span></div><h3>Sales sulit dipantau</h3><p>Kunjungan tidak terverifikasi, lead dibiarkan dingin.</p></article></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><span class=eyebrow>Pemetaan</span><h2>Agent untuk tiap masalah.</h2></div><div class="table-wrap"><table class="tbl "><thead><tr><th scope=col>Masalah</th><th scope=col>Agent</th><th scope=col>Hasil yang diukur</th></tr></thead><tbody><tr><th scope=row>Laporan kunjungan manual</th><td>AI Admin Sales</td><td>Kunjungan &amp; PO tercatat dari voice note</td></tr><tr><th scope=row>Owner buta angka harian</th><td>AI Supervisor</td><td>Owner Brief setiap jam 19.00</td></tr><tr><th scope=row>Piutang telat</th><td>AI Penagih + Tempo Guard</td><td>Rupiah tertagih, hari telat rata-rata</td></tr><tr><th scope=row>Toko berhenti order</th><td>AI Reaktivasi</td><td>Toko yang order lagi</td></tr><tr><th scope=row>Pertanyaan data ad-hoc</th><td>AI Analis</td><td>Jawaban langsung di WhatsApp</td></tr></tbody></table></div></div></section><section class="sec sec-dark"><div class="wrap"><div class="sec-head"><span class=eyebrow>Sehari bersama agent</span><h2>Seperti apa hari kerja tim kamu.</h2></div><ol class="steps"><li><span class="step-n">01</span><div><h3>07.30 · Rute disusun AI</h3><p>Toko diprediksi restock dan yang perlu ditagih masuk rute.</p></div></li><li><span class="step-n">02</span><div><h3>10.00 · Sales kirim voice note</h3><p>Laporan, order, dan jadwal berikutnya tercatat sendiri.</p></div></li><li><span class="step-n">03</span><div><h3>14.00 · Pengingat tagihan</h3><p>AI Penagih mengirim pengingat bertahap dengan link QRIS.</p></div></li><li><span class="step-n">04</span><div><h3>19.00 · Owner Brief</h3><p>Ringkasan harian dan rekomendasi untuk besok.</p></div></li></ol></div></section><section class="sec"><div class="wrap"><div class="cta-band"><div><h2>Program pilot untuk distributor.</h2><p>Coba AI Penagih 30 hari — bayar dari tagihan yang berhasil ditagih.</p></div><div class="btns"><a class="btn btn-light" href="/ai/pilot/">Daftar pilot</a></div></div></div></section>
+  </main>
+  <Footer />
+  <MobileBar />
+</Layout>

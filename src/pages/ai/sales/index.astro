@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import Nav from '../../../components/Nav.astro';
+import TerminalHUD from '../../../components/TerminalHUD.astro';
+import Footer from '../../../components/Footer.astro';
+import MobileBar from '../../../components/MobileBar.astro';
+
+const title = "Cardi Agent AI Sales — Cardi Agent";
+const description = "Agent AI untuk sales: AI Admin Sales, AI Supervisor, AI Penagih, AI Notulen.";
+---
+
+<Layout title={title} description={description} activeNav="ai">
+  <AnnouncementBar />
+  <Nav />
+  <TerminalHUD />
+  <main class="page-content">
+<section class="hero hero-dark"><div class="wrap"><div class="hero-copy"><span class="eyebrow">Cardi Agent AI · Sales</span><h1>Pipeline terisi sendiri, sales terpantau, tagihan masuk tepat waktu.</h1><p class="lead">Setiap agent punya satu tugas dan satu ukuran hasil. Pilih yang paling dibutuhkan bisnismu sekarang.</p><div class="btns"><a class="btn btn-primary" href="/ai/pilot/">Rekrut agent</a><a class="btn btn-outline" href="/ai/harga/">Lihat harga</a></div></div></div></section><section class="sec "><div class="wrap"><div class="sec-head"><span class=eyebrow>Agent Sales</span><h2>Siapa mengerjakan apa.</h2></div><div class="grid g2 "><article class="card "><div class="card-top"><span class="tag live">Tersedia</span></div><h3>AI Admin Sales</h3><p>Mencatat chat WhatsApp dan voice note sales jadi pipeline, order, dan jadwal kunjungan.</p><ul class=checks><li>Voice note kunjungan jadi laporan + PO</li><li>Deal pindah tahap otomatis dari isi chat</li><li>Pengingat follow-up ke sales</li></ul><div class="card-foot">Diukur dari: Jam admin yang hilang</div></article><article class="card "><div class="card-top"><span class="tag live">Tersedia</span></div><h3>AI Supervisor</h3><p>Menilai kinerja sales, mengingatkan lead dingin, dan mengirim Owner Brief jam 19.00.</p><ul class=checks><li>Scorecard per sales</li><li>Peringatan lead panas yang belum dibalas</li><li>Owner Brief harian di WhatsApp</li></ul><div class="card-foot">Diukur dari: Kecepatan respons sales</div></article><article class="card "><div class="card-top"><span class="tag live">Tersedia</span></div><h3>AI Penagih</h3><p>Memberi skor risiko tempo tiap toko dan menagih bertahap dengan link QRIS.</p><ul class=checks><li>Tempo Guard: skor risiko per toko</li><li>Pengingat bertahap: ramah → mengingatkan → tegas</li><li>Nominal &amp; pesan tegas disetujui manusia</li></ul><div class="card-foot">Diukur dari: Rupiah tagihan lunas</div></article><article class="card "><div class="card-top"><span class="tag live">Tersedia</span></div><h3>AI Notulen</h3><p>Merangkum meeting dengan klien dan memasukkan hasilnya ke pipeline.</p><ul class=checks><li>Ditenagai Cardi Agent AI MoM</li><li>Action item dibagikan ke WhatsApp</li><li>Hasil meeting jadi update deal</li></ul><div class="card-foot">Diukur dari: Meeting tercatat</div></article></div></div></section><section class="sec sec-white"><div class="wrap"><div class="split" style="align-items:center"><div class="prose"><span class="eyebrow">Owner Brief</span><h2 style="font-size:34px;color:var(--ink)">Semua angka penting, setiap malam, di WhatsApp.</h2><p>AI Supervisor merangkum omzet, deal panas, sales yang melambat, dan piutang jatuh tempo. Owner bisa langsung bertanya balik.</p></div><div class="chat" aria-label="Contoh Owner Brief di WhatsApp">
+<div class="bubble"><strong>Owner Brief · 19.00</strong><br>Omzet hari ini Rp 48,2 jt (112% target) · 37/42 kunjungan.<br><strong>Perlu perhatian:</strong> 3 lead panas belum dibalas; Toko Berkah Abadi telat 6 hari — janji bayar Jumat.<br><strong>Besok:</strong> fokus Bekasi Timur, 4 toko diprediksi restock.<small>19.00</small></div>
+<div class="bubble me">Toko mana di Bekasi yang belum order 2 minggu?<small>19.04</small></div>
+<div class="bubble">Ada 5 toko. Mau saya masukkan ke rute besok?<small>19.04</small></div>
+<p class="note" style="text-align:center">Contoh tampilan · data ilustrasi</p></div></div></div></section><section class="sec "><div class="wrap"><div class="sec-head"><span class=eyebrow>Lini lain</span><h2>Lengkapi perjalanan pelanggan.</h2></div><div class="grid g2 "><article class="card "><div class="card-top"></div><h3>Cardi Agent AI · Marketing</h3><p>Konten dan iklan yang konsisten mendatangkan lead yang siap dihubungi.</p><a class="card-link" href="/ai/marketing/">Lihat →</a></article><article class="card "><div class="card-top"></div><h3>Cardi Agent AI · Retensi</h3><p>Pelanggan kembali dan memberi ulasan tanpa harus dikejar.</p><a class="card-link" href="/ai/retensi/">Lihat →</a></article></div></div></section><section class="sec"><div class="wrap"><div class="cta-band"><div><h2>Mulai dari lini Sales.</h2><p>Rekrut satu agent dulu, tambah sesuai kebutuhan.</p></div><div class="btns"><a class="btn btn-light" href="/ai/pilot/">Daftar program pilot</a></div></div></div></section>
+  </main>
+  <Footer />
+  <MobileBar />
+</Layout>

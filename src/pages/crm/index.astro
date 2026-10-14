@@ -1,0 +1,1393 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AnnouncementBar from '../../components/AnnouncementBar.astro';
+import Nav from '../../components/Nav.astro';
+import TerminalHUD from '../../components/TerminalHUD.astro';
+import Footer from '../../components/Footer.astro';
+import MobileBar from '../../components/MobileBar.astro';
+
+const WA_PILOT = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20Agent%20CRM%20untuk%20bisnis%20saya.%20%F0%9F%A4%96';
+const WA_DEMO = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20live%20demo%20AI%20CRM.%20%F0%9F%98%81';
+---
+
+<Layout
+  title="Cardi Agent · Tim AI CRM untuk Bisnis Indonesia"
+  description="Agent yang bekerja di WhatsApp dan voice note tim kamu — mendatangkan lead, mencatat penjualan, menagih, dan membawa pelanggan kembali."
+>
+  <AnnouncementBar />
+  <Nav activeNav="crm" />
+  <TerminalHUD />
+
+  <main class="crm-page-main">
+    <!-- HERO SECTION -->
+    <section class="hero-crm grid-bg">
+      <div class="wrap hero-crm-wrap">
+        <div class="hero-crm-copy">
+          <div class="hero-pill mono">
+            <img src="/logos/crm/icon-crm-app.png" alt="Cardi CRM" style="width:16px;height:16px;border-radius:4px;object-fit:cover;margin-right:6px;" />
+            <span class="pulse-dot"></span>
+            <span>Cardi Agent · Tim AI</span>
+          </div>
+
+          <h1 class="crm-title">
+            Tim AI untuk <span class="em">bisnis Indonesia.</span>
+          </h1>
+
+          <p class="crm-lead">
+            Agent yang bekerja di WhatsApp dan voice note tim kamu — mendatangkan lead, mencatat penjualan, menagih, dan membawa pelanggan kembali.
+          </p>
+
+          <div class="crm-cta-group">
+            <a class="btn btn-primary" href="#divisi-ai">
+              Lihat Cardi Agent AI ↓
+            </a>
+            <a class="btn btn-outline" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">
+              Coba gratis: cek brand ↗
+            </a>
+          </div>
+
+          <!-- Proof Metrics Strip -->
+          <div class="crm-proof-strip">
+            <div class="proof-item">
+              <span class="proof-num">0 Detik</span>
+              <span class="proof-lbl">Respon Lead Baru di WhatsApp</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-num">100%</span>
+              <span class="proof-lbl">Voice Note Sales Dicatat ke CRM</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-num">+34%</span>
+              <span class="proof-lbl">Pelunasan Piutang Tepat Waktu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive WhatsApp Simulation Preview -->
+        <div class="hero-crm-sim">
+          <div class="sim-phone-card">
+            <div class="sim-header">
+              <div class="sim-header-user">
+                <div class="sim-avatar"><img src="/logos/crm/icon-crm-app.png" alt="Cardi CRM" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;" /></div>
+                <div>
+                  <div class="sim-name">Cardi AI Supervisor</div>
+                  <div class="sim-status">Online • Terhubung WhatsApp</div>
+                </div>
+              </div>
+              <span class="sim-badge-live">LIVE BOT</span>
+            </div>
+
+            <div class="sim-chat-body">
+              <!-- Bubble 1: AI Briefing -->
+              <div class="chat-bubble bot">
+                <div class="bubble-tag">📊 Owner Brief · 19:00 WIB</div>
+                <p><strong>Omzet hari ini: Rp 48,2 Jt</strong> (112% target) dari 37 kunjungan toko.</p>
+                <div class="bubble-callout">
+                  <span class="alert-tag">Perlu Perhatian</span>
+                  <p>3 lead baru belum di-follow up. Toko Berkah Abadi tempo telat 6 hari — janji bayar Jumat.</p>
+                </div>
+                <div class="bubble-meta">19:00 • Terkirim otomatis</div>
+              </div>
+
+              <!-- Bubble 2: Owner Voice Note -->
+              <div class="chat-bubble user">
+                <div class="vn-player">
+                  <span class="vn-play-btn">▶</span>
+                  <div class="vn-wave"></div>
+                  <span class="vn-dur">0:14</span>
+                </div>
+                <div class="vn-transcribe">
+                  <em>"Tolong jadwalkan tim penagih sapa Toko Berkah besok pagi pakai link QRIS ya."</em>
+                </div>
+                <div class="bubble-meta me">19:02 • Anda</div>
+              </div>
+
+              <!-- Bubble 3: AI Action Completed -->
+              <div class="chat-bubble bot">
+                <p>✅ <strong>Siap, Pak!</strong> Draft penagihan sopan Rp 14.500.000 sudah disiapkan beserta QRIS statis Toko Berkah. Menunggu konfirmasi Anda untuk kirim jam 09:00 besok.</p>
+                <div class="bubble-actions">
+                  <span class="bubble-chip active">[Konfirmasi Kirim]</span>
+                  <span class="bubble-chip">[Ubah Jadwal]</span>
+                </div>
+                <div class="bubble-meta">19:02 • AI Penagih Siap</div>
+              </div>
+            </div>
+
+            <div class="sim-footer-note">
+              <span class="sim-dot-pulse"></span> Berjalan langsung di WhatsApp resmi bisnis Anda
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALLOUT BANNER: CEK BRAND -->
+    <section class="crm-brand-strip">
+      <div class="wrap crm-brand-inner">
+        <div class="brand-strip-copy">
+          <span class="strip-eyebrow mono">Eksklusif Ekosistem Cardi</span>
+          <h3>Belum yakin mulai dari mana untuk bisnis Anda?</h3>
+          <p>Cek brand gratis — kami arahkan ke tim agent yang tepat, atau ke tim konsultan Cardi Nusantara bila brand perlu diperkuat terlebih dahulu.</p>
+        </div>
+        <div class="brand-strip-action">
+          <a class="btn btn-primary" href="https://cardi.co.id/cek-brand/" target="_blank" rel="noopener">
+            Cek Brand Gratis Sekarang →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. TIGA LINI DEPARTEMEN AGEN AI -->
+    <section id="divisi-ai" class="crm-divisions-sec">
+      <div class="wrap">
+        <div class="sec-head-crm text-center">
+          <span class="eyebrow-badge mono">Tiga Lini, Satu Perjalanan Pelanggan</span>
+          <h2>Bukan Satu Chatbot, Tapi Satu Sistem yang Menjalankan Bisnisnya.</h2>
+          <p class="sub-crm">Agent tidak menggantikan tim Anda, melainkan mengambil pekerjaan repetitif agar tim fokus closing dan melayani pelanggan.</p>
+        </div>
+
+        <div class="divisions-stack">
+          <!-- LINI 01: MARKETING -->
+          <div class="division-card-block">
+            <div class="division-header">
+              <div class="div-title-wrap">
+                <span class="div-num mono">01</span>
+                <div>
+                  <h3 class="div-title">Marketing</h3>
+                  <p class="div-desc">Lead masuk ditanggapi dalam hitungan detik, konten terjadwal, dan ulasan terkumpul.</p>
+                </div>
+              </div>
+              <a href="/ai/marketing/" class="div-link-detail">Detail Marketing →</a>
+            </div>
+
+            <div class="agent-grid-cards">
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Inbound</span>
+                </div>
+                <h4 class="agent-name">AI SDR (Sales Rep)</h4>
+                <p class="agent-desc">Menjawab lead dari iklan IG & WhatsApp secara instan 24/7, mengkualifikasi budget, dan menjadwalkan meeting demo.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Kecepatan respon & meeting tercatat</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag soon">○ Segera</span>
+                  <span class="agent-category mono">Content</span>
+                </div>
+                <h4 class="agent-name">AI Konten</h4>
+                <p class="agent-desc">Membuat ide, hook, caption, dan script video dari content pillar brand secara konsisten.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Konten terbit per minggu</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag soon">○ Segera</span>
+                  <span class="agent-category mono">Ads</span>
+                </div>
+                <h4 class="agent-name">AI Ads Reporter</h4>
+                <p class="agent-desc">Laporan mingguan Meta & Google Ads dan keyword langsung ke WhatsApp tanpa perlu buka dashboard rumit.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Biaya per lead & ROAS</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag soon">○ Segera</span>
+                  <span class="agent-category mono">Live Stream</span>
+                </div>
+                <h4 class="agent-name">AI Live Follow-up</h4>
+                <p class="agent-desc">Komentar & DM dari TikTok/IG Live diteruskan ke WhatsApp secara otomatis sampai tahap closing.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Lead live yang closing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINI 02: SALES -->
+          <div class="division-card-block">
+            <div class="division-header">
+              <div class="div-title-wrap">
+                <span class="div-num mono">02</span>
+                <div>
+                  <h3 class="div-title">Sales & Operasional</h3>
+                  <p class="div-desc">Pipeline terisi sendiri dari chat & voice note, sales terpantau, dan tagihan tempo masuk tepat waktu.</p>
+                </div>
+              </div>
+              <a href="/ai/sales/" class="div-link-detail">Detail Sales →</a>
+            </div>
+
+            <div class="agent-grid-cards">
+              <div class="agent-card active-spotlight">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Pipeline</span>
+                </div>
+                <h4 class="agent-name">AI Admin Sales</h4>
+                <p class="agent-desc">Mencatat chat WhatsApp dan voice note sales jadi pipeline deal, surat pesanan, dan rute kunjungan toko.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Jam admin yang dipangkas (hemat 3 jam/hari)</span>
+                </div>
+              </div>
+
+              <div class="agent-card active-spotlight">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Supervision</span>
+                </div>
+                <h4 class="agent-name">AI Supervisor</h4>
+                <p class="agent-desc">Menilai kinerja sales, mengingatkan lead dingin yang terbengkalai, dan mengirim Owner Brief jam 19.00.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Kecepatan respons sales & konversi</span>
+                </div>
+              </div>
+
+              <div class="agent-card active-spotlight">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Billing</span>
+                </div>
+                <h4 class="agent-name">AI Penagih Piutang</h4>
+                <p class="agent-desc">Memberi skor risiko tempo tiap toko dan menagih bertahap dengan link QRIS — nominal disetujui manusia.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Rupiah tagihan lunas tepat waktu</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Meeting</span>
+                </div>
+                <h4 class="agent-name">AI Notulen (Cardi MoM)</h4>
+                <p class="agent-desc">Merangkum meeting dengan klien, mencatat kesepakatan, dan memasukkan hasilnya ke pipeline.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Meeting tercatat & action items</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINI 03: RETENSI -->
+          <div class="division-card-block">
+            <div class="division-header">
+              <div class="div-title-wrap">
+                <span class="div-num mono">03</span>
+                <div>
+                  <h3 class="div-title">Retensi & Loyalitas</h3>
+                  <p class="div-desc">Pelanggan kembali repeat order dan memberikan ulasan bintang 5 tanpa harus dikejar secara manual.</p>
+                </div>
+              </div>
+              <a href="/loyal/" class="div-link-detail">Detail Loyalitas →</a>
+            </div>
+
+            <div class="agent-grid-cards">
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag soon">○ Segera</span>
+                  <span class="agent-category mono">Reactivation</span>
+                </div>
+                <h4 class="agent-name">AI Reaktivasi</h4>
+                <p class="agent-desc">Menemukan pelanggan yang lama tidak order dan memprediksi kapan waktu tepat untuk restock.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Pelanggan yang order kembali</span>
+                </div>
+              </div>
+
+              <div class="agent-card active-spotlight">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Loyalty & NFC</span>
+                </div>
+                <h4 class="agent-name">Cardi Agent AI Loyal</h4>
+                <p class="agent-desc">Program poin, member, hadiah ultah, dan kartu NFC Google Review untuk F&B, retail, barbershop, & salon.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Kenaikan repeat order & rating Google Maps</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag live">● Tersedia</span>
+                  <span class="agent-category mono">Reviews</span>
+                </div>
+                <h4 class="agent-name">AI Review Booster</h4>
+                <p class="agent-desc">Meminta dan membalas ulasan Google secara otomatis setelah transaksi selesai atau kunjungan toko.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Jumlah & rating bintang 5 Google Maps</span>
+                </div>
+              </div>
+
+              <div class="agent-card">
+                <div class="agent-card-top">
+                  <span class="agent-tag soon">○ Segera</span>
+                  <span class="agent-category mono">Intelligence</span>
+                </div>
+                <h4 class="agent-name">AI Analis</h4>
+                <p class="agent-desc">Menjawab pertanyaan owner seputar data pelanggan dan penjualan via voice note WhatsApp kapan saja.</p>
+                <div class="agent-kpi">
+                  <span class="kpi-label">Diukur dari:</span>
+                  <span class="kpi-val">Kecepatan keputusan bisnis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA PASANG -->
+    <section class="crm-integration-sec">
+      <div class="wrap">
+        <div class="sec-head-crm text-center">
+          <span class="eyebrow-badge mono">Fleksibel & Cepat</span>
+          <h2>Cara Pasang: Tidak Perlu Ganti Sistem.</h2>
+          <p class="sub-crm">Anda tidak dipaksa migrasi database atau belajar software baru yang rumit.</p>
+        </div>
+
+        <div class="integration-grid">
+          <div class="integ-card">
+            <div class="integ-num mono">01</div>
+            <h3>Sistem Pendamping</h3>
+            <p>Agent bekerja di atas sistem yang sudah kamu pakai — Google Sheets, Accurate, Jurnal Mekari, atau CRM existing.</p>
+            <div class="integ-badge">Tinggal Sambungkan API / Webhook</div>
+          </div>
+
+          <div class="integ-card spotlight-integ">
+            <div class="integ-num mono">02</div>
+            <h3>Sistem Mandiri</h3>
+            <p>Belum punya CRM? Pakai ruang kerja Cardi Agent sebagai kantor digital tempat semua agent beroperasi bersama tim.</p>
+            <div class="integ-badge active-b">Pakai Workspace Cardi</div>
+          </div>
+
+          <div class="integ-card">
+            <div class="integ-num mono">03</div>
+            <h3>Done-For-You</h3>
+            <p>Tim ahli Cardi Nusantara yang memasang, melatih flow chat sesuai SOP bisnis Anda, dan mengawasi kesehatan agent setiap bulan.</p>
+            <div class="integ-badge">Full Setup Tanpa Repot</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABEL PERBANDINGAN -->
+    <section class="crm-comparison-sec">
+      <div class="wrap">
+        <div class="sec-head-crm text-center">
+          <span class="eyebrow-badge mono">Efisiensi Nyata</span>
+          <h2>Admin Manusia Tetap Penting. Agent Mengambil Beban yang Membosankan.</h2>
+        </div>
+
+        <div class="table-card-wrap">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th class="col-feature">Aspek Operasional</th>
+                <th class="col-old">Cara Lama (Manual)</th>
+                <th class="col-ai">Dengan Tim Cardi Agent AI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-name">Rekap Laporan Sales</td>
+                <td class="row-old">Disalin manual satu-satu dari grup WA di akhir hari</td>
+                <td class="row-ai"><strong>Tercatat otomatis detik itu juga</strong> dari chat & voice note</td>
+              </tr>
+              <tr>
+                <td class="row-name">Menagih Piutang Tempo</td>
+                <td class="row-old">Sering sungkan, lupa jadwal, uang kas macet</td>
+                <td class="row-ai"><strong>Bertahap, sopan, terjadwal rapi</strong> dengan link QRIS instan</td>
+              </tr>
+              <tr>
+                <td class="row-name">Laporan ke Owner / Direksi</td>
+                <td class="row-old">Menunggu akhir bulan baru tahu laba-rugi</td>
+                <td class="row-ai"><strong>Executive Brief setiap malam jam 19.00</strong> langsung di WhatsApp</td>
+              </tr>
+              <tr>
+                <td class="row-name">Jam Kerja & Respon Lead</td>
+                <td class="row-old">Terbatas jam kantor, akhir pekan slow respon</td>
+                <td class="row-ai"><strong>Aktif 24 jam nonstop</strong>, respon under 10 detik</td>
+              </tr>
+              <tr>
+                <td class="row-name">Waktu Implementasi</td>
+                <td class="row-old">Rekrut & onboarding karyawan 4-8 minggu</td>
+                <td class="row-ai"><strong>Aktif dalam 3-5 hari kerja</strong> dengan SOP Anda</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="crm-faq-sec">
+      <div class="wrap faq-crm-wrap">
+        <div class="sec-head-crm text-center">
+          <span class="eyebrow-badge mono">Transparansi & Keamanan</span>
+          <h2>Pertanyaan yang Sering Muncul</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-q">
+              <span>Apakah aman dengan kebijakan dan regulasi WhatsApp?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-a">
+              <p>Sangat aman. Agent menggunakan integrasi WhatsApp Business API resmi milik nomor bisnis Anda sendiri. Tidak ada risiko banned karena interaksi didasarkan pada percakapan bisnis yang sah sesuai regulasi Meta.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Apakah saya harus mengganti sistem kasir atau akuntansi yang ada?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-a">
+              <p>Tidak perlu. Cardi Agent dirancang modular untuk bekerja di atas sistem yang sedang berjalan, termasuk Google Sheets, Excel, Accurate, Jurnal Mekari, maupun software POS lainnya.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Bagaimana kalau agen AI salah menagih ke klien?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-a">
+              <p>Nominal, batas tempo, dan pesan penagihan selalu menunggu persetujuan tim Anda ('Konfirmasi Kirim') sebelum terkirim ke debitur. Anda memegang kendali penuh.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-q">
+              <span>Bagaimana dengan keamanan data pelanggan saya?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-a">
+              <p>Data dienkripsi end-to-end dengan standar keamanan tinggi, akses diatur per peran otorisasi, dan seluruh pemrosesan mematuhi UU Pelindungan Data Pribadi (UU PDP) Indonesia.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA HERO BANNER -->
+    <section class="crm-final-cta">
+      <div class="wrap">
+        <div class="cta-banner-glass">
+          <div class="cta-text-left">
+            <div class="mono cta-badge-live">● PROGRAM PILOT 30 HARI</div>
+            <h2>Siap Punya Tim AI yang Bekerja 24 Jam untuk Bisnis Anda?</h2>
+            <p>Mulai dengan divisi yang paling Anda butuhkan hari ini. Setup cepat, pendampingan penuh dari tim teknis Cardi Nusantara.</p>
+          </div>
+          <div class="cta-action-right">
+            <a class="btn btn-primary" href={WA_PILOT} target="_blank" rel="noopener">
+              Daftar Program Pilot Sekarang →
+            </a>
+            <a class="btn btn-outline" href={WA_DEMO} target="_blank" rel="noopener">
+              Jadwalkan Live Demo WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <MobileBar />
+</Layout>
+
+<style>
+  /* CRM Dedicated Styling matching blueprint dark OS theme */
+  .crm-page-main {
+    background-color: #080C14;
+    color: #E2E8F0;
+    overflow-x: hidden;
+  }
+
+  .hero-crm {
+    padding: 120px 0 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .hero-crm-wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 960px) {
+    .hero-crm-wrap {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .hero-crm-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .crm-title {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .crm-title .em {
+    background: linear-gradient(135deg, #8FA6FF 0%, #1E4FFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .crm-lead {
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.6;
+    color: #94A3B8;
+    max-width: 580px;
+    margin: 0;
+  }
+
+  .crm-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .crm-proof-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 640px) {
+    .crm-proof-strip {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  .proof-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .proof-num {
+    font-family: var(--font-mono, monospace);
+    font-size: 22px;
+    font-weight: 800;
+    color: #8FA6FF;
+  }
+
+  .proof-lbl {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.4;
+  }
+
+  /* WhatsApp Simulation Card */
+  .hero-crm-sim {
+    position: relative;
+  }
+
+  .sim-phone-card {
+    background: #0E1424;
+    border: 1px solid rgba(143, 166, 255, 0.25);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(30, 79, 255, 0.15);
+  }
+
+  .sim-header {
+    background: #141B30;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .sim-header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sim-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #1E4FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .sim-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .sim-status {
+    font-size: 11px;
+    color: #22C55E;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .sim-badge-live {
+    font-family: var(--font-mono, monospace);
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(34, 197, 94, 0.15);
+    color: #22C55E;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 3px 8px;
+    border-radius: 100px;
+  }
+
+  .sim-chat-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #090D18;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .chat-bubble {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+
+  .chat-bubble.bot {
+    background: #172138;
+    color: #E2E8F0;
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top-left-radius: 2px;
+  }
+
+  .chat-bubble.user {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    align-self: flex-end;
+    border: 1px solid rgba(143, 166, 255, 0.3);
+    border-top-right-radius: 2px;
+  }
+
+  .bubble-tag {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-weight: 700;
+    color: #8FA6FF;
+    margin-bottom: 6px;
+  }
+
+  .bubble-callout {
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 3px solid #F59E0B;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+
+  .alert-tag {
+    color: #F59E0B;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .bubble-meta {
+    font-size: 10px;
+    color: #64748B;
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  .bubble-meta.me {
+    color: #93C5FD;
+  }
+
+  .vn-player {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .vn-play-btn {
+    width: 24px;
+    height: 24px;
+    background: #FFFFFF;
+    color: #1E3A8A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .vn-wave {
+    flex: 1;
+    height: 12px;
+    background: repeating-linear-gradient(90deg, #93C5FD 0px, #93C5FD 2px, transparent 2px, transparent 5px);
+    border-radius: 2px;
+  }
+
+  .vn-dur {
+    font-size: 11px;
+    color: #BFDBFE;
+    font-family: var(--font-mono, monospace);
+  }
+
+  .vn-transcribe {
+    font-size: 12px;
+    color: #E0E7FF;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .bubble-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .bubble-chip {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .bubble-chip.active {
+    background: #1E4FFF;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .sim-footer-note {
+    background: #101626;
+    padding: 10px 18px;
+    font-size: 11px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .sim-dot-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 8px #22C55E;
+  }
+
+  /* BRAND STRIP */
+  .crm-brand-strip {
+    background: linear-gradient(90deg, rgba(30, 79, 255, 0.15) 0%, rgba(143, 166, 255, 0.05) 100%);
+    border-top: 1px solid rgba(143, 166, 255, 0.2);
+    border-bottom: 1px solid rgba(143, 166, 255, 0.2);
+    padding: 40px 0;
+  }
+
+  .crm-brand-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .brand-strip-copy {
+    max-width: 650px;
+  }
+
+  .strip-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: #8FA6FF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .brand-strip-copy h3 {
+    font-size: 22px;
+    color: #FFFFFF;
+    margin: 6px 0 8px;
+  }
+
+  .brand-strip-copy p {
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* DIVISIONS SECTION */
+  .crm-divisions-sec {
+    padding: 100px 0 80px;
+  }
+
+  .sec-head-crm {
+    max-width: 780px;
+    margin: 0 auto 60px;
+  }
+
+  .sec-head-crm h2 {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 12px 0;
+    line-height: 1.25;
+  }
+
+  .sub-crm {
+    font-size: 16px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .eyebrow-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8FA6FF;
+    background: rgba(143, 166, 255, 0.1);
+    border: 1px solid rgba(143, 166, 255, 0.25);
+    padding: 4px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .divisions-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .division-card-block {
+    background: #0E1322;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .division-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .div-title-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .div-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #8FA6FF;
+    line-height: 1;
+    opacity: 0.8;
+  }
+
+  .div-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 6px;
+  }
+
+  .div-desc {
+    font-size: 15px;
+    color: #94A3B8;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  .div-link-detail {
+    font-size: 14px;
+    font-weight: 700;
+    color: #8FA6FF;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .div-link-detail:hover {
+    color: #FFFFFF;
+    transform: translateX(4px);
+  }
+
+  .agent-grid-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .agent-grid-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .agent-grid-cards {
+      grid-template-columns: 1fr;
+    }
+    .division-card-block {
+      padding: 24px;
+    }
+  }
+
+  .agent-card {
+    background: #131A2E;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+  }
+
+  .agent-card:hover {
+    border-color: rgba(143, 166, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .agent-card.active-spotlight {
+    border-color: rgba(30, 79, 255, 0.3);
+    background: linear-gradient(180deg, #131A2E 0%, #151F38 100%);
+  }
+
+  .agent-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .agent-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+
+  .agent-tag.live {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22C55E;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .agent-tag.soon {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94A3B8;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .agent-category {
+    font-size: 10px;
+    color: #64748B;
+    text-transform: uppercase;
+  }
+
+  .agent-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 8px;
+  }
+
+  .agent-desc {
+    font-size: 13px;
+    color: #94A3B8;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+
+  .agent-kpi {
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .kpi-label {
+    font-size: 10px;
+    color: #64748B;
+    text-transform: uppercase;
+    font-family: var(--font-mono, monospace);
+  }
+
+  .kpi-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8FA6FF;
+    line-height: 1.3;
+  }
+
+  /* INTEGRATION SECTION */
+  .crm-integration-sec {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .integration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 860px) {
+    .integration-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .integ-card {
+    background: #0E1322;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .integ-card.spotlight-integ {
+    border-color: rgba(143, 166, 255, 0.3);
+    background: linear-gradient(180deg, #10172B 0%, #0E1322 100%);
+    box-shadow: 0 0 30px rgba(30, 79, 255, 0.1);
+  }
+
+  .integ-num {
+    font-size: 20px;
+    font-weight: 800;
+    color: #8FA6FF;
+    margin-bottom: 16px;
+  }
+
+  .integ-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 10px;
+  }
+
+  .integ-card p {
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0 0 24px;
+    flex-grow: 1;
+  }
+
+  .integ-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: #94A3B8;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+
+  .integ-badge.active-b {
+    background: rgba(30, 79, 255, 0.2);
+    color: #8FA6FF;
+    border-color: rgba(30, 79, 255, 0.4);
+  }
+
+  /* COMPARISON TABLE */
+  .crm-comparison-sec {
+    padding: 80px 0;
+  }
+
+  .table-card-wrap {
+    background: #0E1322;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow-x: auto;
+    margin-top: 40px;
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 640px;
+  }
+
+  .comp-table th {
+    padding: 16px 24px;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+    background: #12182B;
+  }
+
+  .comp-table th.col-ai {
+    color: #8FA6FF;
+    background: #141E38;
+  }
+
+  .comp-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.5;
+  }
+
+  .comp-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .row-name {
+    font-weight: 700;
+    color: #FFFFFF;
+    width: 25%;
+  }
+
+  .row-old {
+    color: #94A3B8;
+    width: 35%;
+  }
+
+  .row-ai {
+    color: #E2E8F0;
+    background: rgba(30, 79, 255, 0.04);
+    width: 40%;
+  }
+
+  .row-ai strong {
+    color: #8FA6FF;
+  }
+
+  /* FAQ SECTION */
+  .crm-faq-sec {
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .faq-crm-wrap {
+    max-width: 820px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .faq-item {
+    background: #0E1322;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: all 0.2s;
+  }
+
+  .faq-item[open] {
+    border-color: rgba(143, 166, 255, 0.3);
+    background: #11172A;
+  }
+
+  .faq-q {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .faq-q::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    font-size: 20px;
+    color: #8FA6FF;
+    font-weight: 400;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    padding-top: 14px;
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.6;
+  }
+
+  .faq-a p {
+    margin: 0;
+  }
+
+  /* FINAL CTA BANNER */
+  .crm-final-cta {
+    padding: 80px 0 120px;
+  }
+
+  .cta-banner-glass {
+    background: linear-gradient(135deg, #101830 0%, #0E1222 100%);
+    border: 1px solid rgba(143, 166, 255, 0.25);
+    border-radius: 24px;
+    padding: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(30, 79, 255, 0.15);
+  }
+
+  @media (max-width: 860px) {
+    .cta-banner-glass {
+      flex-direction: column;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .cta-action-right {
+      justify-content: center;
+    }
+  }
+
+  .cta-text-left {
+    max-width: 600px;
+  }
+
+  .cta-badge-live {
+    font-size: 11px;
+    font-weight: 700;
+    color: #22C55E;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .cta-text-left h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+
+  .cta-text-left p {
+    font-size: 15px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cta-action-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 260px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #1E4FFF;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(30, 79, 255, 0.4);
+  }
+
+  .btn-primary:hover {
+    background: #1842DF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 79, 255, 0.5);
+  }
+
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+</style>

@@ -104,6 +104,33 @@ const schemaData = {
         sessionStorage.setItem('ca_booted', '1');
       }, 1200);
     })();
+  
+    // WhatsApp form automation
+    document.querySelectorAll('form[data-wa-form]').forEach(function (f) {
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var WA = '6281289895646';
+        var lines = ['*' + (f.getAttribute('data-wa-title') || 'Pesan dari website') + '*'];
+        var groups = {};
+        Array.prototype.forEach.call(f.elements, function (el) {
+          if (!el.name || el.type === 'submit') return;
+          var label = '';
+          if (el.type === 'checkbox') {
+            if (!el.checked) return;
+            var lg = el.closest('fieldset');
+            label = lg ? (lg.querySelector('legend') ? lg.querySelector('legend').textContent : el.name) : el.name;
+            (groups[label] = groups[label] || []).push(el.value);
+            return;
+          }
+          var l = f.querySelector('label[for="' + el.id + '"]');
+          label = l ? l.textContent.replace(' *', '') : el.name;
+          if (el.value.trim()) lines.push(label + ': ' + el.value.trim());
+        });
+        Object.keys(groups).forEach(function (k) { lines.push(k + ': ' + groups[k].join(', ')); });
+        window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      });
+    });
+
   </script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import AnnouncementBar from '../../../components/AnnouncementBar.astro';
+import Nav from '../../../components/Nav.astro';
+import TerminalHUD from '../../../components/TerminalHUD.astro';
+import Footer from '../../../components/Footer.astro';
+import MobileBar from '../../../components/MobileBar.astro';
+
+const title = "Program Pilot Cardi Agent AI — Cardi Agent";
+const description = "Daftar program pilot Cardi Agent AI: coba AI Penagih 30 hari, bayar dari tagihan yang tertagih.";
+---
+
+<Layout title={title} description={description} activeNav="pilot">
+  <AnnouncementBar />
+  <Nav />
+  <TerminalHUD />
+  <main class="page-content">
+<section class="hero hero-dark"><div class="wrap"><div class="hero-copy"><span class="eyebrow">Program pilot</span><h1>Coba AI Penagih 30 hari. Bayar dari tagihan yang berhasil ditagih.</h1><p class="lead">Untuk [JUMLAH] bisnis pertama: setup dipandu tim Cardi dan harga pilot.</p></div></div></section><section class="sec "><div class="wrap"><div class="split"><form class="form" data-wa-form data-wa-title="Daftar pilot Cardi Agent AI" id="pilot">
+<p class="form-intro">Kami hubungi dalam 1 hari kerja untuk sesi onboarding.</p><div class="field"><label for="pilot-nama">Nama *</label><input id="pilot-nama" name="nama" type="text" placeholder="" required></div><div class="field"><label for="pilot-bisnis">Nama bisnis *</label><input id="pilot-bisnis" name="bisnis" type="text" placeholder="" required></div><div class="field"><label for="pilot-industri">Industri *</label><select id="pilot-industri" name="industri" required><option value="">Pilih…</option><option>Bahan bangunan</option><option>FMCG / makanan-minuman</option><option>Farmasi &amp; alkes</option><option>Sparepart otomotif</option><option>Pertanian &amp; pakan</option><option>Lainnya</option></select></div><div class="field"><label for="pilot-sales">Jumlah sales *</label><select id="pilot-sales" name="sales" required><option value="">Pilih…</option><option>1–5</option><option>6–20</option><option>21–50</option><option>> 50</option></select></div><fieldset class="field"><legend>Agent yang ingin dicoba</legend><div class="checkgroup"><label class="chk"><input type="checkbox" name="agent" value="AI Penagih"> AI Penagih</label><label class="chk"><input type="checkbox" name="agent" value="AI Admin Sales"> AI Admin Sales</label><label class="chk"><input type="checkbox" name="agent" value="AI Supervisor"> AI Supervisor</label><label class="chk"><input type="checkbox" name="agent" value="AI Reaktivasi"> AI Reaktivasi</label></div></fieldset><div class="field"><label for="pilot-sistem">Sistem yang dipakai sekarang</label><input id="pilot-sistem" name="sistem" type="text" placeholder="contoh: Excel, Accurate, Jurnal"></div>
+<button class="btn btn-primary btn-block" type="submit">Kirim via WhatsApp</button>
+<p class="form-note">Form ini membuka WhatsApp dengan pesan yang sudah terisi. Tidak ada data yang disimpan di situs.</p>
+</form><div><div class="grid g1 "><article class="card "><div class="card-top"></div><h3>Syarat pilot</h3><ul class=checks><li>Distributor / grosir / B2B dengan tim sales</li><li>Memakai WhatsApp untuk jualan</li><li>Bersedia review hasil tiap minggu</li></ul></article><article class="card "><div class="card-top"></div><h3>Alur 90 hari</h3><ul class=checks><li>Bulan 1: pasang AI Penagih + AI Admin Sales</li><li>Bulan 2: ukur hasil, tambah AI Supervisor</li><li>Bulan 3: evaluasi &amp; pilih paket</li></ul></article></div></div></div></div></section>
+  </main>
+  <Footer />
+  <MobileBar />
+</Layout>
