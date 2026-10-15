@@ -671,3 +671,39 @@ a, button, input, [role="button"] {
             pointer-events: auto;
         }
 
+        /* ========================================================
+           Video Modal Popup Styles
+           ======================================================== */
+        #videoModal {
+            z-index: 9999;
+        }
+
+        #videoModal.active {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        #videoModal.active #videoModalCard {
+            transform: scale(1) !important;
+        }
+
+        #videoModal iframe {
+            pointer-events: auto !important;
+        }
+
+        /* Custom scrollbar for modal body */
+        #videoModal .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        #videoModal .modal-scroll::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        #videoModal .modal-scroll::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+        #videoModal .modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+
