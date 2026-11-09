@@ -114,13 +114,16 @@
       margin: 0 auto;
     }
 
-    /* Top Ecosystem Bar */
+    /* Top Ecosystem Bar (Standardized) */
     .eco-bar {
-      background: #0A1633;
-      color: rgba(255, 255, 255, 0.7);
+      background: #060B18;
+      color: #94A3B8;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
       font-size: 11.5px;
+      font-weight: 500;
       padding: 7px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
     }
     .eco-bar-inner {
       display: flex;
@@ -128,35 +131,32 @@
       align-items: center;
       gap: 14px;
     }
-    .eco-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #64B5F6;
-      font-weight: 700;
+    .eco-bar-label {
+      color: #64748B;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
-    .eco-links {
+    .eco-bar-nav {
       display: flex;
       gap: 10px;
       align-items: center;
+      white-space: nowrap;
     }
-    .eco-link {
-      color: rgba(255, 255, 255, 0.75);
-      font-weight: 600;
-      font-size: 11.5px;
+    .eco-bar-nav a {
+      color: #94A3B8;
       text-decoration: none;
       transition: color 0.15s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      font-size: 11.5px;
     }
-    .eco-link:hover,
-    .eco-link.active {
-      color: #FFFFFF;
+    .eco-bar-nav a:hover,
+    .eco-bar-nav a.active {
+      color: #38BDF8;
+      font-weight: 700;
     }
-    .eco-sep {
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 9px;
+    .eco-bar-sep {
+      color: rgba(255, 255, 255, 0.2);
+      user-select: none;
     }
 
     /* Sticky Navbar */
@@ -707,6 +707,351 @@
       border-color: var(--blue);
       color: var(--blue);
       background: #F8FAFC;
+    }
+
+    .nav-nfc-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0258A4 !important;
+      font-weight: 700 !important;
+      background: rgba(2, 88, 164, 0.08);
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(2, 88, 164, 0.22);
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+    .nav-nfc-card-link:hover {
+      background: rgba(2, 88, 164, 0.15);
+      color: #01417A !important;
+      transform: translateY(-1px);
+    }
+    .nav-new-pill {
+      font-size: 8.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #0258A4, #00C2D1);
+      padding: 1px 5px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+    .btn-card-login {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0258A4;
+      padding: 0 13px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(2, 88, 164, 0.25);
+      background: #F0F7FF;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+    .btn-card-login:hover {
+      background: #0258A4;
+      color: #FFFFFF;
+      border-color: #0258A4;
+      box-shadow: 0 4px 14px rgba(2, 88, 164, 0.25);
+    }
+    .btn-login-executive {
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      padding: 0 12px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+    .btn-login-executive:hover {
+      color: #0A1633;
+      border-color: #CBD5E1;
+      background: #F8FAFC;
+    }
+
+    /* Dedicated Feature Banner: Cardi MoM Smart NFC Card */
+    .card-nfc-spotlight {
+      background: radial-gradient(120% 120% at 50% 0%, #0F1E36 0%, #08101E 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 28px;
+      padding: 40px;
+      color: #FFFFFF;
+      box-shadow: 0 20px 50px -15px rgba(2, 88, 164, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-nfc-spotlight::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(0, 194, 209, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .card-nfc-spotlight-inner {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .card-nfc-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .spotlight-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .spotlight-chip {
+      font-size: 10.5px;
+      font-family: var(--font-mono, monospace);
+      color: #94A3B8;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .card-nfc-content h2 {
+      font-size: 26px;
+      line-height: 1.3;
+      font-weight: 800;
+      margin: 0 0 12px;
+      color: #FFFFFF;
+    }
+    .accent-nfc {
+      background: linear-gradient(135deg, #38BDF8 0%, #00C2D1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-nfc-content p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #CBD5E1;
+      margin-bottom: 22px;
+    }
+    .card-nfc-features-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+    .nfc-mini-feat {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .nfc-mini-feat i {
+      color: #38BDF8;
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .nfc-mini-feat strong {
+      display: block;
+      font-size: 11.5px;
+      color: #F1F5F9;
+      margin-bottom: 2px;
+    }
+    .nfc-mini-feat span {
+      display: block;
+      font-size: 10.5px;
+      color: #94A3B8;
+      line-height: 1.35;
+    }
+    .card-nfc-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-spotlight-primary {
+      background: linear-gradient(135deg, #0258A4 0%, #1E4FFF 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 11px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(30, 79, 255, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-spotlight-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(30, 79, 255, 0.45);
+    }
+    .btn-spotlight-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+    .btn-spotlight-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .btn-spotlight-ghost {
+      color: #94A3B8;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 11px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s ease;
+    }
+    .btn-spotlight-ghost:hover {
+      color: #38BDF8;
+    }
+    .card-nfc-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nfc-card-card {
+      width: 300px;
+      height: 190px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #0d1b2e 0%, #1e293b 50%, #0f172a 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      position: relative;
+      transform: rotate(2deg);
+      transition: transform 0.3s ease;
+    }
+    .nfc-card-card:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-chip-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+    .card-brand-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #FFFFFF;
+    }
+    .card-wave-indicator {
+      color: #D4AF37;
+      font-size: 14px;
+      transform: rotate(90deg);
+    }
+    .card-center-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gold-chip {
+      width: 36px;
+      height: 26px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #e6c268 0%, #d4af37 50%, #aa820a 100%);
+      border: 1px solid #ffec99;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    .chip-label {
+      font-size: 9px;
+      font-family: var(--font-mono, monospace);
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.08em;
+    }
+    .card-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .card-holder-title {
+      font-size: 8px;
+      font-family: var(--font-mono, monospace);
+      color: #94A3B8;
+      letter-spacing: 0.05em;
+    }
+    .card-holder-name {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+    }
+    .card-badge-secure span {
+      font-size: 8.5px;
+      font-family: var(--font-mono, monospace);
+      font-weight: 700;
+      color: #D4AF37;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    @media (max-width: 900px) {
+      .card-nfc-spotlight-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .card-nfc-features-mini {
+        grid-template-columns: 1fr;
+      }
+      .card-nfc-visual {
+        justify-content: flex-start;
+      }
     }
 
     /* Buttons */
@@ -3241,19 +3586,19 @@
 </head>
 <body>
 
-  <!-- Top Ecosystem Bar -->
+  <!-- Top Ecosystem Bar (Standardized Across Ecosystem) -->
   <div class="eco-bar">
     <div class="container eco-bar-inner">
-      <div class="eco-badge">
-        <i class="fa-solid fa-layer-group"></i> <span data-i18n="eco_badge">Ekosistem Cardi • Cardi Business Power Ecosystem™</span>
-      </div>
-      <div class="eco-links">
-        <a href="/" class="eco-link"><span data-i18n="eco_agent">Cardi Agent AI 24/7</span></a>
-        <span class="eco-sep">•</span>
-        <a href="#top" class="eco-link active"><span data-i18n="eco_mom">Cardi MoM</span></a>
-        <span class="eco-sep">•</span>
-        <a href="/loyal/" class="eco-link"><span data-i18n="eco_loyal">Cardi LoyaL</span></a>
-      </div>
+      <span class="eco-bar-label">Bagian dari ekosistem Cardi</span>
+      <nav class="eco-bar-nav" aria-label="Ekosistem Cardi">
+        <a href="https://cardi.co.id/" target="_blank" rel="noopener">Cardi</a>
+        <span class="eco-bar-sep">·</span>
+        <a href="https://cardinusantara.com/" target="_blank" rel="noopener">Cardi Nusantara</a>
+        <span class="eco-bar-sep">·</span>
+        <a href="/" class="active">Cardi Agent</a>
+        <span class="eco-bar-sep">·</span>
+        <a href="https://cardi.co.id/toko/" target="_blank" rel="noopener">Toko Cardi</a>
+      </nav>
     </div>
   </div>
 
@@ -3265,6 +3610,10 @@
       </a>
 
       <div class="nav-links">
+        <a href="/mom/card/" class="nav-nfc-card-link" title="Pelajari Cardi MoM Smart NFC Card">
+          <i class="fa-solid fa-id-card"></i> <span>Smart NFC Card</span>
+          <span class="nav-new-pill">NEW</span>
+        </a>
         <a href="#features" data-i18n="nav_features">Fitur</a>
         <a href="#solutions" data-i18n="nav_solutions">Solusi Industri</a>
         <a href="#workflow" data-i18n="nav_workflow">Alur Kerja</a>
@@ -3309,6 +3658,12 @@
           </div>
         </div>
 
+        <a class="btn-card-login" href="/mom/card/" title="Lihat Solusi Kartu Smart NFC">
+          <i class="fa-solid fa-id-card"></i> <span>Smart Card</span>
+        </a>
+        <a class="btn-login-executive" href="/mom/login/" title="Masuk ke Portal Eksekutif">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span>
+        </a>
         <a class="btn-main-site" href="/" aria-label="Kembali ke Cardi Agent AI">
           <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_main">Cardi Agent AI</span>
         </a>
@@ -3445,6 +3800,85 @@
                 <div class="speaker-stat"><span>SA • Design</span><div class="progress"><span style="width:22%"></span></div><span>22%</span></div>
               </div>
             </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Feature Banner: Cardi MoM Smart NFC Card -->
+    <section class="container" style="margin-top: 36px; margin-bottom: 24px;">
+      <div class="card-nfc-spotlight">
+        <div class="card-nfc-spotlight-inner">
+          <div class="card-nfc-content">
+            <div class="card-nfc-eyebrow">
+              <span class="spotlight-badge"><i class="fa-solid fa-bolt"></i> INTEGRASI HARDWARE &amp; AI</span>
+              <span class="spotlight-chip">NTAG215 ISO 14443-A</span>
+            </div>
+            <h2>Cardi MoM Smart NFC Card — <span class="accent-nfc">Satu Kartu Eksekutif untuk Seluruh Notulen &amp; Relasi Bisnis.</span></h2>
+            <p>
+              Cukup tempelkan kartu pintar ini ke smartphone rekan bisnis. Secara instan membuka profil eksekutif, sinkronisasi Google Calendar, dan menyambungkan rekaman audio rapat ke sistem AI Notulen Cardi MoM tanpa perlu install aplikasi.
+            </p>
+            <div class="card-nfc-features-mini">
+              <div class="nfc-mini-feat">
+                <i class="fa-solid fa-fingerprint"></i>
+                <div>
+                  <strong>Tap &amp; Share Instan</strong>
+                  <span>Kirim vCard, bio &amp; portofolio eksekutif</span>
+                </div>
+              </div>
+              <div class="nfc-mini-feat">
+                <i class="fa-solid fa-microphone-lines"></i>
+                <div>
+                  <strong>Akses Cepat AI Notulen</strong>
+                  <span>Mulai rekam rapat langsung dari profil</span>
+                </div>
+              </div>
+              <div class="nfc-mini-feat">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div>
+                  <strong>Jadwal &amp; Google Calendar</strong>
+                  <span>Booking jadwal meeting 1 klik</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-nfc-actions">
+              <a href="/mom/card/" class="btn-spotlight-primary">
+                <i class="fa-solid fa-id-card"></i> <span>Pelajari Smart NFC Card</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="/mom/activate/" class="btn-spotlight-secondary">
+                <i class="fa-solid fa-key"></i> <span>Aktivasi Kartu Fisik</span>
+              </a>
+              <a href="/mom/deo" class="btn-spotlight-ghost">
+                <i class="fa-solid fa-circle-play"></i> <span>Lihat Demo Live</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-nfc-visual">
+            <div class="nfc-card-card">
+              <div class="card-top-row">
+                <div class="card-brand-lockup">
+                  <img src="/logos/mom/icon-mom-app.png" alt="Cardi MoM" class="card-chip-logo" />
+                  <span class="card-brand-title">Cardi MoM</span>
+                </div>
+                <div class="card-wave-indicator">
+                  <i class="fa-solid fa-wifi"></i>
+                </div>
+              </div>
+              <div class="card-center-chip">
+                <div class="gold-chip"></div>
+                <span class="chip-label">NFC SMART CHIP</span>
+              </div>
+              <div class="card-bottom-row">
+                <div>
+                  <div class="card-holder-title">EXECUTIVE MEMBER</div>
+                  <div class="card-holder-name">DEO CARDI</div>
+                </div>
+                <div class="card-badge-secure">
+                  <span>SECURE NFC</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -4226,6 +4660,9 @@
       <div class="footer-col">
         <h4 data-i18n="ft_col_prod">Produk MoM</h4>
         <ul>
+          <li><a href="/mom/card/" style="color:#00C2D1;font-weight:700;">Smart NFC Card (Baru)</a></li>
+          <li><a href="/mom/activate/">Aktivasi Chip NFC</a></li>
+          <li><a href="/mom/login/">Portal Eksekutif</a></li>
           <li><a href="#features" data-i18n="ft_link_trans">Transkripsi Live</a></li>
           <li><a href="#features" data-i18n="ft_link_sum">AI Summarization</a></li>
           <li><a href="#features" data-i18n="ft_link_action">Action Items Generator</a></li>
@@ -4238,9 +4675,10 @@
       <div class="footer-col">
         <h4 data-i18n="ft_col_eco">Ekosistem Cardi</h4>
         <ul>
-          <li><a href="/"><span data-i18n="eco_agent">Cardi Agent AI 24/7</span></a></li>
-          <li><a href="#top"><span data-i18n="eco_mom">Cardi MoM</span></a></li>
-          <li><a href="/loyal/"><span data-i18n="eco_loyal">Cardi LoyaL</span></a></li>
+          <li><a href="https://cardi.co.id/" target="_blank" rel="noopener">Cardi</a></li>
+          <li><a href="https://cardinusantara.com/" target="_blank" rel="noopener">Cardi Nusantara</a></li>
+          <li><a href="/">Cardi Agent AI</a></li>
+          <li><a href="https://cardi.co.id/toko/" target="_blank" rel="noopener">Toko Cardi</a></li>
         </ul>
       </div>
 

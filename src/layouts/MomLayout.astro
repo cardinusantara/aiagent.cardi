@@ -1,0 +1,52 @@
+---
+import '../styles/mom.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Cardi — NFC Smart Business Card & AI MoM Assistant",
+  description = "Ekosistem kartu nama bisnis pintar NFC terintegrasi langsung dengan perekam notula rapat otomatis Cardi MoM AI, kontak vCard, dan jadwal Google Calendar.",
+  image = "/og-banner.png",
+} = Astro.props;
+
+const canonicalURL = Astro.url.href;
+---
+
+<!DOCTYPE html>
+<html lang="id" class="h-full antialiased">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-mom-96x96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-mom-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-mom-16x16.png" />
+  <link rel="shortcut icon" href="/favicon-mom.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-mom.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta property="og:site_name" content="Cardi Agent AI MoM" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+</head>
+<body class="min-h-full flex flex-col font-sans bg-[#F8FAFD] text-[#0A1633] dark:bg-[#070B14] dark:text-white transition-colors duration-200">
+  <slot />
+</body>
+</html>
+
