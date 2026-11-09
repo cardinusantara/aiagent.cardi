@@ -457,11 +457,13 @@ export default function DashboardCardPage() {
               /* FRONT FACE */
               <>
                 <div className="flex items-center justify-between relative z-10">
-                  <div className="flex items-center gap-2">
-                    <CardiMomIcon size={26} inverted />
-                    <span className="font-bold text-xs tracking-tight text-white">
-                      cardi agent <span className="text-sky-300 font-extrabold">| mom</span>
-                    </span>
+                  <div className="flex items-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/logos/mom/logo-mom-card.png"
+                      alt="Cardi Agent MoM"
+                      className="h-6 object-contain drop-shadow-xs"
+                    />
                   </div>
                   <div className="flex items-center gap-1.5 text-white/70">
                     <Radio className="w-3.5 h-3.5 text-[#00C2D1] animate-pulse" />

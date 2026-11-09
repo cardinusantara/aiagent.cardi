@@ -586,14 +586,13 @@ function ActivateContent() {
 
                 {/* Top Row: Logo & NFC Wave Icon */}
                 <div className="flex items-center justify-between relative z-10">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src="/logos/mom/icon-mom-app.png"
-                      alt="Cardi MoM"
-                      className="w-6 h-6 rounded-lg object-contain shadow-xs"
+                      src="/logos/mom/logo-mom-card.png"
+                      alt="Cardi Agent MoM"
+                      className="h-6 object-contain drop-shadow-xs"
                     />
-                    <span className="font-extrabold text-xs tracking-wider text-white">CARDI MOM</span>
                   </div>
 
                   <div className="flex items-center gap-1.5 text-white/80">

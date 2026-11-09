@@ -463,11 +463,13 @@ function PublicCardContent({ username: propUsername }: { username?: string }) {
 
             {/* Card Header: Brand & Contactless Icon */}
             <div className="flex justify-between items-center z-10">
-              <div className="flex items-center gap-2">
-                <CardiMomIcon size={26} inverted />
-                <span className="text-white font-bold text-xs tracking-tight">
-                  cardi agent <span className="text-sky-300 font-extrabold">| mom</span>
-                </span>
+              <div className="flex items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logos/mom/logo-mom-card.png"
+                  alt="Cardi Agent MoM"
+                  className="h-6 object-contain drop-shadow-xs"
+                />
               </div>
 
               {/* NFC Wireless Symbol */}

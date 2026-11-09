@@ -386,16 +386,13 @@ export default function HomePage() {
                   /* FRONT FACE */
                   <>
                     <div className="flex items-center justify-between relative z-10">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src="/logos/mom/icon-mom-app.png"
-                          alt="Cardi MoM"
-                          className="w-7 h-7 rounded-lg object-contain shadow-xs"
+                          src="/logos/mom/logo-mom-card.png"
+                          alt="Cardi Agent MoM"
+                          className="h-6 sm:h-7 object-contain drop-shadow-xs"
                         />
-                        <span className="font-extrabold text-xs tracking-wider text-white">
-                          CARDI <span className="text-cyan-300">MOM</span>
-                        </span>
                       </div>
                       <div className="flex items-center gap-1.5 text-white/80">
                         <Radio className="w-4 h-4 text-cyan-300 animate-pulse" />
@@ -1103,9 +1100,9 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
           <div className="inline-flex items-center justify-center mb-5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logos/mom/badge-mom.png"
+              src="/logos/mom/icon-mom-app.png"
               alt="Cardi Agent MoM"
-              className="w-36 sm:w-44 object-contain drop-shadow-md"
+              className="w-24 sm:w-28 h-24 sm:h-28 rounded-3xl object-contain drop-shadow-xl"
             />
           </div>
 
