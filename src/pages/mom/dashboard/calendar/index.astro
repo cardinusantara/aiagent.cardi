@@ -1,0 +1,14 @@
+---
+import MomLayout from '../../../../layouts/MomLayout.astro';
+import DashboardLayout from '../../../../components/mom/DashboardLayout';
+import DashboardCalendarView from '../../../../components/mom/DashboardCalendarView';
+
+const title = "Jadwal & Google Calendar — Dashboard Cardi";
+const description = "Sinkronisasi agenda rapat dan action items MoM langsung ke Google Calendar tim Anda.";
+---
+
+<MomLayout title={title} description={description}>
+  <DashboardLayout client:load>
+    <DashboardCalendarView client:load />
+  </DashboardLayout>
+</MomLayout>

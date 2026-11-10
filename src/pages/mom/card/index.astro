@@ -1,0 +1,11 @@
+---
+import MomLayout from '../../../layouts/MomLayout.astro';
+import NfcCardLanding from '../../../components/mom/NfcCardLanding';
+
+const title = "Cardi Smart NFC Card & AI MoM Assistant — Cardi Agent";
+const description = "Kartu bisnis digital NFC pintar terintegrasi dengan transkripsi notulen AI MoM otomatis, kontak vCard instan, dan sinkronisasi Google Calendar.";
+---
+
+<MomLayout title={title} description={description}>
+  <NfcCardLanding client:load />
+</MomLayout>

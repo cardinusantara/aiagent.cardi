@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aiagent.cardi.co.id/sitemap-index.xml
+

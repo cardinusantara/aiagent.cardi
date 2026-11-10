@@ -1,0 +1,14 @@
+---
+import MomLayout from '../../../../layouts/MomLayout.astro';
+import DashboardLayout from '../../../../components/mom/DashboardLayout';
+import DashboardWalletView from '../../../../components/mom/DashboardWalletView';
+
+const title = "Dompet Koin & Status Aplikasi — Dashboard Cardi";
+const description = "Satu saldo koin terpadu untuk kartu nama digital NFC dan transkripsi notulen AI di website serta aplikasi mobile.";
+---
+
+<MomLayout title={title} description={description}>
+  <DashboardLayout client:load>
+    <DashboardWalletView client:load />
+  </DashboardLayout>
+</MomLayout>
