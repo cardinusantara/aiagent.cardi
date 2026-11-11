@@ -743,7 +743,7 @@
       <p class="page-subtitle">Pilih paket dan lengkapi data Anda untuk mengaktifkan Cardi Agent AI Aspri.</p>
     </div>
 
-    <form id="checkoutForm" onsubmit="handleCheckout(event)">
+    <form id="checkoutForm" onsubmit="handleCheckout(event)" novalidate>
       <div class="checkout-grid">
 
         <!-- LEFT COLUMN: PRODUK & DATA PEMBELI -->
@@ -866,7 +866,7 @@
               </div>
 
               <!-- Pay Button -->
-              <button type="submit" id="payButton" class="btn-pay">
+              <button type="submit" id="submitOrderBtn" class="btn-pay">
                 Bayar Sekarang
               </button>
 
@@ -1050,6 +1050,11 @@
 
   <!-- SCRIPT LOGIC -->
   <script>
+    const XENDIT_PAYMENT_URLS = {
+      'grup': 'https://xen.to/v1uWZ6cx',
+      'nomor-sendiri': 'https://xen.to/ducHSmJz'
+    };
+
     const plansData = {
       'grup': {
         id: 'grup',
@@ -1153,59 +1158,54 @@
       document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan · Batalkan kapan saja';
     }
 
+    let isSubmitting = false;
+
     // Handle Form Submit
     function handleCheckout(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
+      if (isSubmitting) return;
 
       const name = document.getElementById('buyerName').value.trim();
       const email = document.getElementById('buyerEmail').value.trim();
-      let wa = document.getElementById('buyerWa').value.trim();
-      const business = document.getElementById('buyerBusiness').value.trim();
+      const wa = document.getElementById('buyerWa').value.trim();
       const terms = document.getElementById('termsAgree').checked;
 
-      if (!name || !email || !wa) {
-        alert('Mohon lengkapi Nama, Email, dan Nomor WhatsApp Anda.');
+      if (!name) {
+        alert('Mohon lengkapi Nama Lengkap Anda.');
+        document.getElementById('buyerName').focus();
+        return;
+      }
+
+      if (!email) {
+        alert('Mohon lengkapi Alamat Email Anda.');
+        document.getElementById('buyerEmail').focus();
+        return;
+      }
+
+      if (!wa) {
+        alert('Mohon lengkapi Nomor WhatsApp Anda.');
+        document.getElementById('buyerWa').focus();
         return;
       }
 
       if (!terms) {
-        alert('Mohon setujui Syarat & Ketentuan untuk melanjutkan.');
+        alert('Mohon centang persetujuan Syarat & Ketentuan Layanan untuk melanjutkan.');
+        document.getElementById('termsAgree').focus();
         return;
       }
 
-      // Format WhatsApp number
-      wa = wa.replace(/^0+/, '').replace(/[^0-9]/g, '');
-      const fullWa = '62' + wa;
+      isSubmitting = true;
 
-      const plan = plansData[selectedPlan];
-      const orderNo = 'CRD-' + Math.floor(10000 + Math.random() * 90000);
-
-      // Populate Modal
-      document.getElementById('modalOrderNo').textContent = orderNo;
-      document.getElementById('modalPlanName').textContent = plan.name;
-      document.getElementById('modalBuyerName').textContent = name;
-      document.getElementById('modalBuyerWa').textContent = '+62 ' + wa;
-      document.getElementById('modalTotal').textContent = plan.priceFormatted;
-
-      // Construct prefilled WhatsApp Message
-      let waMessage = `Halo Cardi Agent AI, saya ingin melakukan pemesanan dan aktivasi layanan:\n\n` +
-        `*No. Pesanan:* ${orderNo}\n` +
-        `*Paket:* ${plan.name} (${plan.priceFormatted})\n` +
-        `*Nama Pembeli:* ${name}\n` +
-        `*Email:* ${email}\n` +
-        `*Nomor WhatsApp:* +62${wa}\n`;
-
-      if (business) {
-        waMessage += `*Nama Bisnis:* ${business}\n`;
+      // Update button state
+      const submitBtn = document.getElementById('submitOrderBtn');
+      if (submitBtn) {
+        submitBtn.textContent = 'Memproses Pembayaran...';
+        submitBtn.disabled = true;
       }
 
-      waMessage += `\nMohon kirimkan link pembayaran Xendit untuk aktivasi akun saya. Terima kasih!`;
-
-      const waUrl = 'https://wa.me/6281289895646?text=' + encodeURIComponent(waMessage);
-      document.getElementById('modalWaLink').href = waUrl;
-
-      // Show Modal
-      document.getElementById('orderModal').classList.add('active');
+      // Redirect directly to Xendit
+      const currentPlan = selectedPlan;
+      window.location.href = XENDIT_PAYMENT_URLS[currentPlan] || XENDIT_PAYMENT_URLS['grup'];
     }
 
     
