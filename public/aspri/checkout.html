@@ -1160,8 +1160,8 @@
 
     let isSubmitting = false;
 
-    // Handle Form Submit
-    function handleCheckout(e) {
+    // Handle Form Submit & Xendit Invoice Creation
+    async function handleCheckout(e) {
       if (e) e.preventDefault();
       if (isSubmitting) return;
 
@@ -1203,9 +1203,43 @@
         submitBtn.disabled = true;
       }
 
-      // Redirect directly to Xendit
-      const currentPlan = selectedPlan;
-      window.location.href = XENDIT_PAYMENT_URLS[currentPlan] || XENDIT_PAYMENT_URLS['grup'];
+      const cleanPhone = wa.replace(/^0+/, '').replace(/[^0-9]/g, '');
+      const fullPhone = '+62' + cleanPhone;
+
+      try {
+        const response = await fetch('/api/create-invoice', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: fullPhone,
+            plan: selectedPlan
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.invoiceUrl) {
+          throw new Error(data.error || 'Gagal memproses tagihan pembayaran Xendit.');
+        }
+
+        // Langsung arahkan browser pembeli ke URL invoice Xendit
+        window.location.href = data.invoiceUrl;
+
+      } catch (err) {
+        console.error('Invoice creation error:', err);
+        alert(err.message || 'Terjadi kesalahan saat menghubungi server pembayaran. Silakan coba kembali.');
+
+        // Kembalikan tombol ke kondisi aktif semula
+        if (submitBtn) {
+          submitBtn.textContent = 'Bayar Sekarang';
+          submitBtn.disabled = false;
+        }
+        isSubmitting = false;
+      }
     }
 
     
