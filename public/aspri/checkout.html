@@ -159,7 +159,7 @@
     /* PLAN SWITCHER TABS */
     .plan-selector-tabs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       background: #F4F1FD;
       padding: 6px;
@@ -780,10 +780,6 @@
                 <span>Nomor Sendiri</span>
                 <span class="tab-sub">Rp999rb/bln</span>
               </button>
-              <button type="button" class="plan-tab-btn" id="tab_tim-ai" onclick="switchPlan('tim-ai')">
-                <span>Tim AI</span>
-                <span class="tab-sub">Rp799rb/bln</span>
-              </button>
             </div>
 
             <!-- Detail Paket Terpilih -->
@@ -1102,23 +1098,6 @@
           'Setup SOP dibantu langsung oleh tim Cardi',
           'Dukungan integrasi & pelaporan prioritas'
         ]
-      },
-      'tim-ai': {
-        id: 'tim-ai',
-        name: 'Paket Tim AI',
-        badge: 'MULTI-AGENT · 3+ NOMOR AI',
-        price: 799000,
-        priceFormatted: 'Rp799.000',
-        period: '/ bulan per nomor',
-        desc: 'Satu skuad tim AI terintegrasi untuk bisnis berkembang: Sales, Penagih piutang, Konten & Reaktivasi pelanggan.',
-        features: [
-          '3+ nomor WhatsApp AI khusus peran spesifik',
-          'Satu tim AI: Sales, Penagih, Konten & Reaktivasi',
-          'Integrasi Accurate / Jurnal / CRM sistem',
-          'Multi-cabang & dedicated account manager',
-          'Multi-agent workflow kolaboratif',
-          'Prioritas support & SLA respon cepat'
-        ]
       }
     };
 
@@ -1132,8 +1111,6 @@
       // Normalize alternative spellings
       if (planParam === 'nomorsendiri' || planParam === 'nomor_sendiri' || planParam === 'nomor') {
         planParam = 'nomor-sendiri';
-      } else if (planParam === 'timai' || planParam === 'tim_ai' || planParam === 'tim') {
-        planParam = 'tim-ai';
       }
 
       if (plansData[planParam]) {
@@ -1187,12 +1164,7 @@
       document.getElementById('summaryItemName').textContent = 'Cardi Agent AI - ' + plan.name;
       document.getElementById('summaryItemPrice').textContent = plan.priceFormatted;
       document.getElementById('summaryTotal').textContent = plan.priceFormatted;
-
-      if (selectedPlan === 'tim-ai') {
-        document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan per nomor (mulai 3 nomor) · Batalkan kapan saja';
-      } else {
-        document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan · Batalkan kapan saja';
-      }
+      document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan · Batalkan kapan saja';
     }
 
     // Handle Form Submit
