@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syarat dan Ketentuan Layanan - Cardi Agent AI Aspri</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #FAF9FC;
+      color: #17122E;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #5B3CC4;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: #3f2597;
+    }
+
+    /* HEADER */
+    .terms-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #EBE7F7;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.15s ease;
+    }
+    .nav-btn-secondary {
+      color: #5B6B85;
+      background: transparent;
+    }
+    .nav-btn-secondary:hover {
+      background: #F4F1FD;
+      color: #5B3CC4;
+    }
+    .nav-btn-primary {
+      background: #5B3CC4;
+      color: #FFFFFF !important;
+    }
+    .nav-btn-primary:hover {
+      background: #4C2EBA;
+    }
+
+    /* HERO */
+    .terms-hero {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF9FC 100%);
+      border-bottom: 1px solid #EBE7F7;
+      padding: 48px 24px 36px;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .badge-doc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EDE8FA;
+      color: #5B3CC4;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .terms-title {
+      font-size: 32px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: #17122E;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    @media (min-width: 768px) {
+      .terms-title {
+        font-size: 38px;
+      }
+    }
+    .terms-subtitle {
+      font-size: 16px;
+      font-weight: 600;
+      color: #5B3CC4;
+      margin-bottom: 8px;
+    }
+    .terms-meta {
+      font-size: 14px;
+      color: #5B6B85;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      padding-top: 8px;
+    }
+
+    /* CONTENT WRAPPER */
+    .terms-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 24px 80px;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* PREAMBLE BOX */
+    .preamble-box {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #EBE7F7;
+      border-left: 4px solid #5B3CC4;
+      padding: 22px 24px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      color: #3A4A5E;
+      line-height: 1.7;
+      box-shadow: 0 4px 16px rgba(91, 60, 196, 0.03);
+    }
+    .preamble-box p + p {
+      margin-top: 12px;
+    }
+
+    /* QUICK TOC */
+    .toc-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid #EBE7F7;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #17122E;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 640px) {
+      .toc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .toc-link {
+      font-size: 14px;
+      color: #5B6B85;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .toc-link:hover {
+      background: #F4F1FD;
+      color: #5B3CC4;
+    }
+
+    /* SECTIONS */
+    .terms-section {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1px solid #EBE7F7;
+      padding: 28px 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 10px rgba(91, 60, 196, 0.02);
+      scroll-margin-top: 80px;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      border-bottom: 1px solid #F1EEF9;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #5B3CC4;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #17122E;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+    .clause-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 15px;
+      color: #3A4A5E;
+    }
+    .clause-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .clause-num {
+      font-weight: 700;
+      color: #5B3CC4;
+      flex-shrink: 0;
+      min-width: 32px;
+    }
+    .clause-text {
+      flex: 1;
+    }
+    .sub-clause-list {
+      margin-top: 10px;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .sub-clause-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .sub-clause-num {
+      font-weight: 700;
+      color: #5B6B85;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    .terms-footer {
+      background: #17122E;
+      color: #C9C1E2;
+      padding: 32px 24px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      .terms-header, .header-nav, .toc-card, .terms-footer {
+        display: none !important;
+      }
+      body {
+        background: #FFFFFF;
+        color: #000000;
+      }
+      .terms-section {
+        border: none;
+        box-shadow: none;
+        padding: 12px 0;
+        page-break-inside: avoid;
+      }
+      .section-num {
+        background: #000000;
+        color: #FFFFFF;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="terms-header">
+    <div class="header-inner">
+      <a href="/aspri/" class="brand-link" title="Beranda Cardi Agent AI">
+        <img src="/aspri/logo.png" alt="Cardi Agent | Aspri" class="brand-logo" onerror="this.onerror=null; this.src='/favicon.png';">
+      </a>
+      <div class="header-nav">
+        <a href="/aspri/" class="nav-btn nav-btn-secondary">← Beranda</a>
+        <a href="/aspri/checkout.html" class="nav-btn nav-btn-primary">Checkout Layanan</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="terms-hero">
+    <div class="hero-inner">
+      <span class="badge-doc">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Dokumen Hukum Resmi
+      </span>
+      <h1 class="terms-title">Syarat dan Ketentuan Layanan<br>Cardi Agent AI Aspri</h1>
+      <div class="terms-subtitle">PT CARDI NUSANTARA TEKNOLOGI</div>
+      <div class="terms-meta">
+        <span>📅 Terakhir diperbarui: 11 November 2026</span>
+        <span>•</span>
+        <span>🌐 Berlaku untuk seluruh paket langganan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="terms-container">
+
+    <!-- PREAMBLE -->
+    <div class="preamble-box">
+      <p>Perjanjian Syarat dan Ketentuan Layanan ini (<strong>"Ketentuan"</strong>) merupakan kesepakatan yang mengikat secara hukum antara <strong>PT Cardi Nusantara Teknologi</strong> (<strong>"Penyedia Layanan"</strong>, <strong>"Kami"</strong>, atau <strong>"Cardi"</strong>) dan pihak individu atau entitas bisnis (<strong>"Pengguna"</strong>, <strong>"Pelanggan"</strong>, atau <strong>"Anda"</strong>) yang mendaftar, mengakses, atau menggunakan layanan Cardi Agent AI Aspri.</p>
+      <p>Dengan mendaftar atau menyelesaikan transaksi pembayaran, Pengguna menyatakan telah membaca, memahami, dan menyetujui seluruh ketentuan di bawah ini.</p>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-card">
+      <div class="toc-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Daftar Klausul Perjanjian
+      </div>
+      <div class="toc-grid">
+        <a href="#klausul-1" class="toc-link">1. Definisi</a>
+        <a href="#klausul-2" class="toc-link">2. Ruang Lingkup & Ketentuan Paket</a>
+        <a href="#klausul-3" class="toc-link">3. Hak & Kewajiban Pengguna</a>
+        <a href="#klausul-4" class="toc-link">4. Hak & Kewajiban Penyedia Layanan</a>
+        <a href="#klausul-5" class="toc-link">5. Kerahasiaan Data & Kebijakan Privasi</a>
+        <a href="#klausul-6" class="toc-link">6. Biaya, Penagihan, & Pembatalan</a>
+        <a href="#klausul-7" class="toc-link">7. Batasan Tanggung Jawab (Disclaimer)</a>
+        <a href="#klausul-8" class="toc-link">8. Penyelesaian Sengketa & Hukum</a>
+      </div>
+    </div>
+
+    <!-- 1. DEFINISI -->
+    <section class="terms-section" id="klausul-1">
+      <div class="section-header">
+        <span class="section-num">1</span>
+        <h2 class="section-title">DEFINISI</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">1.1.</span>
+          <div class="clause-text"><strong>"Layanan"</strong> merujuk pada platform asisten kecerdasan buatan (AI) Cardi Agent AI Aspri yang beroperasi pada aplikasi perpesanan WhatsApp untuk fungsi koordinasi tim, pengingat tugas, pencatatan progres, dan rekapitulasi operasional.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">1.2.</span>
+          <div class="clause-text"><strong>"Aksi AI"</strong> adalah satuan penghitungan kuota layanan, di mana setiap respon balasan teks terkirim atau analisis terhadap 1 (satu) berkas gambar/foto oleh sistem AI dihitung sebagai 1 (satu) Aksi AI. Pesan antaranggota tim yang tidak melibatkan pemrosesan atau respons sistem AI tidak mengurangi kuota Aksi AI.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">1.3.</span>
+          <div class="clause-text"><strong>"SOP (Standar Operasional Prosedur)"</strong> merujuk pada basis pengetahuan, instruksi kerja, jadwal, dan aturan alur tugas yang disediakan oleh Pengguna untuk dipatuhi dan dijalankan oleh sistem AI.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">1.4.</span>
+          <div class="clause-text"><strong>"Grup WhatsApp"</strong> merujuk pada ruang percakapan grup pada platform pihak ketiga (WhatsApp) tempat nomor agen AI diundang dan ditambahkan oleh Pengguna.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. RUANG LINGKUP DAN KETENTUAN PAKET -->
+    <section class="terms-section" id="klausul-2">
+      <div class="section-header">
+        <span class="section-num">2</span>
+        <h2 class="section-title">RUANG LINGKUP DAN KETENTUAN PAKET</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">2.1.</span>
+          <div class="clause-text">
+            <strong>Paket Grup:</strong>
+            <div class="sub-clause-list">
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">a.</span>
+                <span>Menyediakan integrasi 1 (satu) nomor asisten AI ke dalam grup WhatsApp internal Pengguna.</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">b.</span>
+                <span>Alokasi kuota sebesar 2.000 Aksi AI per bulan.</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">c.</span>
+                <span>Bebas biaya penyiapan awal (setup fee).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clause-item">
+          <span class="clause-num">2.2.</span>
+          <div class="clause-text">
+            <strong>Paket Nomor Sendiri:</strong>
+            <div class="sub-clause-list">
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">a.</span>
+                <span>Menyediakan 1 (satu) nomor WhatsApp khusus terdedikasi untuk bisnis Pengguna.</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">b.</span>
+                <span>Alokasi kuota sebesar 5.000 Aksi AI per bulan per nomor.</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">c.</span>
+                <span>Penyiapan SOP terpandu dengan biaya setup sebesar Rp2.500.000 (ditiadakan untuk komitmen pembayaran tahunan).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clause-item">
+          <span class="clause-num">2.3.</span>
+          <div class="clause-text">Kuota Aksi AI berlaku selama periode tagihan aktif (30 hari kalender) dan tidak diakumulasikan ke periode berikutnya (hangus jika tidak digunakan).</div>
+        </div>
+
+        <div class="clause-item">
+          <span class="clause-num">2.4.</span>
+          <div class="clause-text">Pengguna dapat melakukan penambahan kuota mandiri (top-up) sewaktu-waktu sesuai tarif resmi yang berlaku apabila kuota dasar habis sebelum masa langganan berakhir.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HAK DAN KEWAJIBAN PENGGUNA -->
+    <section class="terms-section" id="klausul-3">
+      <div class="section-header">
+        <span class="section-num">3</span>
+        <h2 class="section-title">HAK DAN KEWAJIBAN PENGGUNA</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">3.1.</span>
+          <div class="clause-text">Pengguna wajib memberikan informasi bisnis, data identitas, dan SOP operasional yang sah, akurat, dan tidak melanggar ketentuan hukum yang berlaku di Republik Indonesia.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">3.2.</span>
+          <div class="clause-text">Pengguna bertanggung jawab penuh atas segala instruksi, delegasi tugas, dan interaksi antaranggota tim yang berlangsung di dalam grup percakapan.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">3.3.</span>
+          <div class="clause-text">
+            <strong>Pengguna dilarang keras memanfaatkan Layanan untuk:</strong>
+            <div class="sub-clause-list">
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">a.</span>
+                <span>Aktivitas perjudian, penipuan, pencucian uang, atau tindak pidana lainnya;</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">b.</span>
+                <span>Pengiriman pesan massal tanpa persetujuan (spamming) yang melanggar ketentuan penggunaan WhatsApp / Meta;</span>
+              </div>
+              <div class="sub-clause-item">
+                <span class="sub-clause-num">c.</span>
+                <span>Menyebarkan konten bermuatan SARA, pornografi, penghinaan, atau materi yang melanggar hak kekayaan intelektual pihak lain.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">3.4.</span>
+          <div class="clause-text">Pelanggaran terhadap klausul 3.3 memberikan hak mutlak bagi Penyedia Layanan untuk menonaktifkan akun seketika tanpa kewajiban pengembalian dana.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HAK DAN KEWAJIBAN PENYEDIA LAYANAN -->
+    <section class="terms-section" id="klausul-4">
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2 class="section-title">HAK DAN KEWAJIBAN PENYEDIA LAYANAN</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">4.1.</span>
+          <div class="clause-text">Penyedia Layanan berkewajiban menjaga ketersediaan sistem Layanan dan menjalankan instruksi sesuai SOP yang telah dikonfigurasikan.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">4.2.</span>
+          <div class="clause-text">Penyedia Layanan berhak melakukan pembaruan algoritma, optimalisasi sistem, dan pemeliharaan rutin yang dapat menyebabkan jeda operasional sementara, dengan pemberitahuan wajar sebelumnya.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">4.3.</span>
+          <div class="clause-text">Penyedia Layanan berhak membatasi atau menolak pemrosesan pesan apabila terindikasi adanya anomali beban komputasi yang berlebihan atau potensi pelanggaran kebijakan penggunaan wajar (Fair Usage Policy).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KERAHASIAAN DATA DAN KEBIJAKAN PRIVASI -->
+    <section class="terms-section" id="klausul-5">
+      <div class="section-header">
+        <span class="section-num">5</span>
+        <h2 class="section-title">KERAHASIAAN DATA DAN KEBIJAKAN PRIVASI</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">5.1.</span>
+          <div class="clause-text">Penyedia Layanan berkomitmen melindungi kerahasiaan data operasional, foto progres kerja, dan riwayat laporan harian Pengguna.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">5.2.</span>
+          <div class="clause-text">Data percakapan yang diproses di dalam grup percakapan diproses semata-mata untuk menjalankan fungsi asistensi, pelaporan, dan kepatuhan SOP internal Pengguna.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">5.3.</span>
+          <div class="clause-text">Penyedia Layanan menjamin tidak akan menyalin, membagikan, menyewakan, atau memperjualbelikan basis data bisnis Pengguna kepada pihak ketiga mana pun tanpa persetujuan tertulis dari Pengguna, kecuali diwajibkan oleh instruksi pengadilan atau otoritas penegak hukum yang sah.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BIAYA, PENAGIHAN, DAN PEMBATALAN -->
+    <section class="terms-section" id="klausul-6">
+      <div class="section-header">
+        <span class="section-num">6</span>
+        <h2 class="section-title">BIAYA, PENAGIHAN, DAN PEMBATALAN</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">6.1.</span>
+          <div class="clause-text">Layanan beroperasi dengan sistem pembayaran di muka (pre-paid/langganan). Tagihan perpanjangan diterbitkan secara berkala sesuai siklus paket yang dipilih.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">6.2.</span>
+          <div class="clause-text">Pembayaran resmi diproses melalui kanal pembayaran resmi yang terafiliasi dengan gateway pembayaran PT Cardi Nusantara Teknologi.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">6.3.</span>
+          <div class="clause-text">Seluruh pembayaran yang telah berhasil dilakukan bersifat final dan tidak dapat dikembalikan (non-refundable), termasuk apabila Pengguna memutuskan berhenti berlangganan di tengah periode aktif atau kuota Aksi AI tidak habis terpakai.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">6.4.</span>
+          <div class="clause-text">Pengguna berhak membatalkan langganan kapan saja tanpa penalti pembatalan. Layanan akan tetap dapat diakses hingga hari terakhir periode penagihan yang telah dibayar.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BATASAN TANGGUNG JAWAB (DISCLAIMER) -->
+    <section class="terms-section" id="klausul-7">
+      <div class="section-header">
+        <span class="section-num">7</span>
+        <h2 class="section-title">BATASAN TANGGUNG JAWAB (DISCLAIMER)</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">7.1.</span>
+          <div class="clause-text">Pengguna memahami dan menyetujui bahwa Layanan beroperasi menggunakan teknologi pemrosesan bahasa alami (Natural Language Processing/LLM). Meskipun sistem dirancang dengan akurasi tinggi, Penyedia Layanan tidak menjamin bahwa sistem sepenuhnya bebas dari kemungkinan salah penafsiran teks atau kesalahan pembacaan gambar.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">7.2.</span>
+          <div class="clause-text">Segala keputusan final terkait pengeluaran finansial, pemutusan hubungan kerja, pemberian diskon, dan tindakan hukum operasional tetap berada di bawah kendali dan tanggung jawab penuh Pengguna (Owner/Manajemen).</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">7.3.</span>
+          <div class="clause-text">Penyedia Layanan tidak bertanggung jawab atas kerugian tidak langsung, kehilangan keuntungan bisnis, atau sanksi pemblokiran nomor WhatsApp oleh pihak Meta Inc. yang disebabkan oleh pelanggaran pola perpesanan Pengguna.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">7.4.</span>
+          <div class="clause-text">Batas tanggung jawab total Penyedia Layanan atas seluruh klaim kerugian langsung yang terbukti sah dibatasi maksimal sebesar nilai biaya langganan 1 (satu) bulan terakhir yang dibayarkan Pengguna.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PENYELESAIAN SENGKETA DAN HUKUM YANG BERLAKU -->
+    <section class="terms-section" id="klausul-8">
+      <div class="section-header">
+        <span class="section-num">8</span>
+        <h2 class="section-title">PENYELESAIAN SENGKETA DAN HUKUM YANG BERLAKU</h2>
+      </div>
+      <div class="clause-list">
+        <div class="clause-item">
+          <span class="clause-num">8.1.</span>
+          <div class="clause-text">Perjanjian ini tunduk pada dan ditafsirkan berdasarkan hukum Negara Kesatuan Republik Indonesia.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">8.2.</span>
+          <div class="clause-text">Segala perselisihan yang timbul dari pelaksanaan perjanjian ini akan diselesaikan terlebih dahulu melalui musyawarah untuk mencapai mufakat dalam waktu 30 (tiga puluh) hari kerja.</div>
+        </div>
+        <div class="clause-item">
+          <span class="clause-num">8.3.</span>
+          <div class="clause-text">Apabila mufakat tidak tercapai, para pihak sepakat untuk menyelesaikan sengketa melalui yurisdiksi Pengadilan Negeri yang berwenang di domisili hukum PT Cardi Nusantara Teknologi.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="terms-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>PT Cardi Nusantara Teknologi</strong> · Seluruh hak cipta dilindungi undang-undang.
+      </div>
+      <div>
+        <a href="/aspri/" style="color: #FFFFFF; text-decoration: underline; margin-right: 16px;">Beranda</a>
+        <a href="/aspri/checkout.html" style="color: #FFFFFF; text-decoration: underline;">Checkout</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
