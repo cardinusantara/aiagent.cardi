@@ -429,7 +429,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      text-align: center;
       box-shadow: 0 6px 20px rgba(91, 60, 196, 0.32);
       transition: all 0.2s ease;
     }
@@ -885,9 +885,7 @@
 
               <!-- Pay Button -->
               <button type="submit" id="payButton" class="btn-pay">
-                <span>Bayar Sekarang</span>
-                <span id="btnPayAmount">· Rp299.000</span>
-                <span>→</span>
+                Bayar Sekarang
               </button>
 
               <!-- Trust / Security badges -->
@@ -1189,7 +1187,6 @@
       document.getElementById('summaryItemName').textContent = 'Cardi Agent AI - ' + plan.name;
       document.getElementById('summaryItemPrice').textContent = plan.priceFormatted;
       document.getElementById('summaryTotal').textContent = plan.priceFormatted;
-      document.getElementById('btnPayAmount').textContent = '· ' + plan.priceFormatted;
 
       if (selectedPlan === 'tim-ai') {
         document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan per nomor (mulai 3 nomor) · Batalkan kapan saja';
