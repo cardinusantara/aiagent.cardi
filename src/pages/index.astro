@@ -64,22 +64,11 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Produk</span>
-        <h2 class="h2">Tiga produk, satu tujuan: <span class="dim">brand kamu dibeli, dan dibeli lagi.</span></h2>
+        <h2 class="h2">Empat produk, satu tujuan: <span class="dim">brand kamu dibeli, dan dibeli lagi.</span></h2>
       </div>
 
-      <div class="grid g3 reveal">
-        <!-- 1. Cardi Agent AI -->
-        <article class="card dark">
-          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
-            <span class="tag live">Utama</span>
-            <img src="/logos/agent-ai/icon-agent-ai.png" alt="Cardi Agent AI" style="width:36px;height:36px;border-radius:8px;object-fit:contain;" />
-          </div>
-          <h3>Cardi Agent AI</h3>
-          <p>AI CRM untuk Marketing, Sales, dan Retensi. CRM yang tidak perlu diisi.</p>
-          <a class="card-link" href="/ai/">Pelajari →</a>
-        </article>
-
-        <!-- 2. Cardi Agent AI MoM -->
+      <div class="grid g4 reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px;">
+        <!-- 1. Cardi Agent AI MoM -->
         <article class="card">
           <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
             <span class="tag live">Tersedia</span>
@@ -93,7 +82,7 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
           </div>
         </article>
 
-        <!-- 3. Cardi Agent AI Loyal -->
+        <!-- 2. Cardi Agent AI Loyal -->
         <article class="card">
           <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
             <span class="tag live">Tersedia</span>
@@ -102,6 +91,28 @@ const WA = 'https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%
           <h3>Cardi Agent AI Loyal</h3>
           <p>Program loyalty dan kartu Google Review NFC untuk repeat order dan ulasan.</p>
           <a class="card-link" href="/cardiloyal/">Pelajari →</a>
+        </article>
+
+        <!-- 3. Cardi Agent AI Aspri -->
+        <article class="card dark">
+          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="tag live">Tersedia</span>
+            <img src="/aspri/logo.png" alt="Cardi Aspri" style="width:36px;height:36px;border-radius:8px;object-fit:contain;" />
+          </div>
+          <h3>Cardi Aspri</h3>
+          <p>Asisten AI pribadi cerdas di WhatsApp. Kelola jadwal, pengingat tugas, pencatatan otomatis, dan bantuan harian tanpa aplikasi tambahan.</p>
+          <a class="card-link" href="/aspri/">Pelajari Aspri →</a>
+        </article>
+
+        <!-- 4. Cardi Agent AI Askoo -->
+        <article class="card">
+          <div class="card-top" style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="tag" style="background:rgba(234, 179, 8, 0.15); color:#FACC15; border:1px solid rgba(250, 204, 21, 0.3);">Segera Hadir</span>
+            <span class="mono" style="font-size:22px;">⚡</span>
+          </div>
+          <h3>Cardi Askoo</h3>
+          <p>AI Support &amp; Sales Agent 24/7 di WhatsApp dan web chat. Jawab pertanyaan produk, kualifikasi lead, dan closing otomatis.</p>
+          <a class="card-link" href={WA} target="_blank" rel="noopener" style="color:#FACC15;">Join Waitlist →</a>
         </article>
       </div>
     </div>
