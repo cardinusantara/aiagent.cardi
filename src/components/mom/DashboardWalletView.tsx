@@ -31,26 +31,26 @@ export default function DashboardWalletPage() {
   const [isPairingModalOpen, setIsPairingModalOpen] = useState(false);
   const [topUpSuccess, setTopUpSuccess] = useState<string | null>(null);
 
-  // Official Cardi MoM coin rates aligned with aiagent.cardi.co.id/cardimom
+  // Official Cardi MoM coin rates aligned with aiagent.cardi.co.id/mom & Cardi ecosystem
   const coinPackages = [
     {
       coins: 500,
-      price: "Rp 90.000",
-      tag: "Starter",
+      price: "Rp 99.000",
+      tag: "Quick",
       desc: "~100x ringkasan rapat AI & vCard sync",
       popular: false,
     },
     {
       coins: 1000,
-      price: "Rp 180.000",
-      tag: "Bisnis",
+      price: "Rp 179.000",
+      tag: "Standard",
       desc: "~200x rapat + prioritas model AI & Google Calendar",
       popular: true,
     },
     {
       coins: 2500,
-      price: "Rp 400.000",
-      tag: "Pro Eksekutif",
+      price: "Rp 399.000",
+      tag: "Bulk",
       desc: "~500x rapat + integrasi tim & distribusi WhatsApp",
       popular: false,
     },

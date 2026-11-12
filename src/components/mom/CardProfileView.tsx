@@ -122,7 +122,7 @@ function PublicCardContent({ username: propUsername }: { username?: string }) {
     if (typeof navigator !== "undefined" && navigator.share) {
       navigator
         .share({
-          title: `${cardProfile.fullName || "Cardi User"} — Cardi Smart NFC Card`,
+          title: `${cardProfile.fullName || "Cardi User"} - Cardi Smart NFC Card`,
           text: `Profil Eksekutif & Notula Rapat AI bersama ${cardProfile.fullName || "Cardi User"}`,
           url: window.location.href,
         })
