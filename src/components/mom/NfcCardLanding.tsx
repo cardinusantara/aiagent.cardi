@@ -161,11 +161,10 @@ export default function HomePage() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col font-sans transition-colors duration-200 ${
-        isDark
+      className={`min-h-screen flex flex-col font-sans transition-colors duration-200 ${isDark
           ? "bg-[#090D16] text-white selection:bg-sky-500 selection:text-white"
           : "bg-[#F8FAFD] text-[#0A1633] selection:bg-sky-500 selection:text-white"
-      }`}
+        }`}
     >
       {/* 00. Top Ecosystem Bar */}
       <EcosystemBar />
@@ -173,11 +172,10 @@ export default function HomePage() {
       {/* 01. Sticky Header / Navbar */}
       <header className="sticky top-2 z-50 max-w-6xl mx-auto px-4 w-full">
         <div
-          className={`backdrop-blur-xl border rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg transition-colors ${
-            isDark
+          className={`backdrop-blur-xl border rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg transition-colors ${isDark
               ? "bg-[#0E1626]/90 border-white/10 shadow-black/40"
               : "bg-white/95 border-[#E6ECF7] shadow-[0_10px_30px_rgba(10,22,51,0.05)]"
-          }`}
+            }`}
         >
           <div className="flex items-center gap-3">
             <Link href="/mom/card" className="flex items-center">
@@ -191,9 +189,8 @@ export default function HomePage() {
 
           {/* Desktop Nav Links */}
           <nav
-            className={`hidden md:flex items-center gap-6 text-[13px] font-semibold ${
-              isDark ? "text-slate-300" : "text-[#3D4B6B]"
-            }`}
+            className={`hidden md:flex items-center gap-6 text-[13px] font-semibold ${isDark ? "text-slate-300" : "text-[#3D4B6B]"
+              }`}
           >
             <a href="#fitur" className="hover:text-sky-600 transition">
               Fitur Kartu
@@ -220,11 +217,10 @@ export default function HomePage() {
           <div className="flex items-center gap-2.5">
             <Link
               href="/mom/login"
-              className={`text-xs font-bold px-3.5 py-2 rounded-xl transition border ${
-                isDark
+              className={`text-xs font-bold px-3.5 py-2 rounded-xl transition border ${isDark
                   ? "bg-white/5 border-white/10 hover:bg-white/10 text-white"
                   : "bg-slate-100 border-slate-200 hover:bg-slate-200 text-slate-800"
-              }`}
+                }`}
             >
               Masuk Akun
             </Link>
@@ -247,15 +243,14 @@ export default function HomePage() {
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            
+
             {/* Left Column: Value Prop */}
             <div className="lg:col-span-6 flex flex-col items-start text-left">
               <div
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[11px] font-bold tracking-wide uppercase mb-4 ${
-                  isDark
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-[11px] font-bold tracking-wide uppercase mb-4 ${isDark
                     ? "bg-sky-500/10 border-sky-500/30 text-sky-400"
                     : "bg-[#EEF4FF] border-[#1E4FFF]/25 text-[#1E4FFF]"
-                }`}
+                  }`}
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#1E4FFF]" />
                 <span>AI MEETING INTELLIGENCE + SMART NFC</span>
@@ -270,9 +265,8 @@ export default function HomePage() {
               </h1>
 
               <p
-                className={`text-base leading-relaxed mb-7 max-w-xl ${
-                  isDark ? "text-slate-300" : "text-[#3D4B6B]"
-                }`}
+                className={`text-base leading-relaxed mb-7 max-w-xl ${isDark ? "text-slate-300" : "text-[#3D4B6B]"
+                  }`}
               >
                 Tinggalkan kartu nama kertas kuno. Cardi menggabungkan kartu bisnis NFC fisik kelas eksekutif dengan kecerdasan AI MoM. Simpan kontak (.vcf) instan, sinkronisasi jadwal Google Calendar, rekam percakapan rapat, dan bagikan notula resmi ke WhatsApp tanpa catat manual.
               </p>
@@ -290,11 +284,10 @@ export default function HomePage() {
                 <Link
                   href="/mom/deo"
                   target="_blank"
-                  className={`w-full sm:w-auto border px-6 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition shadow-xs ${
-                    isDark
+                  className={`w-full sm:w-auto border px-6 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition shadow-xs ${isDark
                       ? "bg-white/5 hover:bg-white/10 border-white/15 text-white"
                       : "bg-white hover:bg-slate-50 border-[#E6ECF7] text-[#0A1633]"
-                  }`}
+                    }`}
                 >
                   <CreditCard className="w-4 h-4 text-[#0258A4]" />
                   <span>Coba Demo Profil Deo</span>
@@ -303,9 +296,8 @@ export default function HomePage() {
 
               {/* Trust Badges */}
               <div
-                className={`pt-5 border-t w-full flex flex-wrap items-center gap-5 text-xs font-semibold ${
-                  isDark ? "border-white/10 text-slate-400" : "border-[#E6ECF7] text-[#6B7A9C]"
-                }`}
+                className={`pt-5 border-t w-full flex flex-wrap items-center gap-5 text-xs font-semibold ${isDark ? "border-white/10 text-slate-400" : "border-[#E6ECF7] text-[#6B7A9C]"
+                  }`}
               >
                 <div className="flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-[#00A87E]" />
@@ -331,13 +323,12 @@ export default function HomePage() {
                     <button
                       key={finish}
                       onClick={() => setCardFinish(finish)}
-                      className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border transition cursor-pointer ${
-                        cardFinish === finish
+                      className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border transition cursor-pointer ${cardFinish === finish
                           ? "bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/40"
                           : isDark
-                          ? "bg-white/5 border-white/10 text-slate-400"
-                          : "bg-white border-slate-200 text-slate-600 shadow-2xs"
-                      }`}
+                            ? "bg-white/5 border-white/10 text-slate-400"
+                            : "bg-white border-slate-200 text-slate-600 shadow-2xs"
+                        }`}
                     >
                       {finish === "onyx" ? "Onyx Gold" : finish === "cyan" ? "Royal Cyan" : "Titanium"}
                     </button>
@@ -346,11 +337,10 @@ export default function HomePage() {
 
                 <button
                   onClick={() => setCardSide(cardSide === "front" ? "back" : "front")}
-                  className={`text-[11px] font-bold px-3 py-1 rounded-lg border flex items-center gap-1.5 transition cursor-pointer ${
-                    isDark
+                  className={`text-[11px] font-bold px-3 py-1 rounded-lg border flex items-center gap-1.5 transition cursor-pointer ${isDark
                       ? "bg-white/5 border-white/15 text-slate-300"
                       : "bg-white border-slate-200 text-slate-700 shadow-2xs hover:bg-slate-50"
-                  }`}
+                    }`}
                 >
                   <Rotate3d className="w-3.5 h-3.5 text-sky-500" />
                   <span>Putar Kartu</span>
@@ -477,8 +467,8 @@ export default function HomePage() {
                     {tapStatus === "tapping"
                       ? "Mendekatkan Kartu ke HP..."
                       : tapStatus === "done"
-                      ? "Tap Berhasil! Profil Terbuka"
-                      : "Coba Simulasi Tap Kartu"}
+                        ? "Tap Berhasil! Profil Terbuka"
+                        : "Coba Simulasi Tap Kartu"}
                   </span>
                 </button>
               </div>
@@ -563,13 +553,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className={`rounded-3xl border p-6 sm:p-8 max-w-4xl mx-auto shadow-xl transition bg-white dark:bg-[#0E1A30] ${
-            isDark ? "border-white/10" : "border-slate-200"
-          }`}>
-            {/* Audio Wave & Trigger Bar */}
-            <div className={`p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 ${
-              isDark ? "bg-[#070F1E] border-white/10" : "bg-slate-50 border-slate-200"
+          <div className={`rounded-3xl border p-6 sm:p-8 max-w-4xl mx-auto shadow-xl transition bg-white dark:bg-[#0E1A30] ${isDark ? "border-white/10" : "border-slate-200"
             }`}>
+            {/* Audio Wave & Trigger Bar */}
+            <div className={`p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 ${isDark ? "bg-[#070F1E] border-white/10" : "bg-slate-50 border-slate-200"
+              }`}>
               <div className="flex items-center gap-3.5">
                 <button
                   onClick={runDemoPipeline}
@@ -592,8 +580,8 @@ export default function HomePage() {
                       ? demoStep === 1
                         ? "🎙️ Membaca rekaman suara audio..."
                         : demoStep === 2
-                        ? "⚡ Mentranskripsi pembicaraan..."
-                        : "🤖 Mengekstrak ringkasan, keputusan & action items..."
+                          ? "⚡ Mentranskripsi pembicaraan..."
+                          : "🤖 Mengekstrak ringkasan, keputusan & action items..."
                       : "Klik tombol play untuk menjalankan simulasi pemrosesan AI"}
                   </p>
                 </div>
@@ -605,9 +593,8 @@ export default function HomePage() {
                   <span
                     key={i}
                     style={{ height: demoRunning ? `${h}px` : "8px" }}
-                    className={`w-1 rounded-full transition-all duration-300 ${
-                      demoRunning ? "bg-sky-500 animate-pulse" : "bg-slate-300 dark:bg-white/20"
-                    }`}
+                    className={`w-1 rounded-full transition-all duration-300 ${demoRunning ? "bg-sky-500 animate-pulse" : "bg-slate-300 dark:bg-white/20"
+                      }`}
                   />
                 ))}
               </div>
@@ -618,41 +605,37 @@ export default function HomePage() {
               <div className={`flex border-b text-xs font-bold gap-6 ${isDark ? "border-white/10" : "border-slate-200"}`}>
                 <button
                   onClick={() => setDemoTab("summary")}
-                  className={`pb-3 border-b-2 transition cursor-pointer ${
-                    demoTab === "summary"
+                  className={`pb-3 border-b-2 transition cursor-pointer ${demoTab === "summary"
                       ? "border-sky-600 text-sky-600 dark:text-sky-400"
                       : "border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   Ringkasan Eksekutif
                 </button>
                 <button
                   onClick={() => setDemoTab("decisions")}
-                  className={`pb-3 border-b-2 transition cursor-pointer ${
-                    demoTab === "decisions"
+                  className={`pb-3 border-b-2 transition cursor-pointer ${demoTab === "decisions"
                       ? "border-sky-600 text-sky-600 dark:text-sky-400"
                       : "border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   Keputusan Rapat (2)
                 </button>
                 <button
                   onClick={() => setDemoTab("actions")}
-                  className={`pb-3 border-b-2 transition cursor-pointer ${
-                    demoTab === "actions"
+                  className={`pb-3 border-b-2 transition cursor-pointer ${demoTab === "actions"
                       ? "border-sky-600 text-sky-600 dark:text-sky-400"
                       : "border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   Action Items &amp; PIC (2)
                 </button>
                 <button
                   onClick={() => setDemoTab("whatsapp")}
-                  className={`pb-3 border-b-2 transition cursor-pointer flex items-center gap-1.5 ${
-                    demoTab === "whatsapp"
+                  className={`pb-3 border-b-2 transition cursor-pointer flex items-center gap-1.5 ${demoTab === "whatsapp"
                       ? "border-emerald-600 text-emerald-600 dark:text-emerald-400"
                       : "border-transparent text-slate-400 hover:text-slate-700 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   <MessageCircle className="w-3.5 h-3.5 text-emerald-500" />
                   <span>Format WhatsApp</span>
@@ -660,9 +643,8 @@ export default function HomePage() {
               </div>
 
               {/* Tab Content Display */}
-              <div className={`p-5 rounded-2xl border text-xs leading-relaxed ${
-                isDark ? "bg-[#070F1E] border-white/10" : "bg-slate-50 border-slate-200"
-              }`}>
+              <div className={`p-5 rounded-2xl border text-xs leading-relaxed ${isDark ? "bg-[#070F1E] border-white/10" : "bg-slate-50 border-slate-200"
+                }`}>
                 {demoTab === "summary" && (
                   <div className="space-y-3">
                     <p className="text-slate-700 dark:text-slate-300">
@@ -717,7 +699,7 @@ export default function HomePage() {
                 {demoTab === "whatsapp" && (
                   <div className="space-y-3">
                     <div className="font-mono text-[11px] bg-white dark:bg-black/30 p-3.5 rounded-xl border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed">
-{`*NOTULA RESMI CARDI MOM: RAPAT KEMITRAAN EKSEKUTIF*
+                      {`*NOTULA RESMI CARDI MOM: RAPAT KEMITRAAN EKSEKUTIF*
 📅 Tanggal: Hari Ini | ⏱️ Durasi: 24 Menit
 👥 Peserta: Deo Cardi Nathanael (CEO), Reza Pratama (Managing Director)
 
@@ -753,11 +735,10 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
       <section id="google-calendar" className="py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div
-            className={`rounded-3xl border p-8 md:p-12 relative overflow-hidden ${
-              isDark
+            className={`rounded-3xl border p-8 md:p-12 relative overflow-hidden ${isDark
                 ? "bg-gradient-to-br from-[#0E1A30] via-[#091122] to-[#050914] border-white/10"
                 : "bg-gradient-to-br from-sky-50/70 via-white to-slate-50 border-[#E6ECF7] shadow-sm"
-            }`}
+              }`}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7">
@@ -805,9 +786,8 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
               {/* Graphic illustration */}
               <div className="lg:col-span-5 flex justify-center">
                 <div
-                  className={`w-full max-w-sm border rounded-2xl p-5 shadow-xl ${
-                    isDark ? "bg-[#070F1E] border-white/10" : "bg-white border-[#E6ECF7]"
-                  }`}
+                  className={`w-full max-w-sm border rounded-2xl p-5 shadow-xl ${isDark ? "bg-[#070F1E] border-white/10" : "bg-white border-[#E6ECF7]"
+                    }`}
                 >
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10 mb-4">
                     <div className="flex items-center gap-2">
@@ -896,34 +876,84 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Starter Card */}
-            <div className={`p-7 rounded-3xl border flex flex-col justify-between transition bg-white dark:bg-[#0E1A30] ${
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 1. Card Only */}
+            <div className={`p-6 rounded-3xl border flex flex-col justify-between transition bg-white dark:bg-[#0E1A30] ${
               isDark ? "border-white/10" : "border-slate-200 shadow-xs"
             }`}>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                  Starter Pack
+                  Starter Standalone
                 </span>
-                <h3 className="text-xl font-black mt-1 mb-2 text-slate-900 dark:text-white">
-                  Kartu Matte PVC
+                <h3 className="text-lg font-black mt-1 mb-2 text-slate-900 dark:text-white">
+                  Card Only
                 </h3>
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-black text-slate-900 dark:text-white">Rp 149.000</span>
+                  <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Rp 49.000</span>
                   <span className="text-xs text-slate-500">/ kartu</span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                  Pilihan sempurna bagi profesional mandiri dan eksekutif muda yang ingin memulai networking pintar.
+                  Kartu fisik NFC pintar murni untuk bertukar kontak profil vCard tanpa batasan tap.
                 </p>
 
                 <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 mb-6">
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Kartu Fisik Matte PVC + Chip NTAG215</span>
+                    <span>Kartu Fisik NFC + NTAG215</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>Bonus 500 Koin MoM</strong> (~100x rapat)</span>
+                    <span>Unlimited Tap &amp; vCard Profil</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>Cadangan QR Laser Engraved</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-slate-400 shrink-0" />
+                    <span className="text-slate-400">0 Koin MoM (Top-up terpisah)</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://wa.me/6281289895646?text=Halo%20Cardi%2C%20saya%20ingin%20pesan%20NFC%20Card%20Only%20(Rp%2049.000)."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-3 rounded-xl font-bold text-xs bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-900 dark:text-white flex items-center justify-center gap-1.5 transition"
+              >
+                <span>Pesan Card Only</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* 2. Card + Quick */}
+            <div className={`p-6 rounded-3xl border flex flex-col justify-between transition bg-white dark:bg-[#0E1A30] ${
+              isDark ? "border-white/10" : "border-slate-200 shadow-xs"
+            }`}>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                  Bundling Hemat
+                </span>
+                <h3 className="text-lg font-black mt-1 mb-2 text-slate-900 dark:text-white">
+                  Card + Quick
+                </h3>
+                <div className="flex items-baseline gap-1 mb-4">
+                  <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Rp 139.000</span>
+                  <span className="text-xs text-slate-500">/ paket</span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  Solusi ideal untuk profesional mandiri: Kartu NFC + Saldo Koin notula AI esensial.
+                </p>
+
+                <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 mb-6">
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>Kartu Fisik NFC + NTAG215</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span><strong>500 Koin MoM</strong> (~100x rapat)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -936,44 +966,46 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
                 </div>
               </div>
 
-              <Link
-                href="/mom/activate"
+              <a
+                href="https://wa.me/6281289895646?text=Halo%20Cardi%2C%20saya%20ingin%20pesan%20paket%20Card%20%2B%20Quick%20500%20Koin%20(Rp%20139.000)."
+                target="_blank"
+                rel="noreferrer"
                 className="w-full py-3 rounded-xl font-bold text-xs bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-900 dark:text-white flex items-center justify-center gap-1.5 transition"
               >
-                <span>Aktivasi / Beli Starter</span>
+                <span>Pesan Card + Quick</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
 
-            {/* Executive Card (Popular) */}
-            <div className="p-7 rounded-3xl border-2 border-[#1E4FFF] shadow-xl shadow-blue-500/10 flex flex-col justify-between relative bg-white dark:bg-[#0E1A30]">
-              <span className="absolute -top-3.5 right-6 bg-gradient-to-r from-[#0258A4] to-[#1E4FFF] text-white text-[10.5px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
-                Paling Diminati
+            {/* 3. Card + Bulk (Best Value / Populer) */}
+            <div className="p-6 rounded-3xl border-2 border-[#1E4FFF] shadow-xl shadow-blue-500/10 flex flex-col justify-between relative bg-white dark:bg-[#0E1A30]">
+              <span className="absolute -top-3.5 right-4 bg-gradient-to-r from-[#0258A4] to-[#1E4FFF] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                Paling Hemat
               </span>
 
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                  Executive Metal
+                  Best Value
                 </span>
-                <h3 className="text-xl font-black mt-1 mb-2 text-slate-900 dark:text-white">
-                  Titanium / Obsidian
+                <h3 className="text-lg font-black mt-1 mb-2 text-slate-900 dark:text-white">
+                  Card + Bulk
                 </h3>
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-black text-slate-900 dark:text-white">Rp 299.000</span>
-                  <span className="text-xs text-slate-500">/ kartu</span>
+                  <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Rp 399.000</span>
+                  <span className="text-xs text-slate-500">/ paket</span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                  Finishing logam mewah dengan bobot premium untuk CEO, Founder, dan Partner bisnis terdepan.
+                  Bundling terlengkap bagi CEO, konsultan, dan tim bisnis dengan kebutuhan rapat rutin tinggi.
                 </p>
 
                 <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 mb-6">
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Kartu Logam Metalik + Laser Engraved</span>
+                    <span>Kartu Fisik NFC Premium (Kartu Gratis)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>Bonus 1.000 Koin MoM</strong> (~200x rapat)</span>
+                    <span><strong>2.500 Koin MoM</strong> (~500x rapat)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -986,50 +1018,52 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
                 </div>
               </div>
 
-              <Link
-                href="/mom/activate"
+              <a
+                href="https://wa.me/6281289895646?text=Halo%20Cardi%2C%20saya%20ingin%20pesan%20paket%20Card%20%2B%20Bulk%202500%20Koin%20(Rp%20399.000)."
+                target="_blank"
+                rel="noreferrer"
                 className="w-full py-3.5 rounded-xl font-bold text-xs bg-gradient-to-r from-[#0258A4] to-[#1E4FFF] hover:brightness-110 text-white flex items-center justify-center gap-1.5 shadow-md shadow-blue-500/25 transition"
               >
-                <span>Pesan Edisi Executive</span>
+                <span>Pesan Card + Bulk</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
 
-            {/* Enterprise / Corporate */}
-            <div className={`p-7 rounded-3xl border flex flex-col justify-between transition bg-white dark:bg-[#0E1A30] ${
+            {/* 4. Enterprise / Corporate */}
+            <div className={`p-6 rounded-3xl border flex flex-col justify-between transition bg-white dark:bg-[#0E1A30] ${
               isDark ? "border-white/10" : "border-slate-200 shadow-xs"
             }`}>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Custom Corporate
                 </span>
-                <h3 className="text-xl font-black mt-1 mb-2 text-slate-900 dark:text-white">
-                  Solusi Tim &amp; Perusahaan
+                <h3 className="text-lg font-black mt-1 mb-2 text-slate-900 dark:text-white">
+                  Tim &amp; Perusahaan
                 </h3>
                 <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-black text-slate-900 dark:text-white">Custom</span>
+                  <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Custom</span>
                   <span className="text-xs text-slate-500">/ organisasi</span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                  Desain kartu kustom logo perusahaan, domain khusus (cards.perusahaan.com), dan integrasi CRM.
+                  Desain kartu kustom brand logo, dashboard admin terpusat, dan integrasi CRM perusahaan.
                 </p>
 
                 <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300 mb-6">
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Kartu Custom Brand Logo &amp; Color Scheme</span>
+                    <span>Kartu Custom Brand Logo Tim</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Unlimited Pool Koin MoM untuk Seluruh Tim</span>
+                    <span>Unlimited Pool Koin MoM Bersama</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Admin Central Dashboard &amp; Lead Analytics</span>
+                    <span>Admin Central Dashboard</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Integrasi API / Webhook ke CRM</span>
+                    <span>Integrasi API &amp; CRM</span>
                   </div>
                 </div>
               </div>
@@ -1040,10 +1074,11 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
                 rel="noreferrer"
                 className="w-full py-3 rounded-xl font-bold text-xs bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-900 dark:text-white flex items-center justify-center gap-1.5 transition"
               >
-                <span>Konsultasi dengan Tim Cardi</span>
+                <span>Konsultasi Tim Cardi</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -1065,11 +1100,10 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`border rounded-2xl transition bg-white dark:bg-[#0E1A30] overflow-hidden ${
-                  openFaq === i
+                className={`border rounded-2xl transition bg-white dark:bg-[#0E1A30] overflow-hidden ${openFaq === i
                     ? "border-sky-500 shadow-sm"
                     : "border-slate-200 dark:border-white/10"
-                }`}
+                  }`}
               >
                 <button
                   type="button"
@@ -1078,9 +1112,8 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
                 >
                   <span>{faq.q}</span>
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                      openFaq === i ? "rotate-180 text-sky-600" : ""
-                    }`}
+                    className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180 text-sky-600" : ""
+                      }`}
                   />
                 </button>
                 {openFaq === i && (
@@ -1115,9 +1148,8 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <div
-              className={`px-5 py-3 rounded-2xl border flex items-center gap-3 ${
-                isDark ? "bg-white/5 border-white/10 text-white" : "bg-white border-[#E6ECF7] text-slate-900 shadow-xs"
-              }`}
+              className={`px-5 py-3 rounded-2xl border flex items-center gap-3 ${isDark ? "bg-white/5 border-white/10 text-white" : "bg-white border-[#E6ECF7] text-slate-900 shadow-xs"
+                }`}
             >
               <Smartphone className="w-6 h-6 text-sky-600" />
               <div className="text-left">
@@ -1129,9 +1161,8 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
             </div>
 
             <div
-              className={`px-5 py-3 rounded-2xl border flex items-center gap-3 ${
-                isDark ? "bg-white/5 border-white/10 text-white" : "bg-white border-[#E6ECF7] text-slate-900 shadow-xs"
-              }`}
+              className={`px-5 py-3 rounded-2xl border flex items-center gap-3 ${isDark ? "bg-white/5 border-white/10 text-white" : "bg-white border-[#E6ECF7] text-slate-900 shadow-xs"
+                }`}
             >
               <Smartphone className="w-6 h-6 text-cyan-600" />
               <div className="text-left">
@@ -1147,11 +1178,10 @@ _Dibuat otomatis via Cardi Smart NFC & AI MoM (cardi.co.id)_`}
 
       {/* 10. COMPREHENSIVE RICH FOOTER (Matched to aiagent main & mom.astro) */}
       <footer
-        className={`border-t py-14 text-xs transition-colors ${
-          isDark
+        className={`border-t py-14 text-xs transition-colors ${isDark
             ? "border-white/10 bg-[#05080E] text-slate-400"
             : "border-[#E6ECF7] bg-white text-[#3D4B6B]"
-        }`}
+          }`}
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-200 dark:border-white/10">

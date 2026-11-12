@@ -215,7 +215,7 @@
         }
       }
 
-      // soft bloom over the brightest dots — drawn last so it reads as light, not fill
+      // soft bloom over the brightest dots - drawn last so it reads as light, not fill
       if (bloom.length) {
         ctx.globalCompositeOperation = 'lighter';
         for (let k = 0; k < bloom.length; k++) {
@@ -409,7 +409,7 @@
     };
 
     const NODES = [
-      { id: 'os', label: 'cardi-agent-os', group: 'core', r: 25, desc: 'Inti sistem. Semua kanal, data, agen, dan laporan bertemu di satu tempat — bukan tersebar di lima aplikasi.' },
+      { id: 'os', label: 'cardi-agent-os', group: 'core', r: 25, desc: 'Inti sistem. Semua kanal, data, agen, dan laporan bertemu di satu tempat - bukan tersebar di lima aplikasi.' },
 
       { id: 'wa', label: 'whatsapp', group: 'kanal', r: 16, desc: 'Terhubung lewat WhatsApp Business API resmi, bukan cara tidak resmi yang berisiko diblokir.' },
       { id: 'ig', label: 'instagram-dm', group: 'kanal', r: 12, desc: 'DM dan komentar Instagram masuk ke antrean yang sama, ditangani agen yang sama.' },
@@ -422,8 +422,8 @@
       { id: 'sop', label: 'sop-bisnis', group: 'engine', r: 14, desc: 'Prosedur internal Anda dikodekan jadi aturan yang dipatuhi setiap agen.' },
 
       { id: 'katalog', label: 'katalog', group: 'data', r: 15, desc: 'Produk, layanan, paket, dan harga. Sumber kebenaran untuk semua jawaban komersial.' },
-      { id: 'dokumen', label: 'basis-dokumen', group: 'data', r: 13, desc: 'Kontrak, proposal, FAQ, dan materi internal — bisa dibaca dan dikutip agen saat menjawab.' },
-      { id: 'stok', label: 'stok-operasional', group: 'data', r: 12, desc: 'Ketersediaan barang, slot, atau kapasitas tim — real-time, bukan tebakan.' },
+      { id: 'dokumen', label: 'basis-dokumen', group: 'data', r: 13, desc: 'Kontrak, proposal, FAQ, dan materi internal - bisa dibaca dan dikutip agen saat menjawab.' },
+      { id: 'stok', label: 'stok-operasional', group: 'data', r: 12, desc: 'Ketersediaan barang, slot, atau kapasitas tim - real-time, bukan tebakan.' },
       { id: 'pelanggan', label: 'data-pelanggan', group: 'data', r: 15, desc: 'Riwayat interaksi, order, dan preferensi. Tetap milik Anda, bisa diekspor kapan saja.' },
 
       { id: 'sales', label: 'sales-agent', group: 'aksi', r: 17, desc: 'Mengkualifikasi lead, menjawab pertanyaan produk, menyusun penawaran, dan mengejar closing.' },
@@ -432,7 +432,7 @@
       { id: 'ops', label: 'ops-agent', group: 'aksi', r: 14, desc: 'Mengerjakan tugas berulang internal: input data, update status, rekap, dan pengingat tim.' },
       { id: 'eskalasi', label: 'eskalasi-manusia', group: 'aksi', r: 12, desc: 'Kalau agen ragu atau nilainya besar, pekerjaan diserahkan ke tim Anda. Tidak pernah menggantung.' },
 
-      { id: 'dash', label: 'dashboard', group: 'output', r: 16, desc: 'Pipeline, konversi, beban kerja, dan biaya — semua terlihat di satu layar.' },
+      { id: 'dash', label: 'dashboard', group: 'output', r: 16, desc: 'Pipeline, konversi, beban kerja, dan biaya - semua terlihat di satu layar.' },
       { id: 'laporan', label: 'laporan-otomatis', group: 'output', r: 14, desc: 'Ringkasan harian dan bulanan dikirim sendiri ke tim dan manajemen Anda.' },
       { id: 'audit', label: 'jejak-audit', group: 'output', r: 12, desc: 'Setiap tindakan agen tercatat: apa yang dilakukan, kapan, dan atas dasar apa.' },
 

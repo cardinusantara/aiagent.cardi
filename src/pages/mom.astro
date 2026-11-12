@@ -6,8 +6,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cardi Agent MoM — AI Meeting Intelligence untuk merekam, mentranskripsi, merangkum, dan mengubah hasil rapat menjadi action items yang siap dieksekusi." />
-  <title>Cardi Agent MoM — AI Meeting Intelligence | Cardi Agent AI</title>
+  <meta name="description" content="Cardi Agent MoM: AI Meeting Intelligence untuk merekam, mentranskripsi, merangkum, dan mengubah hasil rapat menjadi action items yang siap dieksekusi." />
+  <title>Cardi Agent MoM: AI Meeting Intelligence | Cardi Agent AI</title>
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-mom-96x96.png" />
@@ -2437,19 +2437,84 @@
     }
     .pricing-head {
       text-align: center;
-      max-width: 620px;
-      margin: 0 auto 48px;
+      max-width: 680px;
+      margin: 0 auto 36px;
     }
     .pricing-head p {
       color: var(--body);
       font-size: 14.5px;
       margin-top: 8px;
     }
+    .pricing-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .pricing-toggle {
+      background: #EDF2F9;
+      padding: 5px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+    .pricing-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--body);
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 9px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .pricing-toggle-btn.active {
+      background: #FFFFFF;
+      color: var(--blue);
+      box-shadow: 0 4px 14px rgba(2, 88, 164, 0.12);
+    }
+    .pricing-toggle-btn:hover:not(.active) {
+      color: var(--ink);
+    }
+    .badge-saving {
+      background: #DCFCE7;
+      color: #15803D;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .unit-price {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0369A1;
+      background: #E0F2FE;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .unit-price.text-emerald {
+      color: #15803D;
+      background: #DCFCE7;
+    }
     .price-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       align-items: stretch;
+    }
+    .price-grid.hidden {
+      display: none !important;
     }
     .price-card {
       background: #FFFFFF;
@@ -3018,7 +3083,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
       .price-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
       }
       .price-card.featured {
         transform: none;
@@ -3409,15 +3475,20 @@
       letter-spacing: 0.3px;
     }
 
+    .store-mini-tag.live {
+      background: #16A34A;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.4);
+    }
+
     /* Dedicated App Download Banner */
     .app-download-banner-wrap {
       background: linear-gradient(135deg, #0A1428 0%, #0E1B38 100%);
       border: 1px solid rgba(147, 197, 253, 0.2);
       border-radius: 24px;
-      padding: 56px;
+      padding: 48px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 40px;
       align-items: center;
       box-shadow: 0 24px 60px rgba(10, 22, 51, 0.25);
       position: relative;
@@ -3428,15 +3499,16 @@
     @media (max-width: 960px) {
       .app-download-banner-wrap {
         grid-template-columns: 1fr;
-        padding: 36px 24px;
+        padding: 32px 20px;
+        gap: 32px;
       }
     }
 
     .app-download-title {
-      font-size: clamp(26px, 3.2vw, 38px);
+      font-size: clamp(24px, 3vw, 36px);
       font-weight: 800;
       color: #FFFFFF;
-      line-height: 1.2;
+      line-height: 1.25;
       margin: 12px 0 16px;
     }
 
@@ -3444,7 +3516,7 @@
       font-size: 15px;
       line-height: 1.6;
       color: #94A3B8;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .app-download-desc strong {
@@ -3455,27 +3527,37 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .store-pill-card {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 14px;
       padding: 12px 18px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
-      transition: background 0.2s ease;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: #FFFFFF;
     }
 
     .store-pill-card:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(147, 197, 253, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(96, 165, 250, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .store-pill-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     .store-img-card {
-      height: 40px;
+      height: 38px;
       width: auto;
     }
 
@@ -3483,6 +3565,7 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
+      text-align: left;
     }
 
     .store-pill-info strong {
@@ -3495,118 +3578,121 @@
       color: #94A3B8;
     }
 
-    .download-prereg-cta {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .store-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
     }
 
-    .prereg-caption {
-      font-size: 12px;
-      color: #64748B;
+    .download-trust-bullets {
       display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: #94A3B8;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .download-trust-bullets span {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .prereg-caption i {
+    .download-trust-bullets i {
       color: #22C55E;
     }
 
-    .app-download-mockup {
-      position: relative;
+    /* Showcase Visuals on Right */
+    .app-showcase-visual {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .mockup-phone-frame {
-      max-width: 260px;
+    .showcase-feature-banner {
       width: 100%;
-      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      background: #020617;
     }
 
-    .mockup-phone-img {
+    .showcase-feature-banner img {
       width: 100%;
       height: auto;
       display: block;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+      object-fit: cover;
     }
 
-    .mockup-floating-card {
-      position: absolute;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 10px 14px;
+    .showcase-screenshots-slider {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .showcase-screenshots-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding-bottom: 8px;
+      }
+      .screenshot-item-card {
+        flex: 0 0 120px;
+        scroll-snap-align: start;
+      }
+    }
+
+    .screenshot-item-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
       display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      z-index: 2;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .mockup-floating-card.top-float {
-      top: 20px;
-      left: 0;
+    .screenshot-item-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.4);
     }
 
-    .mockup-floating-card.btm-float {
-      bottom: 20px;
-      right: 0;
+    .screenshot-item-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
     }
 
-    .mockup-icon-box {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    .mockup-icon-box.play {
-      background: rgba(0, 193, 166, 0.15);
-      color: #00D3FE;
-    }
-
-    .mockup-icon-box.apple {
-      background: rgba(255, 255, 255, 0.15);
-      color: #FFFFFF;
-    }
-
-    .mockup-float-label {
-      font-size: 12px;
+    .screenshot-caption {
+      padding: 4px 6px;
+      font-size: 9px;
       font-weight: 700;
-      color: #FFFFFF;
-    }
-
-    .mockup-float-val {
-      font-size: 10px;
-      color: #22C55E;
+      color: #CBD5E1;
+      text-align: center;
+      background: rgba(10, 20, 40, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   </style>
 
 </head>
 <body>
-
-  <!-- Top Ecosystem Bar (Standardized Across Ecosystem) -->
-  <div class="eco-bar">
-    <div class="container eco-bar-inner">
-      <span class="eco-bar-label">Bagian dari ekosistem Cardi</span>
-      <nav class="eco-bar-nav" aria-label="Ekosistem Cardi">
-        <a href="https://cardi.co.id/" target="_blank" rel="noopener">Cardi</a>
-        <span class="eco-bar-sep">·</span>
-        <a href="https://cardinusantara.com/" target="_blank" rel="noopener">Cardi Nusantara</a>
-        <span class="eco-bar-sep">·</span>
-        <a href="/" class="active">Cardi Agent</a>
-        <span class="eco-bar-sep">·</span>
-        <a href="https://cardi.co.id/toko/" target="_blank" rel="noopener">Toko Cardi</a>
-      </nav>
-    </div>
-  </div>
 
   <!-- Sticky Navbar -->
   <div class="container nav-wrap">
@@ -3616,7 +3702,7 @@
       </a>
 
       <div class="nav-links">
-        <a href="/mom/card/" class="nav-nfc-card-link" title="Pelajari Cardi MoM Smart NFC Card">
+        <a href="/" class="nav-nfc-card-link" title="Pelajari Cardi MoM Smart NFC Card">
           <i class="fa-solid fa-id-card"></i> <span>Smart NFC Card</span>
           <span class="nav-new-pill">NEW</span>
         </a>
@@ -3664,10 +3750,10 @@
           </div>
         </div>
 
-        <a class="btn-card-login" href="/mom/card/" title="Lihat Solusi Kartu Smart NFC">
+        <a class="btn-card-login" href="https://nfc.cardi.co.id" target="_blank" rel="noopener" title="Lihat Solusi Kartu Smart NFC">
           <i class="fa-solid fa-id-card"></i> <span>Smart Card</span>
         </a>
-        <a class="btn-login-executive" href="/mom/login/" title="Masuk ke Portal Eksekutif">
+        <a class="btn-login-executive" href="https://nfc.cardi.co.id/login" target="_blank" rel="noopener" title="Masuk ke Portal Eksekutif">
           <i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span>
         </a>
         <a class="btn-main-site" href="/" aria-label="Kembali ke Cardi Agent AI">
@@ -3689,7 +3775,7 @@
         </div>
         <h1><span data-i18n="hero_title_1">Ubah Waktu Rapat Jadi </span><span class="accent" data-i18n="hero_title_2">Tindakan Nyata & Eksekusi Cepat.</span></h1>
         <p data-i18n="hero_desc">
-          Cardi Agent MoM merekam, mentranskripsi suara, merangkum, dan menyusun notula rapat otomatis (Minutes of Meeting)—sehingga tim Anda fokus pada keputusan strategis dan pertumbuhan bisnis skala IPO.
+          Cardi Agent MoM mentranskripsi percakapan multi-pembicara, menyarikan poin keputusan eksekutif, dan menyinkronkan tugas langsung ke kalender kerja serta alur operasional tim Anda.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#features">
@@ -3702,15 +3788,15 @@
 
         <!-- App Store & Google Play Hero Badges -->
         <div class="hero-store-bar">
-          <span class="store-notice-label"><i class="fa-solid fa-mobile-screen"></i> Segera rilis di smartphone:</span>
+          <span class="store-notice-label"><i class="fa-solid fa-mobile-screen"></i> Tersedia resmi di smartphone:</span>
           <div class="store-badges-group">
-            <a href="#download-app" class="store-badge-link" title="Segera hadir di Google Play Store">
-              <img src="/google-play-badge.svg" alt="Segera hadir di Google Play" class="store-svg-badge" />
-              <span class="store-mini-tag">Segera Rilis</span>
+            <a href="https://play.google.com/store/apps/details?id=com.cardinusantara.cardiagentaimom&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="store-badge-link" title="Download Cardi MoM di Google Play Store">
+              <img src="/google-play-badge.svg" alt="Download di Google Play" class="store-svg-badge" />
+              <span class="store-mini-tag live">Resmi Live</span>
             </a>
-            <a href="#download-app" class="store-badge-link" title="Segera hadir di Apple App Store">
-              <img src="/app-store-badge.svg" alt="Segera hadir di Apple App Store" class="store-svg-badge" />
-              <span class="store-mini-tag">Segera Rilis</span>
+            <a href="https://apps.apple.com/us/app/cardi-mom/id6809435140" target="_blank" rel="noopener noreferrer" class="store-badge-link" title="Download Cardi MoM di Apple App Store">
+              <img src="/app-store-badge.svg" alt="Download di Apple App Store" class="store-svg-badge" />
+              <span class="store-mini-tag live">Resmi Live</span>
             </a>
           </div>
         </div>
@@ -3820,7 +3906,7 @@
               <span class="spotlight-badge"><i class="fa-solid fa-bolt"></i> INTEGRASI HARDWARE &amp; AI</span>
               <span class="spotlight-chip">NTAG215 ISO 14443-A</span>
             </div>
-            <h2>Cardi MoM Smart NFC Card — <span class="accent-nfc">Satu Kartu Eksekutif untuk Seluruh Notulen &amp; Relasi Bisnis.</span></h2>
+            <h2>Cardi MoM Smart NFC Card - <span class="accent-nfc">Satu Kartu Eksekutif untuk Seluruh Notulen &amp; Relasi Bisnis.</span></h2>
             <p>
               Cukup tempelkan kartu pintar ini ke smartphone rekan bisnis. Secara instan membuka profil eksekutif, sinkronisasi Google Calendar, dan menyambungkan rekaman audio rapat ke sistem AI Notulen Cardi MoM tanpa perlu install aplikasi.
             </p>
@@ -3848,14 +3934,14 @@
               </div>
             </div>
             <div class="card-nfc-actions">
-              <a href="/mom/card/" class="btn-spotlight-primary">
+              <a href="https://nfc.cardi.co.id" target="_blank" rel="noopener" class="btn-spotlight-primary">
                 <i class="fa-solid fa-id-card"></i> <span>Pelajari Smart NFC Card</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
-              <a href="/mom/activate/" class="btn-spotlight-secondary">
+              <a href="https://nfc.cardi.co.id/activate" target="_blank" rel="noopener" class="btn-spotlight-secondary">
                 <i class="fa-solid fa-key"></i> <span>Aktivasi Kartu Fisik</span>
               </a>
-              <a href="/mom/deo" class="btn-spotlight-ghost">
+              <a href="https://nfc.cardi.co.id/deo" target="_blank" rel="noopener" class="btn-spotlight-ghost">
                 <i class="fa-solid fa-circle-play"></i> <span>Lihat Demo Live</span>
               </a>
             </div>
@@ -4327,57 +4413,68 @@
       <div class="app-download-banner-wrap">
         <div class="app-download-content">
           <div class="kicker" style="color: #60A5FA;">
-            <i class="fa-solid fa-cloud-arrow-down"></i> APLIKASI MOBILE CARDI MOM
+            <i class="fa-solid fa-cloud-arrow-down"></i> RESMI TERSEDIA DI PLAY STORE & APP STORE
           </div>
-          <h2 class="app-download-title">Notula Rapat di Saku Anda. Segera Hadir di Play Store & App Store.</h2>
+          <h2 class="app-download-title">Unduh Aplikasi Mobile Cardi MoM</h2>
           <p class="app-download-desc">
-            Aplikasi resmi <strong>Cardi Agent MoM</strong> dirancang untuk eksekutif, sales lapangan, dan tim hybrid. Rekam percakapan meeting secara offline maupun online, pantau action items, dan sinkronkan hasil notula langsung ke WhatsApp dan CRM perusahaan.
+            Aplikasi resmi <strong>Cardi Agent MoM</strong> kini telah resmi rilis di Google Play Store dan Apple App Store. Rekam percakapan rapat offline maupun online, transkripsikan multi-speaker secara instan, dan sinkronkan keputusan kerja langsung dari saku Anda.
           </p>
 
           <div class="store-action-buttons">
-            <div class="store-pill-card">
-              <img src="/google-play-badge.svg" alt="Google Play Store Badge" class="store-img-card" />
-              <div class="store-pill-info">
-                <strong>Android Mobile & Tablet</strong>
-                <span>Pra-Registrasi rilis resmi Play Store</span>
+            <a href="https://play.google.com/store/apps/details?id=com.cardinusantara.cardiagentaimom&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Google Play Store">
+              <div class="store-pill-left">
+                <img src="/google-play-badge.svg" alt="Google Play Store Badge" class="store-img-card" />
+                <div class="store-pill-info">
+                  <strong>Android Smartphone & Tablet</strong>
+                  <span>Versi Resmi Play Store • ID: com.cardinusantara.cardiagentaimom</span>
+                </div>
               </div>
-            </div>
+              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
+            </a>
 
-            <div class="store-pill-card">
-              <img src="/app-store-badge.svg" alt="Apple App Store Badge" class="store-img-card" />
-              <div class="store-pill-info">
-                <strong>iPhone & iPad (iOS)</strong>
-                <span>Rilis TestFlight & App Store</span>
+            <a href="https://apps.apple.com/us/app/cardi-mom/id6809435140" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Apple App Store">
+              <div class="store-pill-left">
+                <img src="/app-store-badge.svg" alt="Apple App Store Badge" class="store-img-card" />
+                <div class="store-pill-info">
+                  <strong>iPhone & iPad (iOS)</strong>
+                  <span>Versi Resmi App Store • ID: 6809435140</span>
+                </div>
               </div>
-            </div>
+              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
+            </a>
           </div>
 
-          <div class="download-prereg-cta">
-            <button class="btn btn-primary" onclick="openWhatsApp('demo')">
-              <i class="fa-brands fa-whatsapp"></i> Ingatkan Saya Saat Aplikasi Rilis
-            </button>
-            <span class="prereg-caption"><i class="fa-solid fa-check"></i> Gratis, tanpa spam, jadilah yang pertama mencoba versi beta.</span>
+          <div class="download-trust-bullets">
+            <span><i class="fa-solid fa-shield-check"></i> Enkripsi Data AES-256</span>
+            <span><i class="fa-solid fa-bolt"></i> Sinkronisasi Multi-Device</span>
+            <span><i class="fa-solid fa-microphone-lines"></i> Rekam Online & Offline</span>
           </div>
         </div>
 
-        <div class="app-download-mockup">
-          <div class="mockup-floating-card top-float">
-            <div class="mockup-icon-box play"><i class="fa-brands fa-google-play"></i></div>
-            <div>
-              <div class="mockup-float-label">Google Play</div>
-              <div class="mockup-float-val">Tahap Verifikasi</div>
+        <div class="app-showcase-visual">
+          <div class="showcase-feature-banner">
+            <img src="/previews/header-mom.webp" alt="Tampilan Resmi Cardi Agent MoM Mobile" loading="lazy" />
+          </div>
+          <div class="showcase-screenshots-slider">
+            <div class="screenshot-item-card">
+              <img src="/previews/1.webp" alt="Tampilan Dashboard Rapat Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">01. Rekam Rapat</div>
             </div>
-          </div>
-
-          <div class="mockup-phone-frame">
-            <img src="/android-mockup-frame.png" alt="Aplikasi Cardi MoM di Android" class="mockup-phone-img" />
-          </div>
-
-          <div class="mockup-floating-card btm-float">
-            <div class="mockup-icon-box apple"><i class="fa-brands fa-apple"></i></div>
-            <div>
-              <div class="mockup-float-label">App Store</div>
-              <div class="mockup-float-val">Build iOS Ready</div>
+            <div class="screenshot-item-card">
+              <img src="/previews/2.webp" alt="Tampilan Transkrip Suara Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">02. Transkrip AI</div>
+            </div>
+            <div class="screenshot-item-card">
+              <img src="/previews/3.webp" alt="Tampilan Ringkasan Keputusan Rapat Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">03. Ringkasan Eksekutif</div>
+            </div>
+            <div class="screenshot-item-card">
+              <img src="/previews/4.webp" alt="Tampilan Action Items & Tugas Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">04. Action Items</div>
+            </div>
+            <div class="screenshot-item-card">
+              <img src="/previews/5.webp" alt="Tampilan Ekspor dan Berbagi Notula Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">05. Ekspor & Share</div>
             </div>
           </div>
         </div>
@@ -4429,14 +4526,31 @@
           <div class="kicker" data-i18n="price_kicker">Langganan</div>
           <h2 data-i18n="price_head">Pilih paket langganan</h2>
           <p data-i18n="price_sub">1 coin ≈ 1 menit transkrip. Saldo terisi ulang otomatis tiap siklus tagihan lewat Google Play.</p>
+
+          <!-- Toggle between Coin Packages and NFC Card Bundling -->
+          <div class="pricing-toggle-wrap">
+            <div class="pricing-toggle" role="tablist" aria-label="Pilihan Model Harga">
+              <button type="button" class="pricing-toggle-btn active" id="tabCoinBtn" role="tab" aria-selected="true" aria-controls="gridCoin" onclick="switchPricingTab('coin')">
+                <i class="fa-solid fa-coins"></i>
+                <span data-i18n="tab_coins">Paket Koin Aplikasi</span>
+              </button>
+              <button type="button" class="pricing-toggle-btn" id="tabNfcBtn" role="tab" aria-selected="false" aria-controls="gridNfc" onclick="switchPricingTab('nfc')">
+                <i class="fa-solid fa-id-card"></i>
+                <span data-i18n="tab_nfc">Bundling Kartu NFC</span>
+                <span class="badge-saving" data-i18n="tab_nfc_badge">Populer</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="price-grid">
-          <!-- 1. Quick (Pojok Kiri) -->
+        <!-- 1. Coin Packages Grid -->
+        <div class="price-grid" id="gridCoin">
+          <!-- 1. Quick -->
           <article class="price-card">
             <div>
               <h3 data-i18n="plan_quick_name">Quick</h3>
               <div class="price"><span data-i18n="plan_quick_price">Rp 99.000</span><small data-i18n="plan_quick_period">/bulan</small></div>
+              <div class="unit-price" data-i18n="plan_quick_unit">Rp 198 / coin</div>
               <div class="coin-desc" data-i18n="plan_quick_quota">500 coin / bulan</div>
               <ul class="price-list">
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_quick_f1">500 coin transkrip (~8,3 jam audio)</span></li>
@@ -4452,19 +4566,41 @@
             </button>
           </article>
 
-          <!-- 2. Bulk (Tengah - Paling Populer) -->
+          <!-- 2. Standard -->
+          <article class="price-card">
+            <div>
+              <h3 data-i18n="plan_standard_name">Standard</h3>
+              <div class="price"><span data-i18n="plan_standard_price">Rp 179.000</span><small data-i18n="plan_standard_period">/bulan</small></div>
+              <div class="unit-price" data-i18n="plan_standard_unit">Rp 179 / coin</div>
+              <div class="coin-desc" data-i18n="plan_standard_quota">1.000 coin / bulan</div>
+              <ul class="price-list">
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_standard_f1">1.000 coin transkrip (~16,6 jam audio)</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_standard_f2">Semua fitur paket Quick</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_standard_f3">Prioritas pemrosesan transkripsi AI</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_standard_f4">Sinkronisasi Google Calendar otomatis</span></li>
+                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="plan_standard_f_ext">Akses Ekstensi Chrome multi-tab</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_standard_f5">Dukungan teknis via WhatsApp</span></li>
+              </ul>
+            </div>
+            <button class="btn-plan" onclick="openWhatsApp('standard')" data-i18n="plan_standard_btn">
+              Pilih Standard
+            </button>
+          </article>
+
+          <!-- 3. Bulk (Paling Populer) -->
           <article class="price-card featured">
             <span class="popular" data-i18n="popular_badge">PALING POPULER</span>
             <div>
               <h3 data-i18n="plan_bulk_name">Bulk</h3>
               <div class="price"><span data-i18n="plan_bulk_price">Rp 399.000</span><small data-i18n="plan_bulk_period">/bulan</small></div>
+              <div class="unit-price text-emerald" data-i18n="plan_bulk_unit">Rp 160 / coin (Terhemat)</div>
               <div class="coin-desc" data-i18n="plan_bulk_quota">2.500 coin / bulan</div>
               <ul class="price-list">
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f1">2.500 coin transkrip (~41,6 jam audio)</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f2">Semua fitur paket Quick</span></li>
-                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="plan_bulk_f_ext">Akses Ekstensi Chrome multi-tab & multi-device</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f2">Semua fitur paket Standard</span></li>
+                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="plan_bulk_f_ext">Akses Ekstensi Chrome multi-device</span></li>
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f3">Alokasi coin besar untuk rapat intensif</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f4">Analisis kontribusi pembicara dalam rapat</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f4">Analisis kontribusi pembicara rapat</span></li>
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_bulk_f5">Sinkronisasi multi-device & priority support</span></li>
               </ul>
             </div>
@@ -4473,19 +4609,20 @@
             </button>
           </article>
 
-          <!-- 3. Enterprise (Pojok Kanan) -->
+          <!-- 4. Enterprise -->
           <article class="price-card">
             <div>
               <h3 data-i18n="plan_enterprise_name">Enterprise</h3>
               <div class="price"><span data-i18n="plan_enterprise_price">Kustom</span><small data-i18n="plan_enterprise_period">/organisasi</small></div>
+              <div class="unit-price" data-i18n="plan_enterprise_unit">Skala Perusahaan</div>
               <div class="coin-desc" data-i18n="plan_enterprise_quota">Kapasitas & Coin Kustom</div>
               <ul class="price-list">
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f1">Alokasi coin tak terbatas / sesuai kebutuhan</span></li>
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f2">Semua fitur paket Bulk & Chrome Extension</span></li>
-                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="plan_enterprise_f_ext">Integrasi SSO, API & Webhook internal tim</span></li>
+                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="plan_enterprise_f_ext">Integrasi SSO, API & Webhook internal</span></li>
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f3">Dedicated AI transcription cluster & SLA 99,9%</span></li>
                 <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f4">Kustomisasi template MoM & keamanan enterprise</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f5">Dedicated Account Manager & support prioritas 24/7</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="plan_enterprise_f5">Dedicated Account Manager & support 24/7</span></li>
               </ul>
             </div>
             <button class="btn-plan" onclick="openWhatsApp('enterprise')" data-i18n="plan_enterprise_btn">
@@ -4494,9 +4631,97 @@
           </article>
         </div>
 
-        <div class="pricing-play-footer">
+        <!-- 2. NFC Bundling Grid (Hidden by default) -->
+        <div class="price-grid hidden" id="gridNfc">
+          <!-- 1. Kartu Saja -->
+          <article class="price-card">
+            <div>
+              <h3 data-i18n="nfc_card_only_name">Kartu Saja</h3>
+              <div class="price"><span data-i18n="nfc_card_only_price">Rp 49.000</span><small data-i18n="nfc_card_only_period">/kartu</small></div>
+              <div class="unit-price" data-i18n="nfc_card_only_unit">0 Koin Bawaan</div>
+              <div class="coin-desc" data-i18n="nfc_card_only_desc">Kartu NFC + profil vCard + tap tanpa batas</div>
+              <ul class="price-list">
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f1">1x Kartu Fisik Pintar NFC Eksklusif</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f2">Profil vCard Digital & Unlimited Tap</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f3">Cadangan QR Code Laser Engraved</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f4">Tanpa kuota koin MoM (Top-up terpisah)</span></li>
+              </ul>
+            </div>
+            <button class="btn-plan" onclick="openWhatsApp('nfc_card_only')" data-i18n="nfc_card_only_btn">
+              Pesan Kartu Saja
+            </button>
+          </article>
+
+          <!-- 2. Kartu + Quick -->
+          <article class="price-card">
+            <div>
+              <h3 data-i18n="nfc_quick_name">Kartu + Quick</h3>
+              <div class="price"><span data-i18n="nfc_quick_price">Rp 139.000</span><small data-i18n="nfc_quick_period">/paket</small></div>
+              <div class="unit-price" data-i18n="nfc_quick_unit">Hemat Kuota Koin</div>
+              <div class="coin-desc" data-i18n="nfc_quick_desc">Kartu + 1 bulan Quick (500 coin)</div>
+              <ul class="price-list">
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f1">1x Kartu Fisik Pintar NFC Eksklusif</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f2">500 Koin MoM langsung aktif (~100x rapat)</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f3">Profil vCard Digital & Unlimited Tap</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f4">Transkripsi & Notulen MoM AI Otomatis</span></li>
+                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="nfc_quick_f5">Ekstensi Chrome Zoom, Meet & YouTube</span></li>
+              </ul>
+            </div>
+            <button class="btn-plan" onclick="openWhatsApp('nfc_quick')" data-i18n="nfc_quick_btn">
+              Pesan Kartu + Quick
+            </button>
+          </article>
+
+          <!-- 3. Kartu + Bulk (Star / Featured) -->
+          <article class="price-card featured">
+            <span class="popular" data-i18n="nfc_bulk_badge">KARTU GRATIS · PALING HEMAT</span>
+            <div>
+              <h3 data-i18n="nfc_bulk_name">Kartu + Bulk</h3>
+              <div class="price"><span data-i18n="nfc_bulk_price">Rp 399.000</span><small data-i18n="nfc_bulk_period">/paket</small></div>
+              <div class="unit-price text-emerald" data-i18n="nfc_bulk_unit">Kartu Fisik Gratis (Hemat Rp 50.000)</div>
+              <div class="coin-desc" data-i18n="nfc_bulk_desc">Kartu + 1 bulan Bulk (2.500 coin)</div>
+              <ul class="price-list">
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f1">1x Kartu Fisik Pintar NFC (Gratis!)</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f2">2.500 Koin MoM langsung aktif (~500x rapat)</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f3">Profil vCard Digital & Unlimited Tap</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f4">Prioritas Pemrosesan AI Model Voice</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f5">Auto Dispatch Notula ke WhatsApp</span></li>
+              </ul>
+            </div>
+            <button class="btn-plan" onclick="openWhatsApp('nfc_bulk')" data-i18n="nfc_bulk_btn">
+              Pesan Kartu + Bulk
+            </button>
+          </article>
+
+          <!-- 4. Custom Corporate -->
+          <article class="price-card">
+            <div>
+              <h3 data-i18n="nfc_custom_name">Custom Corporate</h3>
+              <div class="price"><span data-i18n="nfc_custom_price">Hubungi Tim</span><small data-i18n="nfc_custom_period">/dinegosiasi</small></div>
+              <div class="unit-price" data-i18n="nfc_custom_unit">Branding Khusus</div>
+              <div class="coin-desc" data-i18n="nfc_custom_desc">Kartu untuk tim + kuota coin bersama</div>
+              <ul class="price-list">
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f1">Desain Kartu Custom Full Branding Tim</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f2">Unlimited Pool Koin MoM untuk Seluruh Tim</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f3">Admin Central Dashboard & Lead Analytics</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f4">Integrasi API & Webhook ke CRM</span></li>
+                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f5">Dedicated Account Manager & Invoice Resmi</span></li>
+              </ul>
+            </div>
+            <button class="btn-plan" onclick="openWhatsApp('nfc_custom')" data-i18n="nfc_custom_btn">
+              Konsultasi Tim Corporate
+            </button>
+          </article>
+        </div>
+
+        <div class="pricing-play-footer" id="pricingFooterCoin">
           <i class="fa-brands fa-google-play"></i>
           <span data-i18n="price_play_footer">Pembayaran & perpanjangan otomatis lewat Google Play. Batalkan kapan saja dari Play Store.</span>
+        </div>
+
+        <div class="pricing-play-footer" id="pricingFooterNfc" style="display: none;">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span data-i18n="price_nfc_footer">Pengiriman kartu fisik ke seluruh Indonesia. Kartu siap pakai dan langsung terhubung dengan akun MoM Anda.</span>
         </div>
       </div>
     </section>
@@ -4665,9 +4890,10 @@
       <div class="footer-col">
         <h4 data-i18n="ft_col_prod">Produk MoM</h4>
         <ul>
-          <li><a href="/mom/card/" style="color:#00C2D1;font-weight:700;">Smart NFC Card (Baru)</a></li>
-          <li><a href="/mom/activate/">Aktivasi Chip NFC</a></li>
-          <li><a href="/mom/login/">Portal Eksekutif</a></li>
+          <li><a href="https://nfc.cardi.co.id" target="_blank" rel="noopener" style="color:#00C2D1;font-weight:700;">Smart NFC Card (Baru)</a></li>
+          <li><a href="https://nfc.cardi.co.id/activate" target="_blank" rel="noopener">Aktivasi Chip NFC</a></li>
+          <li><a href="https://nfc.cardi.co.id/login" target="_blank" rel="noopener">Portal Eksekutif</a></li>
+          <li><a href="/mom/delete-account/">Penghapusan Akun &amp; Data</a></li>
           <li><a href="#features" data-i18n="ft_link_trans">Transkripsi Live</a></li>
           <li><a href="#features" data-i18n="ft_link_sum">AI Summarization</a></li>
           <li><a href="#features" data-i18n="ft_link_action">Action Items Generator</a></li>
@@ -4762,7 +4988,7 @@
         hero_eyebrow: "AI MEETING INTELLIGENCE",
         hero_title_1: "Ubah Waktu Rapat Jadi ",
         hero_title_2: "Tindakan Nyata & Eksekusi Cepat.",
-        hero_desc: "Cardi Agent MoM merekam, mentranskripsi suara, merangkum, dan menyusun notula rapat otomatis (Minutes of Meeting)—sehingga tim Anda fokus pada keputusan strategis dan pertumbuhan bisnis skala IPO.",
+        hero_desc: "Cardi Agent MoM mentranskripsi percakapan multi-pembicara, menyarikan poin keputusan eksekutif, dan menyinkronkan tugas langsung ke kalender kerja serta alur operasional tim Anda.",
         hero_btn_features: "Lihat Fitur Lengkap",
         hero_btn_demo: "Jadwalkan Demo",
 
@@ -4905,9 +5131,13 @@
         price_kicker: "Langganan",
         price_head: "Pilih paket langganan",
         price_sub: "1 coin ≈ 1 menit transkrip. Saldo terisi ulang otomatis tiap siklus tagihan lewat Google Play.",
+        tab_coins: "Paket Koin Aplikasi",
+        tab_nfc: "Bundling Kartu NFC",
+        tab_nfc_badge: "Populer",
         plan_quick_name: "Quick",
         plan_quick_price: "Rp 99.000",
         plan_quick_period: "/bulan",
+        plan_quick_unit: "Rp 198 / coin",
         plan_quick_quota: "500 coin / bulan",
         plan_quick_f1: "500 coin transkrip (~8,3 jam audio)",
         plan_quick_f2: "Transkripsi verbatim Speech-to-Text",
@@ -4916,30 +5146,89 @@
         plan_quick_f_ext: "Ekstensi Google Chrome (Zoom, Meet & YouTube)",
         plan_quick_f5: "Saldo terisi otomatis per siklus",
         plan_quick_btn: "Pilih Quick",
+        plan_standard_name: "Standard",
+        plan_standard_price: "Rp 179.000",
+        plan_standard_period: "/bulan",
+        plan_standard_unit: "Rp 179 / coin",
+        plan_standard_quota: "1.000 coin / bulan",
+        plan_standard_f1: "1.000 coin transkrip (~16,6 jam audio)",
+        plan_standard_f2: "Semua fitur paket Quick",
+        plan_standard_f3: "Prioritas pemrosesan transkripsi AI",
+        plan_standard_f4: "Sinkronisasi Google Calendar otomatis",
+        plan_standard_f_ext: "Akses Ekstensi Chrome multi-tab",
+        plan_standard_f5: "Dukungan teknis via WhatsApp",
+        plan_standard_btn: "Pilih Standard",
         popular_badge: "PALING POPULER",
         plan_bulk_name: "Bulk",
         plan_bulk_price: "Rp 399.000",
         plan_bulk_period: "/bulan",
+        plan_bulk_unit: "Rp 160 / coin (Terhemat)",
         plan_bulk_quota: "2.500 coin / bulan",
         plan_bulk_f1: "2.500 coin transkrip (~41,6 jam audio)",
-        plan_bulk_f2: "Semua fitur paket Quick",
-        plan_bulk_f_ext: "Akses Ekstensi Chrome multi-tab & multi-device",
+        plan_bulk_f2: "Semua fitur paket Standard",
+        plan_bulk_f_ext: "Akses Ekstensi Chrome multi-device",
         plan_bulk_f3: "Alokasi coin besar untuk rapat intensif",
-        plan_bulk_f4: "Analisis kontribusi pembicara dalam rapat",
+        plan_bulk_f4: "Analisis kontribusi pembicara rapat",
         plan_bulk_f5: "Sinkronisasi multi-device & priority support",
         plan_bulk_btn: "Pilih Bulk",
         plan_enterprise_name: "Enterprise",
         plan_enterprise_price: "Kustom",
         plan_enterprise_period: "/organisasi",
+        plan_enterprise_unit: "Skala Perusahaan",
         plan_enterprise_quota: "Kapasitas & Coin Kustom",
         plan_enterprise_f1: "Alokasi coin tak terbatas / sesuai kebutuhan",
         plan_enterprise_f2: "Semua fitur paket Bulk & Chrome Extension",
-        plan_enterprise_f_ext: "Integrasi SSO, API & Webhook internal tim",
+        plan_enterprise_f_ext: "Integrasi SSO, API & Webhook internal",
         plan_enterprise_f3: "Dedicated AI transcription cluster & SLA 99,9%",
         plan_enterprise_f4: "Kustomisasi template MoM & keamanan enterprise",
-        plan_enterprise_f5: "Dedicated Account Manager & support prioritas 24/7",
+        plan_enterprise_f5: "Dedicated Account Manager & support 24/7",
         plan_enterprise_btn: "Hubungi Tim Enterprise",
         price_play_footer: "Pembayaran & perpanjangan otomatis lewat Google Play. Batalkan kapan saja dari Play Store.",
+        nfc_card_only_name: "Kartu Saja",
+        nfc_card_only_price: "Rp 49.000",
+        nfc_card_only_period: "/kartu",
+        nfc_card_only_unit: "0 Koin Bawaan",
+        nfc_card_only_desc: "Kartu NFC + profil vCard + tap tanpa batas",
+        nfc_card_only_f1: "1x Kartu Fisik Pintar NFC Eksklusif",
+        nfc_card_only_f2: "Profil vCard Digital & Unlimited Tap",
+        nfc_card_only_f3: "Cadangan QR Code Laser Engraved",
+        nfc_card_only_f4: "Tanpa kuota koin MoM (Top-up terpisah)",
+        nfc_card_only_btn: "Pesan Kartu Saja",
+        nfc_quick_name: "Kartu + Quick",
+        nfc_quick_price: "Rp 139.000",
+        nfc_quick_period: "/paket",
+        nfc_quick_unit: "Hemat Kuota Koin",
+        nfc_quick_desc: "Kartu + 1 bulan Quick (500 coin)",
+        nfc_quick_f1: "1x Kartu Fisik Pintar NFC Eksklusif",
+        nfc_quick_f2: "500 Koin MoM langsung aktif (~100x rapat)",
+        nfc_quick_f3: "Profil vCard Digital & Unlimited Tap",
+        nfc_quick_f4: "Transkripsi & Notulen MoM AI Otomatis",
+        nfc_quick_f5: "Ekstensi Chrome Zoom, Meet & YouTube",
+        nfc_quick_btn: "Pesan Kartu + Quick",
+        nfc_bulk_badge: "KARTU GRATIS · PALING HEMAT",
+        nfc_bulk_name: "Kartu + Bulk",
+        nfc_bulk_price: "Rp 399.000",
+        nfc_bulk_period: "/paket",
+        nfc_bulk_unit: "Kartu Fisik Gratis (Hemat Rp 50.000)",
+        nfc_bulk_desc: "Kartu + 1 bulan Bulk (2.500 coin)",
+        nfc_bulk_f1: "1x Kartu Fisik Pintar NFC (Gratis!)",
+        nfc_bulk_f2: "2.500 Koin MoM langsung aktif (~500x rapat)",
+        nfc_bulk_f3: "Profil vCard Digital & Unlimited Tap",
+        nfc_bulk_f4: "Prioritas Pemrosesan AI Model Voice",
+        nfc_bulk_f5: "Auto Dispatch Notula ke WhatsApp",
+        nfc_bulk_btn: "Pesan Kartu + Bulk",
+        nfc_custom_name: "Custom Corporate",
+        nfc_custom_price: "Hubungi Tim",
+        nfc_custom_period: "/dinegosiasi",
+        nfc_custom_unit: "Branding Khusus",
+        nfc_custom_desc: "Kartu untuk tim + kuota coin bersama",
+        nfc_custom_f1: "Desain Kartu Custom Full Branding Tim",
+        nfc_custom_f2: "Unlimited Pool Koin MoM untuk Seluruh Tim",
+        nfc_custom_f3: "Admin Central Dashboard & Lead Analytics",
+        nfc_custom_f4: "Integrasi API & Webhook ke CRM",
+        nfc_custom_f5: "Dedicated Account Manager & Invoice Resmi",
+        nfc_custom_btn: "Konsultasi Tim Corporate",
+        price_nfc_footer: "Pengiriman kartu fisik ke seluruh Indonesia. Kartu siap pakai dan langsung terhubung dengan akun MoM Anda.",
 
         // FAQ
         faq_kicker: "Pertanyaan Umum",
@@ -5049,7 +5338,7 @@
         hero_eyebrow: "AI MEETING INTELLIGENCE",
         hero_title_1: "Turn Meeting Hours into ",
         hero_title_2: "Real Action & Swift Execution.",
-        hero_desc: "Cardi Agent MoM records, transcribes, summarizes, and automatically drafts Minutes of Meeting—freeing your team to focus on strategic decisions and IPO-scale growth.",
+        hero_desc: "Cardi Agent MoM transcribes multi-speaker discussions, distills executive decisions, and syncs actionable next steps directly into your team's work calendars and operations.",
         hero_btn_features: "Explore All Features",
         hero_btn_demo: "Schedule Demo",
 
@@ -5192,9 +5481,13 @@
         price_kicker: "Subscriptions",
         price_head: "Choose your subscription plan",
         price_sub: "1 coin ≈ 1 minute transcript. Balance auto-renews each billing cycle via Google Play.",
+        tab_coins: "App Coin Packages",
+        tab_nfc: "NFC Card Bundles",
+        tab_nfc_badge: "Popular",
         plan_quick_name: "Quick",
         plan_quick_price: "Rp 99.000",
         plan_quick_period: "/month",
+        plan_quick_unit: "Rp 198 / coin",
         plan_quick_quota: "500 coins / month",
         plan_quick_f1: "500 transcript coins (~8.3 hours audio)",
         plan_quick_f2: "Verbatim Speech-to-Text transcription",
@@ -5203,14 +5496,27 @@
         plan_quick_f_ext: "Google Chrome Extension (Zoom, Meet & YouTube)",
         plan_quick_f5: "Auto-renew balance per billing cycle",
         plan_quick_btn: "Choose Quick",
+        plan_standard_name: "Standard",
+        plan_standard_price: "Rp 179.000",
+        plan_standard_period: "/month",
+        plan_standard_unit: "Rp 179 / coin",
+        plan_standard_quota: "1,000 coins / month",
+        plan_standard_f1: "1,000 transcript coins (~16.6 hours audio)",
+        plan_standard_f2: "All features in Quick plan",
+        plan_standard_f3: "Priority AI transcription processing",
+        plan_standard_f4: "Automatic Google Calendar sync",
+        plan_standard_f_ext: "Chrome Extension multi-tab access",
+        plan_standard_f5: "Technical priority support via WhatsApp",
+        plan_standard_btn: "Choose Standard",
         popular_badge: "MOST POPULAR",
         plan_bulk_name: "Bulk",
         plan_bulk_price: "Rp 399.000",
         plan_bulk_period: "/month",
+        plan_bulk_unit: "Rp 160 / coin (Best Value)",
         plan_bulk_quota: "2,500 coins / month",
         plan_bulk_f1: "2,500 transcript coins (~41.6 hours audio)",
-        plan_bulk_f2: "All features in Quick plan",
-        plan_bulk_f_ext: "Chrome Extension multi-tab & multi-device access",
+        plan_bulk_f2: "All features in Standard plan",
+        plan_bulk_f_ext: "Chrome Extension multi-device access",
         plan_bulk_f3: "High coin allocation for intensive meetings",
         plan_bulk_f4: "Speaker contribution analytics",
         plan_bulk_f5: "Multi-device sync & priority support",
@@ -5218,6 +5524,7 @@
         plan_enterprise_name: "Enterprise",
         plan_enterprise_price: "Custom",
         plan_enterprise_period: "/organization",
+        plan_enterprise_unit: "Enterprise Scale",
         plan_enterprise_quota: "Custom Volume & Coins",
         plan_enterprise_f1: "Unlimited / tailored coin allocation",
         plan_enterprise_f2: "All Bulk & Chrome Extension features",
@@ -5227,6 +5534,51 @@
         plan_enterprise_f5: "Dedicated Account Manager & 24/7 priority support",
         plan_enterprise_btn: "Contact Enterprise Team",
         price_play_footer: "Payment & auto-renewal securely processed via Google Play. Cancel anytime in the Play Store.",
+        nfc_card_only_name: "Card Only",
+        nfc_card_only_price: "Rp 49.000",
+        nfc_card_only_period: "/card",
+        nfc_card_only_unit: "0 Built-in Coins",
+        nfc_card_only_desc: "NFC Smart Card + vCard Profile + Unlimited Tap",
+        nfc_card_only_f1: "1x Exclusive NFC Smart Card",
+        nfc_card_only_f2: "Interactive Digital vCard & Unlimited Tap",
+        nfc_card_only_f3: "Laser Engraved QR Code Backup",
+        nfc_card_only_f4: "0 MoM Coins included (Top up separately)",
+        nfc_card_only_btn: "Order Card Only",
+        nfc_quick_name: "Card + Quick",
+        nfc_quick_price: "Rp 139.000",
+        nfc_quick_period: "/bundle",
+        nfc_quick_unit: "Essential Coin Savings",
+        nfc_quick_desc: "NFC Card + 1 Month Quick (500 Coins)",
+        nfc_quick_f1: "1x Exclusive NFC Smart Card",
+        nfc_quick_f2: "500 MoM Coins immediately active (~100 meetings)",
+        nfc_quick_f3: "Interactive Digital vCard & Unlimited Tap",
+        nfc_quick_f4: "AI Automated Speech-to-Text & MoM",
+        nfc_quick_f5: "Chrome Extension Zoom, Meet & YouTube",
+        nfc_quick_btn: "Order Card + Quick",
+        nfc_bulk_badge: "FREE CARD · BEST VALUE",
+        nfc_bulk_name: "Card + Bulk",
+        nfc_bulk_price: "Rp 399.000",
+        nfc_bulk_period: "/bundle",
+        nfc_bulk_unit: "Free Smart Card (Save Rp 50,000)",
+        nfc_bulk_desc: "NFC Card + 1 Month Bulk (2,500 Coins)",
+        nfc_bulk_f1: "1x Exclusive NFC Smart Card (Free!)",
+        nfc_bulk_f2: "2,500 MoM Coins immediately active (~500 meetings)",
+        nfc_bulk_f3: "Interactive Digital vCard & Unlimited Tap",
+        nfc_bulk_f4: "Priority Voice AI Model Processing",
+        nfc_bulk_f5: "Auto Dispatch MoM via WhatsApp",
+        nfc_bulk_btn: "Order Card + Bulk",
+        nfc_custom_name: "Custom Corporate",
+        nfc_custom_price: "Negotiated",
+        nfc_custom_period: "/organization",
+        nfc_custom_unit: "Custom Team Branding",
+        nfc_custom_desc: "Team cards + shared company coin quota",
+        nfc_custom_f1: "Custom Card Artwork with Company Branding",
+        nfc_custom_f2: "Shared Pool of MoM Coins for Entire Team",
+        nfc_custom_f3: "Centralized Admin Dashboard & Analytics",
+        nfc_custom_f4: "API & CRM Webhook Integrations",
+        nfc_custom_f5: "Dedicated Account Manager & Official Tax Invoice",
+        nfc_custom_btn: "Consult Corporate Team",
+        price_nfc_footer: "Physical card delivery across Indonesia. Card arrives ready to use and automatically linked to your MoM account.",
 
         // FAQ
         faq_kicker: "Frequently Asked Questions",
@@ -5479,9 +5831,13 @@
         price_kicker: "订阅方案",
         price_head: "选择最适合您的套餐",
         price_sub: "1 币 ≈ 1 分钟转写。通过 Google Play 账单周期自动续订与充值代币。",
+        tab_coins: "应用代币套餐",
+        tab_nfc: "NFC 智能卡套餐",
+        tab_nfc_badge: "热门推荐",
         plan_quick_name: "Quick (基础版)",
         plan_quick_price: "Rp 99.000",
         plan_quick_period: "/月",
+        plan_quick_unit: "Rp 198 / 币",
         plan_quick_quota: "500 币 / 月",
         plan_quick_f1: "500 币转写额度（约 8.3 小时音频）",
         plan_quick_f2: "高精度逐字语音转文字",
@@ -5490,13 +5846,26 @@
         plan_quick_f_ext: "Google Chrome 扩展插件 (Zoom/Meet/YouTube)",
         plan_quick_f5: "按月度账单周期自动刷新充值",
         plan_quick_btn: "选择 Quick",
+        plan_standard_name: "Standard (标准版)",
+        plan_standard_price: "Rp 179.000",
+        plan_standard_period: "/月",
+        plan_standard_unit: "Rp 179 / 币",
+        plan_standard_quota: "1.000 币 / 月",
+        plan_standard_f1: "1.000 币转写额度（约 16.6 小时音频）",
+        plan_standard_f2: "包含 Quick 基础版所有权益",
+        plan_standard_f3: "高优先级 AI 转写模型算力调度",
+        plan_standard_f4: "Google 日历双向自动同步",
+        plan_standard_f_ext: "Chrome 插件多标签页支持",
+        plan_standard_f5: "WhatsApp 专属技术客服支持",
+        plan_standard_btn: "选择 Standard",
         popular_badge: "最受欢迎",
         plan_bulk_name: "Bulk (大额版)",
         plan_bulk_price: "Rp 399.000",
         plan_bulk_period: "/月",
+        plan_bulk_unit: "Rp 160 / 币 (超值之选)",
         plan_bulk_quota: "2.500 币 / 月",
         plan_bulk_f1: "2.500 币转写额度（约 41.6 小时音频）",
-        plan_bulk_f2: "包含 Quick 基础版所有权益",
+        plan_bulk_f2: "包含 Standard 标准版所有权益",
         plan_bulk_f_ext: "Chrome 插件多标签页与多设备无缝支持",
         plan_bulk_f3: "大额代币配额，满足高频会议需求",
         plan_bulk_f4: "与会成员发言时长与贡献分析",
@@ -5505,6 +5874,7 @@
         plan_enterprise_name: "Enterprise",
         plan_enterprise_price: "定制方案",
         plan_enterprise_period: "/按需定制",
+        plan_enterprise_unit: "企业级定制",
         plan_enterprise_quota: "定制算力与额度",
         plan_enterprise_f1: "无上限 / 按需定制会议币额度",
         plan_enterprise_f2: "包含 Bulk 及 Chrome 插件所有功能",
@@ -5514,6 +5884,51 @@
         plan_enterprise_f5: "专属客户成功经理与 24/7 优先支持",
         plan_enterprise_btn: "联系企业专属顾问",
         price_play_footer: "所有付款与自动续订均通过 Google Play 安全处理。随时可在 Play Store 取消。",
+        nfc_card_only_name: "NFC 纯卡版",
+        nfc_card_only_price: "Rp 49.000",
+        nfc_card_only_period: "/张",
+        nfc_card_only_unit: "不含代币",
+        nfc_card_only_desc: "智能 NFC 卡片 + vCard 数字名片 + 无限次触碰",
+        nfc_card_only_f1: "1张 尊贵哑光 NFC 实体智能卡",
+        nfc_card_only_f2: "完整数字交互名片与无限次触碰",
+        nfc_card_only_f3: "激光雕刻动态二维码双重备份",
+        nfc_card_only_f4: "不含 MoM 代币（可按需独立充值）",
+        nfc_card_only_btn: "订购纯卡版",
+        nfc_quick_name: "智能卡 + Quick",
+        nfc_quick_price: "Rp 139.000",
+        nfc_quick_period: "/套",
+        nfc_quick_unit: "含 500 会议代币",
+        nfc_quick_desc: "NFC 智能卡 + 1个月 Quick (500币)",
+        nfc_quick_f1: "1张 尊贵哑光 NFC 实体智能卡",
+        nfc_quick_f2: "包含 500 会议币（约100场会议）",
+        nfc_quick_f3: "完整数字名片与无限次触碰",
+        nfc_quick_f4: "高精度语音转文字与智能纪要",
+        nfc_quick_f5: "Chrome 插件 Zoom/Meet/YouTube 支持",
+        nfc_quick_btn: "订购 卡片+Quick",
+        nfc_bulk_badge: "免费送卡 · 超值之选",
+        nfc_bulk_name: "智能卡 + Bulk",
+        nfc_bulk_price: "Rp 399.000",
+        nfc_bulk_period: "/套",
+        nfc_bulk_unit: "免卡片工本费 (立省 Rp 50.000)",
+        nfc_bulk_desc: "NFC 智能卡 + 1个月 Bulk (2.500币)",
+        nfc_bulk_f1: "1张 尊贵哑光 NFC 实体智能卡 (免费赠送)",
+        nfc_bulk_f2: "包含 2.500 会议币（约500场会议）",
+        nfc_bulk_f3: "完整数字名片与无限次触碰",
+        nfc_bulk_f4: "高优先级 AI 语音模型算力",
+        nfc_bulk_f5: "自动将会议纪要同步推送至 WhatsApp",
+        nfc_bulk_btn: "订购 卡片+Bulk",
+        nfc_custom_name: "企业定制版",
+        nfc_custom_price: "协商定价",
+        nfc_custom_period: "/按企业规模",
+        nfc_custom_unit: "专属企业品牌定制",
+        nfc_custom_desc: "团队定制卡片 + 企业共享会议代币池",
+        nfc_custom_f1: "印制企业专属 Logo 与品牌视觉设计",
+        nfc_custom_f2: "全团队共享超大容量会议代币池",
+        nfc_custom_f3: "中央管理员后台与销售线索分析",
+        nfc_custom_f4: "支持企业 API 与 CRM Webhook 深度对接",
+        nfc_custom_f5: "专属大客户经理与正规税务发票",
+        nfc_custom_btn: "咨询企业团队方案",
+        price_nfc_footer: "实体卡顺丰/专线快递配送至印尼全境。开箱即用，自动绑定您的 MoM 账户。",
 
         // FAQ
         faq_kicker: "常见问题",
@@ -5587,15 +6002,23 @@
         standard: "Halo Cardi Agent MoM, saya tertarik untuk berlangganan paket Standard (Rp 179.000/bulan - 1.000 coin). Bagaimana cara memulainya?",
         bulk: "Halo Cardi Agent MoM, saya tertarik untuk berlangganan paket Bulk (Rp 399.000/bulan - 2.500 coin). Bagaimana cara memulainya?",
         enterprise: "Halo Cardi Agent MoM, kami ingin berdiskusi mengenai paket khusus skala perusahaan dan opsi integrasi kustom.",
+        nfc_card_only: "Halo Cardi Agent MoM, saya tertarik untuk memesan kartu fisik NFC Card Only (Rp 49.000). Bagaimana proses pemesanannya?",
+        nfc_quick: "Halo Cardi Agent MoM, saya tertarik untuk memesan paket bundling Kartu NFC + 1 Bulan Quick 500 Coin (Rp 139.000). Bagaimana proses pemesanannya?",
+        nfc_bulk: "Halo Cardi Agent MoM, saya tertarik untuk memesan paket bundling Kartu NFC + 1 Bulan Bulk 2.500 Coin (Rp 399.000 - Kartu Gratis). Bagaimana proses pemesanannya?",
+        nfc_custom: "Halo Cardi Agent MoM, kami tertarik untuk konsultasi pengadaan Smart Card NFC kustom tim/perusahaan beserta kuota coin bersama.",
         general: "Halo Cardi Agent MoM, saya ingin mengetahui informasi lebih lanjut mengenai solusi AI Meeting Intelligence."
       },
       en: {
         demo: "Hello Cardi Agent MoM team, I would like to request a live demo of the AI Meeting Intelligence platform. Could you help schedule a session?",
         extension: "Hello Cardi Agent MoM team, I am interested in using the Cardi Google Chrome Extension to transcribe web meetings (Zoom/Meet/YouTube). How can I get started?",
-        quick: "Hello Cardi Agent MoM, I am interested in subscribing to the Quick plan (Rp 90,000/month - 500 coins). How can I get started?",
+        quick: "Hello Cardi Agent MoM, I am interested in subscribing to the Quick plan (Rp 99,000/month - 500 coins). How can I get started?",
         standard: "Hello Cardi Agent MoM, I am interested in subscribing to the Standard plan (Rp 179,000/month - 1,000 coins). How can I get started?",
         bulk: "Hello Cardi Agent MoM, I am interested in subscribing to the Bulk plan (Rp 399,000/month - 2,500 coins). How can I get started?",
         enterprise: "Hello Cardi Agent MoM, we would like to discuss custom enterprise packages and API integrations.",
+        nfc_card_only: "Hello Cardi Agent MoM, I would like to order the NFC Card Only (Rp 49,000). How do I place an order?",
+        nfc_quick: "Hello Cardi Agent MoM, I would like to order the NFC Card + 1 Month Quick 500 Coins bundle (Rp 139,000). How do I place an order?",
+        nfc_bulk: "Hello Cardi Agent MoM, I would like to order the NFC Card + 1 Month Bulk 2,500 Coins bundle (Rp 399,000 - Free Card). How do I place an order?",
+        nfc_custom: "Hello Cardi Agent MoM, we would like to consult on custom team NFC cards with shared coin quota.",
         general: "Hello Cardi Agent MoM, I would like more information about your AI Meeting Intelligence solution."
       },
       zh: {
@@ -5605,9 +6028,50 @@
         standard: "您好 Cardi Agent MoM，我想了解并订阅 Standard 标准套餐（Rp 179.000/月 - 1.000币）。请问如何开始使用？",
         bulk: "您好 Cardi Agent MoM，我想了解并订阅 Bulk 大额套餐（Rp 399.000/月 - 2.500币）。请问如何开始使用？",
         enterprise: "您好 Cardi Agent MoM，我们希望探讨企业级定制方案及 API 深度集成合作。",
+        nfc_card_only: "您好 Cardi Agent MoM，我想订购 NFC 单卡版（Rp 49.000）。请问如何办理？",
+        nfc_quick: "您好 Cardi Agent MoM，我想订购 NFC 智能卡 + 1个月 Quick 500币套餐（Rp 139.000）。请问如何办理？",
+        nfc_bulk: "您好 Cardi Agent MoM，我想订购 NFC 智能卡 + 1个月 Bulk 2.500币超值套餐（Rp 399.000 - 赠送卡片）。请问如何办理？",
+        nfc_custom: "您好 Cardi Agent MoM，我们希望咨询企业团队定制 NFC 智能卡及共享会议代币方案。",
         general: "您好 Cardi Agent MoM，我想了解更多关于 AI 智能会议纪要系统的信息。"
       }
     };
+
+    function switchPricingTab(tab) {
+      const gridCoin = document.getElementById("gridCoin");
+      const gridNfc = document.getElementById("gridNfc");
+      const tabCoinBtn = document.getElementById("tabCoinBtn");
+      const tabNfcBtn = document.getElementById("tabNfcBtn");
+      const footerCoin = document.getElementById("pricingFooterCoin");
+      const footerNfc = document.getElementById("pricingFooterNfc");
+
+      if (tab === "coin") {
+        if (gridCoin) gridCoin.classList.remove("hidden");
+        if (gridNfc) gridNfc.classList.add("hidden");
+        if (tabCoinBtn) {
+          tabCoinBtn.classList.add("active");
+          tabCoinBtn.setAttribute("aria-selected", "true");
+        }
+        if (tabNfcBtn) {
+          tabNfcBtn.classList.remove("active");
+          tabNfcBtn.setAttribute("aria-selected", "false");
+        }
+        if (footerCoin) footerCoin.style.display = "flex";
+        if (footerNfc) footerNfc.style.display = "none";
+      } else {
+        if (gridCoin) gridCoin.classList.add("hidden");
+        if (gridNfc) gridNfc.classList.remove("hidden");
+        if (tabCoinBtn) {
+          tabCoinBtn.classList.remove("active");
+          tabCoinBtn.setAttribute("aria-selected", "false");
+        }
+        if (tabNfcBtn) {
+          tabNfcBtn.classList.add("active");
+          tabNfcBtn.setAttribute("aria-selected", "true");
+        }
+        if (footerCoin) footerCoin.style.display = "none";
+        if (footerNfc) footerNfc.style.display = "flex";
+      }
+    }
 
     function closeAllNavDropdowns() {
       closeLangDropdown();
@@ -5893,6 +6357,7 @@
     window.toggleLangDropdown = toggleLangDropdown;
     window.setLanguage = setLanguage;
     window.openWhatsApp = openWhatsApp;
+    window.switchPricingTab = switchPricingTab;
     window.selectFeedbackCategory = selectFeedbackCategory;
     window.handleFeedbackSubmit = handleFeedbackSubmit;
     window.closeAllNavDropdowns = closeAllNavDropdowns;
