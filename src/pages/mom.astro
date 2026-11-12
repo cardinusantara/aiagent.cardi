@@ -1089,8 +1089,8 @@
     }
     .btn-wa {
       color: #FFFFFF;
-      background: #25D366;
-      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+      background: #1E4FFF;
+      box-shadow: 0 6px 18px rgba(30, 79, 255, 0.28);
       padding: 0 15px;
       height: 38px;
       border-radius: 999px;
@@ -1099,11 +1099,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      border: 1px solid #1E4FFF;
     }
     .btn-wa:hover {
-      background: #1EBE5D;
+      background: #0D3FE8;
+      border-color: #0D3FE8;
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.32);
+      box-shadow: 0 10px 24px rgba(30, 79, 255, 0.38);
     }
     .btn-outline {
       color: var(--ink);
@@ -3617,28 +3619,40 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 18px;
+      padding: 16px;
     }
 
-    .showcase-feature-banner {
-      width: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-      background: #020617;
+    .showcase-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      color: #94A3B8;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
-    .showcase-feature-banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
+    .showcase-preview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(30, 79, 255, 0.18);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      color: #93C5FD;
+      font-size: 10px;
+      font-weight: 700;
     }
 
     .showcase-screenshots-slider {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
 
     @media (max-width: 640px) {
@@ -3650,24 +3664,25 @@
         padding-bottom: 8px;
       }
       .screenshot-item-card {
-        flex: 0 0 120px;
+        flex: 0 0 140px;
         scroll-snap-align: start;
       }
     }
 
     .screenshot-item-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      background: #020617;
+      border: 2px solid rgba(148, 163, 184, 0.22);
+      border-radius: 16px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .screenshot-item-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.65);
     }
 
     .screenshot-item-card img {
@@ -3678,13 +3693,13 @@
     }
 
     .screenshot-caption {
-      padding: 4px 6px;
-      font-size: 9px;
+      padding: 6px 8px;
+      font-size: 10px;
       font-weight: 700;
-      color: #CBD5E1;
+      color: #E2E8F0;
       text-align: center;
-      background: rgba(10, 20, 40, 0.85);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(10, 20, 40, 0.92);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -3702,16 +3717,10 @@
       </a>
 
       <div class="nav-links">
-        <a href="/" class="nav-nfc-card-link" title="Pelajari Cardi MoM Smart NFC Card">
-          <i class="fa-solid fa-id-card"></i> <span>Smart NFC Card</span>
-          <span class="nav-new-pill">NEW</span>
-        </a>
         <a href="#features" data-i18n="nav_features">Fitur</a>
         <a href="#solutions" data-i18n="nav_solutions">Solusi Industri</a>
-        <a href="#workflow" data-i18n="nav_workflow">Alur Kerja</a>
         <a href="#pricing" data-i18n="nav_pricing">Langganan</a>
         <a href="#faq" data-i18n="nav_faq">FAQ</a>
-        <a href="#feedback" data-i18n="nav_feedback">Feedback</a>
       </div>
 
       <div class="nav-actions">
@@ -3750,12 +3759,6 @@
           </div>
         </div>
 
-        <a class="btn-card-login" href="https://nfc.cardi.co.id" target="_blank" rel="noopener" title="Lihat Solusi Kartu Smart NFC">
-          <i class="fa-solid fa-id-card"></i> <span>Smart Card</span>
-        </a>
-        <a class="btn-login-executive" href="https://nfc.cardi.co.id/login" target="_blank" rel="noopener" title="Masuk ke Portal Eksekutif">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Login</span>
-        </a>
         <a class="btn-main-site" href="/" aria-label="Kembali ke Cardi Agent AI">
           <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_main">Cardi Agent AI</span>
         </a>
@@ -3892,6 +3895,72 @@
                 <div class="speaker-stat"><span>SA • Design</span><div class="progress"><span style="width:22%"></span></div><span>22%</span></div>
               </div>
             </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated App Store & Google Play Download Section -->
+    <section class="container section" id="download-app">
+      <div class="app-download-banner-wrap">
+        <div class="app-download-content">
+          <div class="kicker" style="color: #60A5FA;">
+            <i class="fa-solid fa-cloud-arrow-down"></i> RESMI TERSEDIA DI PLAY STORE & APP STORE
+          </div>
+          <h2 class="app-download-title">Unduh Aplikasi Mobile Cardi MoM</h2>
+          <p class="app-download-desc">
+            Aplikasi resmi <strong>Cardi Agent MoM</strong> kini telah resmi rilis di Google Play Store dan Apple App Store. Rekam percakapan rapat offline maupun online, transkripsikan multi-speaker secara instan, dan sinkronkan keputusan kerja langsung dari saku Anda.
+          </p>
+
+          <div class="store-action-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.cardinusantara.cardiagentaimom&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Google Play Store">
+              <div class="store-pill-left">
+                <img src="/google-play-badge.svg" alt="Google Play Store Badge" class="store-img-card" />
+                <div class="store-pill-info">
+                  <strong>Android Smartphone & Tablet</strong>
+                  <span>Versi Resmi Play Store • ID: com.cardinusantara.cardiagentaimom</span>
+                </div>
+              </div>
+              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
+            </a>
+
+            <a href="https://apps.apple.com/us/app/cardi-mom/id6809435140" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Apple App Store">
+              <div class="store-pill-left">
+                <img src="/app-store-badge.svg" alt="Apple App Store Badge" class="store-img-card" />
+                <div class="store-pill-info">
+                  <strong>iPhone & iPad (iOS)</strong>
+                  <span>Versi Resmi App Store • ID: 6809435140</span>
+                </div>
+              </div>
+              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
+            </a>
+          </div>
+
+          <div class="download-trust-bullets">
+            <span><i class="fa-solid fa-shield-check"></i> Enkripsi Data AES-256</span>
+            <span><i class="fa-solid fa-bolt"></i> Sinkronisasi Multi-Device</span>
+            <span><i class="fa-solid fa-microphone-lines"></i> Rekam Online & Offline</span>
+          </div>
+        </div>
+
+        <div class="app-showcase-visual">
+          <div class="showcase-preview-header">
+            <span>Preview Tampilan Aplikasi</span>
+            <span class="showcase-preview-badge"><i class="fa-solid fa-mobile-screen-button"></i> iOS & Android</span>
+          </div>
+          <div class="showcase-screenshots-slider">
+            <div class="screenshot-item-card">
+              <img src="/previews/1.webp" alt="Tampilan Dashboard Rapat Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">01. Rekam Rapat</div>
+            </div>
+            <div class="screenshot-item-card">
+              <img src="/previews/2.webp" alt="Tampilan Transkrip Suara Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">02. Transkrip AI</div>
+            </div>
+            <div class="screenshot-item-card">
+              <img src="/previews/3.webp" alt="Tampilan Ringkasan Keputusan Rapat Cardi MoM" loading="lazy" />
+              <div class="screenshot-caption">03. Ringkasan Eksekutif</div>
+            </div>
           </div>
         </div>
       </div>
@@ -4405,79 +4474,6 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Dedicated App Store & Google Play Download Section -->
-    <section class="container section" id="download-app">
-      <div class="app-download-banner-wrap">
-        <div class="app-download-content">
-          <div class="kicker" style="color: #60A5FA;">
-            <i class="fa-solid fa-cloud-arrow-down"></i> RESMI TERSEDIA DI PLAY STORE & APP STORE
-          </div>
-          <h2 class="app-download-title">Unduh Aplikasi Mobile Cardi MoM</h2>
-          <p class="app-download-desc">
-            Aplikasi resmi <strong>Cardi Agent MoM</strong> kini telah resmi rilis di Google Play Store dan Apple App Store. Rekam percakapan rapat offline maupun online, transkripsikan multi-speaker secara instan, dan sinkronkan keputusan kerja langsung dari saku Anda.
-          </p>
-
-          <div class="store-action-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.cardinusantara.cardiagentaimom&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Google Play Store">
-              <div class="store-pill-left">
-                <img src="/google-play-badge.svg" alt="Google Play Store Badge" class="store-img-card" />
-                <div class="store-pill-info">
-                  <strong>Android Smartphone & Tablet</strong>
-                  <span>Versi Resmi Play Store • ID: com.cardinusantara.cardiagentaimom</span>
-                </div>
-              </div>
-              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
-            </a>
-
-            <a href="https://apps.apple.com/us/app/cardi-mom/id6809435140" target="_blank" rel="noopener noreferrer" class="store-pill-card" title="Download Cardi MoM di Apple App Store">
-              <div class="store-pill-left">
-                <img src="/app-store-badge.svg" alt="Apple App Store Badge" class="store-img-card" />
-                <div class="store-pill-info">
-                  <strong>iPhone & iPad (iOS)</strong>
-                  <span>Versi Resmi App Store • ID: 6809435140</span>
-                </div>
-              </div>
-              <span class="store-pill-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unduh</span>
-            </a>
-          </div>
-
-          <div class="download-trust-bullets">
-            <span><i class="fa-solid fa-shield-check"></i> Enkripsi Data AES-256</span>
-            <span><i class="fa-solid fa-bolt"></i> Sinkronisasi Multi-Device</span>
-            <span><i class="fa-solid fa-microphone-lines"></i> Rekam Online & Offline</span>
-          </div>
-        </div>
-
-        <div class="app-showcase-visual">
-          <div class="showcase-feature-banner">
-            <img src="/previews/header-mom.webp" alt="Tampilan Resmi Cardi Agent MoM Mobile" loading="lazy" />
-          </div>
-          <div class="showcase-screenshots-slider">
-            <div class="screenshot-item-card">
-              <img src="/previews/1.webp" alt="Tampilan Dashboard Rapat Cardi MoM" loading="lazy" />
-              <div class="screenshot-caption">01. Rekam Rapat</div>
-            </div>
-            <div class="screenshot-item-card">
-              <img src="/previews/2.webp" alt="Tampilan Transkrip Suara Cardi MoM" loading="lazy" />
-              <div class="screenshot-caption">02. Transkrip AI</div>
-            </div>
-            <div class="screenshot-item-card">
-              <img src="/previews/3.webp" alt="Tampilan Ringkasan Keputusan Rapat Cardi MoM" loading="lazy" />
-              <div class="screenshot-caption">03. Ringkasan Eksekutif</div>
-            </div>
-            <div class="screenshot-item-card">
-              <img src="/previews/4.webp" alt="Tampilan Action Items & Tugas Cardi MoM" loading="lazy" />
-              <div class="screenshot-caption">04. Action Items</div>
-            </div>
-            <div class="screenshot-item-card">
-              <img src="/previews/5.webp" alt="Tampilan Ekspor dan Berbagi Notula Cardi MoM" loading="lazy" />
-              <div class="screenshot-caption">05. Ekspor & Share</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
