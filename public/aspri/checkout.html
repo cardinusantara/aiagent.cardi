@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Cardi Agent AI Aspri</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #FAF9FC;
+      color: #17122E;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #5B3CC4;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: #3f2597;
+    }
+
+    /* HEADER */
+    .checkout-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid #EBE7F7;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #059669;
+      background: #ECFDF5;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #A7F3D0;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #5B6B85;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.15s ease;
+    }
+    .back-link:hover {
+      background: #F4F1FD;
+      color: #5B3CC4;
+    }
+
+    /* MAIN CONTAINER */
+    .checkout-wrapper {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      width: 100%;
+      flex: 1;
+    }
+    .page-title-box {
+      margin-bottom: 32px;
+    }
+    .page-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #17122E;
+      margin-bottom: 6px;
+    }
+    .page-subtitle {
+      font-size: 16px;
+      color: #5B6B85;
+    }
+
+    /* 2-COLUMN GRID (Lynk.id style) */
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 960px) {
+      .checkout-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: start;
+        gap: 36px;
+      }
+    }
+
+    /* CARDS */
+    .checkout-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 1px solid #EBE7F7;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(91, 60, 196, 0.04);
+      margin-bottom: 24px;
+    }
+    .card-header-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #17122E;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #5B3CC4;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* PLAN SWITCHER TABS */
+    .plan-selector-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      background: #F4F1FD;
+      padding: 6px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+    }
+    .plan-tab-btn {
+      background: transparent;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: #5B6B85;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .plan-tab-btn:hover {
+      color: #5B3CC4;
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .plan-tab-btn.active {
+      background: #5B3CC4;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(91, 60, 196, 0.25);
+    }
+    .plan-tab-btn .tab-sub {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    /* SELECTED PRODUCT CARD */
+    .selected-plan-box {
+      border: 2px solid #5B3CC4;
+      background: #FDFCFE;
+      border-radius: 16px;
+      padding: 22px;
+      position: relative;
+    }
+    .plan-badge-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #EDE8FA;
+      color: #5B3CC4;
+      margin-bottom: 10px;
+    }
+    .plan-card-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #17122E;
+      margin-bottom: 4px;
+    }
+    .plan-card-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .plan-card-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #5B3CC4;
+      letter-spacing: -0.02em;
+    }
+    .plan-card-period {
+      font-size: 14px;
+      color: #5B6B85;
+      font-weight: 600;
+    }
+    .plan-card-desc {
+      font-size: 14px;
+      color: #3A4A5E;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #EBE7F7;
+    }
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #17122E;
+      font-weight: 500;
+    }
+    .check-icon {
+      color: #5B3CC4;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    /* FORM INPUTS */
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #17122E;
+      margin-bottom: 8px;
+    }
+    .form-label .req {
+      color: #DC2626;
+      margin-left: 2px;
+    }
+    .form-label .opt {
+      color: #8C99AA;
+      font-weight: 500;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-field {
+      width: 100%;
+      height: 48px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 15px;
+      color: #17122E;
+      background: #FFFFFF;
+      border: 1.5px solid #D5DEEA;
+      border-radius: 12px;
+      transition: all 0.15s ease;
+      outline: none;
+    }
+    .input-field:focus {
+      border-color: #5B3CC4;
+      box-shadow: 0 0 0 3px rgba(91, 60, 196, 0.12);
+    }
+    .input-field::placeholder {
+      color: #94A3B8;
+    }
+    .phone-prefix {
+      position: absolute;
+      left: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #3A4A5E;
+      pointer-events: none;
+      padding-right: 8px;
+      border-right: 1.5px solid #E2E8F0;
+    }
+    .input-field.with-prefix {
+      padding-left: 82px;
+    }
+    .form-help {
+      font-size: 12px;
+      color: #64748B;
+      margin-top: 6px;
+    }
+
+    /* RIGHT COLUMN (STICKY SUMMARY) */
+    .sticky-summary {
+      position: sticky;
+      top: 90px;
+    }
+    .summary-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 1.5px solid #EBE7F7;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(91, 60, 196, 0.06);
+    }
+    .summary-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #17122E;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #EBE7F7;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #3A4A5E;
+      margin-bottom: 14px;
+    }
+    .summary-row.total-row {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1.5px dashed #D5DEEA;
+      font-size: 16px;
+      font-weight: 700;
+      color: #17122E;
+      margin-bottom: 6px;
+    }
+    .summary-total-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #5B3CC4;
+      letter-spacing: -0.02em;
+    }
+    .summary-subtext {
+      font-size: 12px;
+      color: #64748B;
+      text-align: right;
+      margin-bottom: 22px;
+    }
+
+    /* TERMS CHECKBOX */
+    .terms-box {
+      margin-bottom: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #F1EEF9;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.45;
+      user-select: none;
+    }
+    .checkbox-input {
+      width: 18px;
+      height: 18px;
+      accent-color: #5B3CC4;
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* PAY BUTTON */
+    .btn-pay {
+      width: 100%;
+      height: 54px;
+      background: #5B3CC4;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(91, 60, 196, 0.32);
+      transition: all 0.2s ease;
+    }
+    .btn-pay:hover {
+      background: #4C2EBA;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(91, 60, 196, 0.4);
+    }
+    .btn-pay:active {
+      transform: translateY(0);
+    }
+    .btn-pay:disabled {
+      background: #A797E3;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    /* TRUST ITEMS */
+    .trust-footer {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #F1EEF9;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      color: #5B6B85;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FOOTER */
+    .checkout-footer {
+      background: #FFFFFF;
+      border-top: 1px solid #EBE7F7;
+      padding: 24px;
+      font-size: 13px;
+      color: #64748B;
+      text-align: center;
+    }
+
+    /* MODAL POPUP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 10, 35, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      max-width: 480px;
+      width: 100%;
+      padding: 32px 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: modalFadeIn 0.25s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #EDE8FA;
+      color: #5B3CC4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 18px;
+    }
+    .modal-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #17122E;
+      margin-bottom: 8px;
+    }
+    .modal-desc {
+      font-size: 14px;
+      color: #5B6B85;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .order-details-box {
+      background: #FAF9FC;
+      border: 1px solid #EBE7F7;
+      border-radius: 14px;
+      padding: 16px;
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .order-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .order-row:last-child {
+      margin-bottom: 0;
+      padding-top: 8px;
+      border-top: 1px dashed #E2E8F0;
+      font-weight: 700;
+    }
+    .modal-btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      height: 52px;
+      background: #25D366;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: background 0.15s ease;
+    }
+    .modal-btn-wa:hover {
+      background: #20BA5A;
+      color: #FFFFFF;
+    }
+    .modal-btn-close {
+      background: transparent;
+      border: 1.5px solid #D5DEEA;
+      color: #5B6B85;
+      width: 100%;
+      height: 44px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .modal-btn-close:hover {
+      background: #F8FAFC;
+      color: #17122E;
+    }
+  
+    /* TERMS MODAL STYLES */
+    .terms-modal-card {
+      max-width: 680px;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      max-height: 85vh;
+      overflow: hidden;
+    }
+    .terms-modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid #EBE7F7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #FFFFFF;
+    }
+    .terms-modal-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #17122E;
+      margin: 0;
+    }
+    .terms-modal-subtitle {
+      font-size: 12px;
+      color: #5B6B85;
+      margin-top: 2px;
+    }
+    .terms-modal-close {
+      background: #F4F1FD;
+      border: none;
+      color: #5B3CC4;
+      font-size: 22px;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    .terms-modal-close:hover {
+      background: #E6DFFB;
+    }
+    .terms-modal-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #3A4A5E;
+      flex: 1;
+      background: #FAF9FC;
+    }
+    .terms-modal-body .t-sec {
+      background: #FFFFFF;
+      border: 1px solid #EBE7F7;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+    .terms-modal-body .t-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #17122E;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .terms-modal-body p {
+      margin-bottom: 8px;
+    }
+    .terms-modal-body ul {
+      margin: 6px 0 8px 18px;
+    }
+    .terms-modal-body li {
+      margin-bottom: 4px;
+    }
+    .terms-modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid #EBE7F7;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .terms-modal-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: #5B3CC4;
+      text-decoration: underline;
+    }
+    .btn-terms-cancel {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #5B6B85;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-terms-cancel:hover {
+      background: #F8FAFC;
+    }
+    .btn-terms-accept {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background: #5B3CC4;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(91, 60, 196, 0.25);
+    }
+    .btn-terms-accept:hover {
+      background: #4C2EBA;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="checkout-header">
+    <div class="header-inner">
+      <a href="/aspri/" class="brand-link" title="Kembali ke Beranda">
+        <img src="/aspri/logo.png" alt="Cardi Agent | Aspri" class="brand-logo" onerror="this.onerror=null; this.src='https://cardi.co.id/favicon.png';">
+      </a>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span class="header-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Checkout Aman
+        </span>
+        <a href="/aspri/" class="back-link">
+          ← Beranda
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="checkout-wrapper">
+    <div class="page-title-box">
+      <h1 class="page-title">Selesaikan Pemesanan</h1>
+      <p class="page-subtitle">Pilih paket dan lengkapi data Anda untuk mengaktifkan Cardi Agent AI Aspri.</p>
+    </div>
+
+    <form id="checkoutForm" onsubmit="handleCheckout(event)" novalidate>
+      <div class="checkout-grid">
+
+        <!-- LEFT COLUMN: PRODUK & DATA PEMBELI -->
+        <div class="left-col">
+
+          <!-- 1. PILIH PAKET -->
+          <div class="checkout-card">
+            <div class="card-header-title">
+              <span class="step-num">1</span>
+              <span>Pilihan Paket Langganan</span>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="plan-selector-tabs">
+              <button type="button" class="plan-tab-btn" id="tab_grup" onclick="switchPlan('grup')">
+                <span>Grup</span>
+                <span class="tab-sub">Rp299rb/bln</span>
+              </button>
+              <button type="button" class="plan-tab-btn" id="tab_nomor-sendiri" onclick="switchPlan('nomor-sendiri')">
+                <span>Nomor Sendiri</span>
+                <span class="tab-sub">Rp999rb/bln</span>
+              </button>
+            </div>
+
+            <!-- Detail Paket Terpilih -->
+            <div class="selected-plan-box" id="selectedPlanBox">
+              <span class="plan-badge-pill" id="planBadge">ASPRI DI GRUP WHATSAPP</span>
+              <div class="plan-card-name" id="planName">Paket Grup</div>
+              <div class="plan-card-price-row">
+                <span class="plan-card-price" id="planPrice">Rp299.000</span>
+                <span class="plan-card-period" id="planPeriod">/ bulan per grup</span>
+              </div>
+              <p class="plan-card-desc" id="planDesc">Cardi Agent AI Aspri langsung masuk ke grup WhatsApp tim Anda untuk tagih update order, baca foto progres, dan rekap harian 24/7.</p>
+              <ul class="features-list" id="planFeatures">
+                <!-- Injected via JS -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. DATA PEMBELI -->
+          <div class="checkout-card">
+            <div class="card-header-title">
+              <span class="step-num">2</span>
+              <span>Data Pembeli & Bisnis</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="buyerName">Nama Lengkap <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <input type="text" id="buyerName" class="input-field" required placeholder="Contoh: Budi Santoso" autocomplete="name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="buyerEmail">Alamat Email <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <input type="email" id="buyerEmail" class="input-field" required placeholder="Contoh: budi@bisnisanda.com" autocomplete="email">
+              </div>
+              <div class="form-help">Bukti pembayaran dan instruksi setup akan dikirim ke email ini.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="buyerWa">Nomor WhatsApp <span class="req">*</span></label>
+              <div class="input-wrapper">
+                <div class="phone-prefix">
+                  <span>🇮🇩</span> <span>+62</span>
+                </div>
+                <input type="tel" id="buyerWa" class="input-field with-prefix" required placeholder="81234567890" inputmode="numeric" autocomplete="tel">
+              </div>
+              <div class="form-help">Nomor ini akan dihubungi oleh tim Cardi untuk penyerahan nomor AI & setup SOP.</div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="buyerBusiness">Nama Bisnis / Perusahaan <span class="opt">(opsional)</span></label>
+              <div class="input-wrapper">
+                <input type="text" id="buyerBusiness" class="input-field" placeholder="Contoh: Kopi Nusantara / Bengkel Sentosa" autocomplete="organization">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: RINGKASAN PEMBAYARAN -->
+        <div class="right-col">
+          <div class="sticky-summary">
+            <div class="summary-card">
+              <h2 class="summary-title">Ringkasan Pembayaran</h2>
+
+              <div class="summary-row">
+                <span id="summaryItemName">Cardi Agent AI - Paket Grup</span>
+                <span id="summaryItemPrice" style="font-weight: 700;">Rp299.000</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Biaya Setup Akun & SOP</span>
+                <span style="color: #059669; font-weight: 700;">GRATIS</span>
+              </div>
+
+              <div class="summary-row">
+                <span>PPN & Biaya Layanan</span>
+                <span style="color: #64748B;">Termasuk</span>
+              </div>
+
+              <div class="summary-row total-row">
+                <span>Total Tagihan</span>
+                <span class="summary-total-price" id="summaryTotal">Rp299.000</span>
+              </div>
+              <div class="summary-subtext" id="summaryBillingDesc">Tagihan bulanan · Batalkan kapan saja</div>
+
+              <!-- Terms Checkbox -->
+              <div class="terms-box">
+                <label class="checkbox-label" for="termsAgree">
+                  <input type="checkbox" id="termsAgree" class="checkbox-input" required>
+                  <span>Saya telah membaca dan menyetujui <a href="javascript:void(0)" onclick="openTermsModal()">Syarat & Ketentuan Layanan</a> serta Kebijakan Privasi PT Cardi Nusantara Teknologi.</span>
+                </label>
+                <div style="margin-left: 28px; margin-top: 4px;">
+                  <a href="/aspri/terms.html" target="_blank" style="font-size: 12px; color: #5B6B85; text-decoration: underline;">Baca dokumen resmi lengkap di tab baru ↗</a>
+                </div>
+              </div>
+
+              <!-- Pay Button -->
+              <button type="submit" id="submitOrderBtn" class="btn-pay">
+                Bayar Sekarang
+              </button>
+
+              <!-- Trust / Security badges -->
+              <div class="trust-footer">
+                <div class="trust-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B3CC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>Pembayaran aman diproses langsung via Xendit</span>
+                </div>
+                <div class="trust-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B3CC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Langsung aktif hari ini tanpa biaya instalasi</span>
+                </div>
+                <div class="trust-item" style="margin-top: 6px;">
+                  <span>Butuh panduan? <a href="https://wa.me/6281289895646?text=Halo%20Cardi%20Agent%20AI,%20saya%20ingin%20tanya%20seputar%20pembayaran" target="_blank" style="font-weight: 700;">Chat WhatsApp Support</a></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="checkout-footer">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+      <div>Cardi Agent AI · bagian dari <a href="https://cardi.co.id" target="_blank">cardi.co.id</a></div>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <a href="/aspri/terms.html" target="_blank" style="color: #64748B; text-decoration: underline;">Syarat & Ketentuan</a>
+        <span>•</span>
+        <span>aiagent.cardi.co.id/aspri/</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SUCCESS MODAL POPUP -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-card">
+      <div class="modal-icon-circle">✓</div>
+      <h3 class="modal-title">Pesanan Dikonfirmasi!</h3>
+      <p class="modal-desc">Terima kasih. Rincian pesanan Anda telah dicatat. Klik tombol di bawah untuk melanjutkan pembayaran instan dan aktivasi via WhatsApp:</p>
+
+      <div class="order-details-box">
+        <div class="order-row">
+          <span style="color: #64748B;">No. Pesanan:</span>
+          <span style="font-weight: 700; font-family: monospace;" id="modalOrderNo">CRD-83921</span>
+        </div>
+        <div class="order-row">
+          <span style="color: #64748B;">Paket:</span>
+          <span style="font-weight: 700;" id="modalPlanName">Paket Grup</span>
+        </div>
+        <div class="order-row">
+          <span style="color: #64748B;">Nama:</span>
+          <span id="modalBuyerName">Budi Santoso</span>
+        </div>
+        <div class="order-row">
+          <span style="color: #64748B;">WhatsApp:</span>
+          <span id="modalBuyerWa">+62 812xxxx</span>
+        </div>
+        <div class="order-row">
+          <span>Total Bayar:</span>
+          <span style="color: #5B3CC4; font-size: 16px;" id="modalTotal">Rp299.000</span>
+        </div>
+      </div>
+
+      <a id="modalWaLink" href="#" target="_blank" class="modal-btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.155.57 4.177 1.564 5.927l-1.656 6.045 6.223-1.633c1.691.921 3.633 1.449 5.869 1.449 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+        <span>Lanjut Bayar via WhatsApp</span>
+      </a>
+
+      <button type="button" class="modal-btn-close" onclick="closeModal()">Tutup</button>
+    </div>
+  </div>
+
+
+  <!-- TERMS & CONDITIONS MODAL -->
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-card terms-modal-card">
+      <div class="terms-modal-header">
+        <div>
+          <h3 class="terms-modal-title">Syarat & Ketentuan Layanan</h3>
+          <p class="terms-modal-subtitle">PT CARDI NUSANTARA TEKNOLOGI · Terakhir diperbarui 11 Nov 2026</p>
+        </div>
+        <button type="button" class="terms-modal-close" onclick="closeTermsModal()" aria-label="Tutup">×</button>
+      </div>
+
+      <div class="terms-modal-body">
+        <div style="background: #EDE8FA; border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; font-size: 13px; color: #3A4A5E;">
+          Perjanjian ini mengikat secara hukum antara <strong>PT Cardi Nusantara Teknologi</strong> dan <strong>Pengguna</strong> layanan Cardi Agent AI Aspri. Dengan menyelesaikan pendaftaran atau pembayaran, Pengguna menyetujui seluruh klausul di bawah ini.
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">1. DEFINISI</div>
+          <p><strong>1.1. Layanan:</strong> Platform asisten kecerdasan buatan (AI) Cardi Agent AI Aspri yang beroperasi pada aplikasi perpesanan WhatsApp untuk koordinasi tim, pengingat tugas, pencatatan progres, dan rekapitulasi operasional.</p>
+          <p><strong>1.2. Aksi AI:</strong> Satuan penghitungan kuota, di mana setiap respon balasan teks terkirim atau analisis 1 berkas gambar/foto dihitung 1 Aksi AI. Pesan biasa antaranggota tim yang tidak dibalas AI tidak memotong kuota.</p>
+          <p><strong>1.3. SOP:</strong> Basis pengetahuan, instruksi kerja, jadwal, dan aturan alur tugas yang disediakan Pengguna untuk dipatuhi oleh sistem AI.</p>
+          <p><strong>1.4. Grup WhatsApp:</strong> Ruang percakapan grup pada WhatsApp tempat nomor agen AI diundang oleh Pengguna.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">2. RUANG LINGKUP & KETENTUAN PAKET</div>
+          <p><strong>2.1. Paket Grup:</strong></p>
+          <ul>
+            <li>Integrasi 1 nomor asisten AI ke dalam grup WhatsApp internal Pengguna.</li>
+            <li>Alokasi kuota 2.000 Aksi AI per bulan.</li>
+            <li>Bebas biaya penyiapan awal (setup fee).</li>
+          </ul>
+          <p><strong>2.2. Paket Nomor Sendiri:</strong></p>
+          <ul>
+            <li>1 nomor WhatsApp khusus terdedikasi untuk bisnis Pengguna.</li>
+            <li>Alokasi kuota 5.000 Aksi AI per bulan per nomor.</li>
+            <li>Penyiapan SOP terpandu dengan biaya setup Rp2.500.000 (ditiadakan untuk komitmen tahunan).</li>
+          </ul>
+          <p><strong>2.3.</strong> Kuota Aksi AI berlaku selama periode tagihan aktif (30 hari kalender) dan tidak diakumulasikan (hangus jika tidak digunakan).</p>
+          <p><strong>2.4.</strong> Pengguna dapat melakukan top-up kuota mandiri sewaktu-waktu sesuai tarif resmi yang berlaku.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">3. HAK & KEWAJIBAN PENGGUNA</div>
+          <p><strong>3.1.</strong> Wajib memberikan data identitas, informasi bisnis, dan SOP yang sah, akurat, dan tidak melanggar hukum RI.</p>
+          <p><strong>3.2.</strong> Bertanggung jawab penuh atas segala instruksi, delegasi tugas, dan interaksi yang berlangsung di dalam grup percakapan.</p>
+          <p><strong>3.3. Dilarang keras memanfaatkan Layanan untuk:</strong></p>
+          <ul>
+            <li>Aktivitas perjudian, penipuan, pencucian uang, atau tindak pidana lainnya;</li>
+            <li>Pengiriman pesan massal tanpa persetujuan (spamming) yang melanggar ketentuan WhatsApp/Meta;</li>
+            <li>Konten bermuatan SARA, pornografi, penghinaan, atau pelanggaran HKI.</li>
+          </ul>
+          <p><strong>3.4.</strong> Pelanggaran klausul 3.3 memberikan hak mutlak bagi Penyedia Layanan untuk menonaktifkan akun seketika tanpa kewajiban refund.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">4. HAK & KEWAJIBAN PENYEDIA LAYANAN</div>
+          <p><strong>4.1.</strong> Berkewajiban menjaga ketersediaan sistem Layanan dan menjalankan instruksi sesuai SOP yang dikonfigurasikan.</p>
+          <p><strong>4.2.</strong> Berhak melakukan pembaruan algoritma, optimalisasi sistem, dan pemeliharaan rutin dengan pemberitahuan wajar.</p>
+          <p><strong>4.3.</strong> Berhak membatasi atau menolak pemrosesan pesan apabila terindikasi adanya anomali beban komputasi berlebihan atau pelanggaran batas penggunaan wajar (Fair Usage Policy).</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">5. KERAHASIAAN DATA & KEBIJAKAN PRIVASI</div>
+          <p><strong>5.1.</strong> Berkomitmen melindungi kerahasiaan data operasional, foto progres kerja, dan riwayat laporan harian Pengguna.</p>
+          <p><strong>5.2.</strong> Data percakapan diproses semata-mata untuk menjalankan fungsi asistensi, pelaporan, dan kepatuhan SOP Pengguna.</p>
+          <p><strong>5.3.</strong> Tidak akan menyalin, membagikan, menyewakan, atau memperjualbelikan basis data bisnis Pengguna kepada pihak ketiga mana pun tanpa persetujuan tertulis Pengguna, kecuali diwajibkan oleh instruksi pengadilan/penegak hukum.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">6. BIAYA, PENAGIHAN, & PEMBATALAN</div>
+          <p><strong>6.1.</strong> Beroperasi dengan sistem pembayaran di muka (pre-paid/langganan).</p>
+          <p><strong>6.2.</strong> Pembayaran resmi diproses melalui gateway pembayaran resmi PT Cardi Nusantara Teknologi.</p>
+          <p><strong>6.3.</strong> Pembayaran bersifat final dan non-refundable (tidak dapat dikembalikan).</p>
+          <p><strong>6.4.</strong> Pengguna berhak membatalkan langganan kapan saja tanpa penalti pembatalan. Layanan aktif hingga akhir periode yang dibayar.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">7. BATASAN TANGGUNG JAWAB (DISCLAIMER)</div>
+          <p><strong>7.1.</strong> Beroperasi menggunakan teknologi Natural Language Processing/LLM. Tidak menjamin 100% bebas dari potensi salah penafsiran teks atau kesalahan pembacaan gambar.</p>
+          <p><strong>7.2.</strong> Segala keputusan final terkait pengeluaran finansial, pemutusan hubungan kerja, pemberian diskon, dan tindakan operasional tetap menjadi kendali dan tanggung jawab penuh Pengguna (Owner/Manajemen).</p>
+          <p><strong>7.3.</strong> Tidak bertanggung jawab atas kerugian tidak langsung atau pemblokiran nomor WhatsApp oleh Meta Inc. akibat pola perpesanan Pengguna.</p>
+          <p><strong>7.4.</strong> Batas tanggung jawab total atas klaim kerugian langsung yang sah dibatasi maksimal sebesar nilai biaya langganan 1 bulan terakhir.</p>
+        </div>
+
+        <div class="t-sec">
+          <div class="t-title">8. PENYELESAIAN SENGKETA & HUKUM</div>
+          <p><strong>8.1.</strong> Tunduk pada hukum Negara Kesatuan Republik Indonesia.</p>
+          <p><strong>8.2.</strong> Diselesaikan secara musyawarah mufakat dalam waktu 30 hari kerja.</p>
+          <p><strong>8.3.</strong> Apabila tidak tercapai, sengketa diselesaikan melalui Pengadilan Negeri di domisili hukum PT Cardi Nusantara Teknologi.</p>
+        </div>
+      </div>
+
+      <div class="terms-modal-footer">
+        <a href="/aspri/terms.html" target="_blank" class="terms-modal-link">Buka Dokumen Resmi Lengkap ↗</a>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-terms-cancel" onclick="closeTermsModal()">Tutup</button>
+          <button type="button" class="btn-terms-accept" onclick="acceptTermsFromModal()">Saya Mengerti & Setuju</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    const XENDIT_PAYMENT_URLS = {
+      'grup': 'https://xen.to/v1uWZ6cx',
+      'nomor-sendiri': 'https://xen.to/ducHSmJz'
+    };
+
+    const plansData = {
+      'grup': {
+        id: 'grup',
+        name: 'Paket Grup',
+        badge: 'ASPRI DI GRUP WHATSAPP',
+        price: 299000,
+        priceFormatted: 'Rp299.000',
+        period: '/ bulan per grup',
+        desc: 'Cardi Agent AI Aspri langsung masuk ke grup WhatsApp tim Anda untuk tagih update order, baca foto progres, dan rekap harian 24/7.',
+        features: [
+          'Cardi Agent AI Aspri masuk ke grup WhatsApp tim',
+          '2.000 aksi AI / bulan per grup',
+          'Tagih update order & baca foto progres',
+          'Pengingat deadline otomatis & rekap harian',
+          'Tanpa biaya setup · Aktif hari ini',
+          'Bisa berhenti atau upgrade kapan saja'
+        ]
+      },
+      'nomor-sendiri': {
+        id: 'nomor-sendiri',
+        name: 'Paket Nomor Sendiri',
+        badge: 'PALING POPULER · 1 NOMOR AI',
+        price: 999000,
+        priceFormatted: 'Rp999.000',
+        period: '/ bulan per nomor',
+        desc: 'Nomor WhatsApp AI khusus bisnis Anda dengan peran spesifik (Admin Sales, Penagih Piutang, Konten, atau Supervisor).',
+        features: [
+          '1 Nomor WhatsApp AI khusus bisnis Anda',
+          '5.000 aksi AI / bulan per nomor',
+          'Pilih peran: Admin Sales, Penagih, Konten, Supervisor',
+          'Semua fitur paket Grup sudah termasuk',
+          'Setup SOP dibantu langsung oleh tim Cardi',
+          'Dukungan integrasi & pelaporan prioritas'
+        ]
+      }
+    };
+
+    let selectedPlan = 'grup';
+
+    // Parse URL parameter ?plan=
+    function initPlanFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let planParam = (urlParams.get('plan') || '').toLowerCase().trim();
+
+      // Normalize alternative spellings
+      if (planParam === 'nomorsendiri' || planParam === 'nomor_sendiri' || planParam === 'nomor') {
+        planParam = 'nomor-sendiri';
+      }
+
+      if (plansData[planParam]) {
+        selectedPlan = planParam;
+      } else {
+        selectedPlan = 'grup';
+      }
+
+      renderSelectedPlan();
+    }
+
+    // Switch Plan via Tabs
+    function switchPlan(planId) {
+      if (!plansData[planId]) return;
+      selectedPlan = planId;
+
+      // Update URL without full reload
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set('plan', planId);
+      window.history.replaceState({}, '', newUrl);
+
+      renderSelectedPlan();
+    }
+
+    // Render DOM based on selected plan
+    function renderSelectedPlan() {
+      const plan = plansData[selectedPlan];
+
+      // Update Tab active states
+      document.querySelectorAll('.plan-tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeTab = document.getElementById('tab_' + selectedPlan);
+      if (activeTab) activeTab.classList.add('active');
+
+      // Update Left Card
+      document.getElementById('planBadge').textContent = plan.badge;
+      document.getElementById('planName').textContent = plan.name;
+      document.getElementById('planPrice').textContent = plan.priceFormatted;
+      document.getElementById('planPeriod').textContent = plan.period;
+      document.getElementById('planDesc').textContent = plan.desc;
+
+      // Features list
+      const featuresUl = document.getElementById('planFeatures');
+      featuresUl.innerHTML = '';
+      plan.features.forEach(feat => {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="check-icon">✓</span> <span>' + feat + '</span>';
+        featuresUl.appendChild(li);
+      });
+
+      // Update Right Column Summary
+      document.getElementById('summaryItemName').textContent = 'Cardi Agent AI - ' + plan.name;
+      document.getElementById('summaryItemPrice').textContent = plan.priceFormatted;
+      document.getElementById('summaryTotal').textContent = plan.priceFormatted;
+      document.getElementById('summaryBillingDesc').textContent = 'Tagihan bulanan · Batalkan kapan saja';
+    }
+
+    let isSubmitting = false;
+
+    // Handle Form Submit & Xendit Invoice Creation
+    async function handleCheckout(e) {
+      if (e) e.preventDefault();
+      if (isSubmitting) return;
+
+      const name = document.getElementById('buyerName').value.trim();
+      const email = document.getElementById('buyerEmail').value.trim();
+      const wa = document.getElementById('buyerWa').value.trim();
+      const terms = document.getElementById('termsAgree').checked;
+
+      if (!name) {
+        alert('Mohon lengkapi Nama Lengkap Anda.');
+        document.getElementById('buyerName').focus();
+        return;
+      }
+
+      if (!email) {
+        alert('Mohon lengkapi Alamat Email Anda.');
+        document.getElementById('buyerEmail').focus();
+        return;
+      }
+
+      if (!wa) {
+        alert('Mohon lengkapi Nomor WhatsApp Anda.');
+        document.getElementById('buyerWa').focus();
+        return;
+      }
+
+      if (!terms) {
+        alert('Mohon centang persetujuan Syarat & Ketentuan Layanan untuk melanjutkan.');
+        document.getElementById('termsAgree').focus();
+        return;
+      }
+
+      isSubmitting = true;
+
+      // Update button state
+      const submitBtn = document.getElementById('submitOrderBtn');
+      if (submitBtn) {
+        submitBtn.textContent = 'Memproses Pembayaran...';
+        submitBtn.disabled = true;
+      }
+
+      const cleanPhone = wa.replace(/^0+/, '').replace(/[^0-9]/g, '');
+      const fullPhone = '+62' + cleanPhone;
+
+      try {
+        const response = await fetch('/api/create-invoice', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: fullPhone,
+            plan: selectedPlan
+          })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.invoiceUrl) {
+          throw new Error(data.error || 'Gagal memproses tagihan pembayaran Xendit.');
+        }
+
+        // Langsung arahkan browser pembeli ke URL invoice Xendit
+        window.location.href = data.invoiceUrl;
+
+      } catch (err) {
+        console.error('Invoice creation error:', err);
+        alert(err.message || 'Terjadi kesalahan saat menghubungi server pembayaran. Silakan coba kembali.');
+
+        // Kembalikan tombol ke kondisi aktif semula
+        if (submitBtn) {
+          submitBtn.textContent = 'Bayar Sekarang';
+          submitBtn.disabled = false;
+        }
+        isSubmitting = false;
+      }
+    }
+
+    
+    function openTermsModal() {
+      document.getElementById('termsModal').classList.add('active');
+    }
+
+    function closeTermsModal() {
+      document.getElementById('termsModal').classList.remove('active');
+    }
+
+    function acceptTermsFromModal() {
+      document.getElementById('termsAgree').checked = true;
+      closeTermsModal();
+    }
+
+    function closeModal() {
+      document.getElementById('orderModal').classList.remove('active');
+    }
+
+    // Close modals on click outside
+    window.addEventListener('click', function(e) {
+      const orderModal = document.getElementById('orderModal');
+      const termsModal = document.getElementById('termsModal');
+      if (e.target === orderModal) {
+        closeModal();
+      }
+      if (e.target === termsModal) {
+        closeTermsModal();
+      }
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initPlanFromUrl);
+  </script>
+</body>
+</html>
