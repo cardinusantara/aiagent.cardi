@@ -1,0 +1,49 @@
+{
+  "redirects": [
+    {
+      "source": "/cardiloyal/card",
+      "destination": "/loyal/card/",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/card/",
+      "destination": "/loyal/card/",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/card/checkout",
+      "destination": "/loyal/card/checkout/",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/card/checkout/",
+      "destination": "/loyal/card/checkout/",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/card/affiliate",
+      "destination": "/loyal/card/affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/card/affiliate.html",
+      "destination": "/loyal/card/affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/loyal/card/affiliate.html",
+      "destination": "/loyal/card/affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal",
+      "destination": "/loyal/",
+      "permanent": true
+    },
+    {
+      "source": "/cardiloyal/",
+      "destination": "/loyal/",
+      "permanent": true
+    }
+  ]
+}

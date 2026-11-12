@@ -8,4 +8,9 @@ export default defineConfig({
   site: 'https://aiagent.cardi.co.id',
   adapter: vercel(),
   integrations: [sitemap(), react()],
+  redirects: {
+    '/cardiloyal/card': '/loyal/card/',
+    '/cardiloyal/card/': '/loyal/card/',
+    '/loyal/card/affiliate.html': '/loyal/card/affiliate',
+  },
 });
