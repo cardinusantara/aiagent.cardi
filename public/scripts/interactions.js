@@ -96,13 +96,11 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    // Cardi mark: a horizontal lens (leaf) plus a small dot to its left
+    // Cardi mark: a horizontal lens (leaf)
     function inMark(u, v) {
-      const lx = (u - 0.585) / 0.415;
-      const ly = (v - 0.5) / 0.152;
-      if (Math.abs(lx) <= 1 && Math.abs(ly) <= 1 - lx * lx) return true;
-      const dx = u - 0.065, dy = v - 0.5;
-      return dx * dx + dy * dy <= 0.085 * 0.085;
+      const lx = (u - 0.5) / 0.46;
+      const ly = (v - 0.5) / 0.18;
+      return Math.abs(lx) <= 1 && Math.abs(ly) <= 1 - lx * lx;
     }
 
     function rgba(c, a) { return `rgba(${c[0]},${c[1]},${c[2]},${a.toFixed(3)})`; }

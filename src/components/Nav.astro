@@ -7,15 +7,16 @@ const { activeNav = 'crm' } = Astro.props;
 <nav id="mainNav">
   <div class="wrap navIn">
     <a class="brand" href="/" aria-label="Cardi Agent Beranda">
-      <img src="/logos/agent-ai/logo-agent-ai-dark.png" alt="cardi agent." width="1151" height="368" />
+      <img src="/logos/lockups/cardi-agent.png" alt="Cardi Agent" style="height:32px; width:auto; display:block;" />
     </a>
 
-    <!-- Main Navigation Menu (CRM, MoM, Loyal, Harga) -->
+    <!-- Main Navigation Menu (CRM, MoM, Loyal, Aspri, Konsultasi) -->
     <div class="menu" role="menubar">
       <a href="/crm/" class={activeNav === 'crm' ? 'active' : ''} role="menuitem">CRM</a>
       <a href="/mom/" class={activeNav === 'mom' || activeNav === 'cardimom' ? 'active' : ''} role="menuitem">MoM</a>
       <a href="/loyal/" class={activeNav === 'loyal' || activeNav === 'cardiloyal' ? 'active' : ''} role="menuitem">Loyal</a>
-      <a href="/#harga" class={activeNav === 'harga' ? 'active' : ''} role="menuitem">Harga</a>
+      <a href="/aspri/" class={activeNav === 'aspri' ? 'active' : ''} role="menuitem">Aspri</a>
+      <a href="/#konsultasi" class={activeNav === 'konsultasi' ? 'active' : ''} role="menuitem">Konsultasi</a>
     </div>
 
     <div class="navR">
@@ -59,9 +60,9 @@ const { activeNav = 'crm' } = Astro.props;
         </div>
       </div>
 
-      <!-- Rekrut Agent CTA Button -->
-      <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20agent%20untuk%20bisnis%20saya.%20%F0%9F%A4%96" target="_blank" rel="noopener">
-        Rekrut Agent
+      <!-- Jadwalkan Demo CTA Button -->
+      <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20demo%20tim%20AI%20agent%20untuk%20bisnis%20saya." target="_blank" rel="noopener">
+        Jadwalkan Demo
       </a>
     </div>
 
@@ -121,11 +122,12 @@ const { activeNav = 'crm' } = Astro.props;
     <a href="/crm/" class={activeNav === 'crm' ? 'mobile-nav-link active' : 'mobile-nav-link'}>CRM</a>
     <a href="/mom/" class={activeNav === 'mom' || activeNav === 'cardimom' ? 'mobile-nav-link active' : 'mobile-nav-link'}>MoM</a>
     <a href="/loyal/" class={activeNav === 'loyal' || activeNav === 'cardiloyal' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Loyal</a>
-    <a href="/#harga" class={activeNav === 'harga' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Harga</a>
+    <a href="/aspri/" class={activeNav === 'aspri' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Aspri</a>
+    <a href="/#konsultasi" class={activeNav === 'konsultasi' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Konsultasi</a>
   </div>
 
-  <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20rekrut%20tim%20AI%20agent%20untuk%20bisnis%20saya.%20%F0%9F%A4%96" target="_blank" rel="noopener" style="width:100%; justify-content:center; margin-top:16px;">
-    Rekrut Agent
+  <a class="btn" href="https://api.whatsapp.com/send?phone=6281289895646&text=Halo%20Cardi%20Agent!%20Saya%20ingin%20jadwalkan%20demo%20tim%20AI%20agent%20untuk%20bisnis%20saya." target="_blank" rel="noopener" style="width:100%; justify-content:center; margin-top:16px;">
+    Jadwalkan Demo
   </a>
 </div>
 
