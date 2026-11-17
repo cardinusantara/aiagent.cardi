@@ -108,56 +108,7 @@ const SUPPORT_WA = "https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
       width: 100%;
     }
 
-    /* Top Ecosystem Bar (Identik dengan Cardi MoM) */
-    .eco-bar {
-      background: #0A1633;
-      color: #94A3B8;
-      font-size: 11.5px;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
 
-    .eco-bar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .eco-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      color: #E2E8F0;
-    }
-
-    .eco-badge i {
-      color: #38BDF8;
-    }
-
-    .eco-links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 500;
-    }
-
-    .eco-link {
-      color: #94A3B8;
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .eco-link:hover,
-    .eco-link.active {
-      color: #FFFFFF;
-    }
-
-    .eco-sep {
-      color: rgba(255, 255, 255, 0.2);
-    }
 
     /* Sticky Navbar */
     .navbar-wrapper {
@@ -858,22 +809,6 @@ const SUPPORT_WA = "https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
 </head>
 <body>
 
-  <!-- Top Ecosystem Bar -->
-  <div class="eco-bar">
-    <div class="container eco-bar-inner">
-      <div class="eco-badge">
-        <i class="fa-solid fa-layer-group"></i> <span>Ekosistem Cardi • Cardi Business Power Ecosystem™</span>
-      </div>
-      <div class="eco-links">
-        <a href="/" class="eco-link">Cardi Agent AI 24/7</a>
-        <span class="eco-sep">•</span>
-        <a href="/mom" class="eco-link active">Cardi MoM</a>
-        <span class="eco-sep">•</span>
-        <a href="/loyal/" class="eco-link">Cardi LoyaL</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Sticky Navbar -->
   <div class="navbar-wrapper">
     <div class="container">
@@ -884,9 +819,15 @@ const SUPPORT_WA = "https://api.whatsapp.com/send?phone=6281289895646&text=Halo%
         </a>
 
         <div class="nav-actions">
+          <a href="https://cardi.co.id" class="btn-nav-back" style="margin-right:8px;" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>cardi.co.id</span>
+          </a>
           <a href="/mom" class="btn-nav-back">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Kembali ke Cardi MoM</span>
+          </a>
+        </div>
           </a>
         </div>
       </nav>

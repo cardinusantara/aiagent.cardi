@@ -20,6 +20,10 @@ const { activeNav = 'crm' } = Astro.props;
     </div>
 
     <div class="navR">
+      <a href="https://cardi.co.id" class="nav-back-main" target="_blank" rel="noopener">
+        ← cardi.co.id
+      </a>
+
       <!-- Bahasa Switcher (ID, EN, ZH) -->
       <div class="lang-dropdown-wrapper" id="langDropdownWrap">
         <button type="button" class="lang-toggle-btn" id="langToggleBtn" aria-expanded="false" aria-label="Pilih Bahasa" onclick="window.toggleLangDropdown(event)">
@@ -119,6 +123,7 @@ const { activeNav = 'crm' } = Astro.props;
 <!-- Mobile Navigation Drawer -->
 <div class="mobile-nav-drawer" id="mobileNavDrawer">
   <div class="mobile-nav-links-wrap">
+    <a href="https://cardi.co.id" class="mobile-nav-link" target="_blank" rel="noopener" style="color:var(--sky, #0284c7); font-weight:700;">← cardi.co.id</a>
     <a href="/crm/" class={activeNav === 'crm' ? 'mobile-nav-link active' : 'mobile-nav-link'}>CRM</a>
     <a href="/mom/" class={activeNav === 'mom' || activeNav === 'cardimom' ? 'mobile-nav-link active' : 'mobile-nav-link'}>MoM</a>
     <a href="/loyal/" class={activeNav === 'loyal' || activeNav === 'cardiloyal' ? 'mobile-nav-link active' : 'mobile-nav-link'}>Loyal</a>

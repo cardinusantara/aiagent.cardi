@@ -10,7 +10,8 @@ export default defineConfig({
   integrations: [sitemap(), react()],
   redirects: {
     '/cardiloyal/card': '/loyal/card/',
-    '/cardiloyal/card/': '/loyal/card/',
     '/loyal/card/affiliate.html': '/loyal/card/affiliate',
+    '/aspri/checkout.html': '/aspri/checkout/',
+    '/aspri/terms.html': '/aspri/terms/',
   },
 });

@@ -114,50 +114,7 @@
       margin: 0 auto;
     }
 
-    /* Top Ecosystem Bar (Standardized) */
-    .eco-bar {
-      background: #060B18;
-      color: #94A3B8;
-      font-family: var(--font-mono, 'JetBrains Mono', monospace);
-      font-size: 11.5px;
-      font-weight: 500;
-      padding: 7px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      width: 100%;
-    }
-    .eco-bar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
-    .eco-bar-label {
-      color: #64748B;
-      font-size: 11px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-    .eco-bar-nav {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      white-space: nowrap;
-    }
-    .eco-bar-nav a {
-      color: #94A3B8;
-      text-decoration: none;
-      transition: color 0.15s ease;
-      font-size: 11.5px;
-    }
-    .eco-bar-nav a:hover,
-    .eco-bar-nav a.active {
-      color: #38BDF8;
-      font-weight: 700;
-    }
-    .eco-bar-sep {
-      color: rgba(255, 255, 255, 0.2);
-      user-select: none;
-    }
+
 
     /* Sticky Navbar */
     .nav-wrap {
@@ -3112,7 +3069,7 @@
       #feedback {
         scroll-margin-top: 76px;
       }
-      .eco-bar { display: none; }
+
       .nav-links { display: none; }
       .btn-main-site { display: none; }
       
@@ -3759,6 +3716,9 @@
           </div>
         </div>
 
+        <a class="btn-main-site" href="https://cardi.co.id" aria-label="Kembali ke cardi.co.id" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-left"></i> <span>cardi.co.id</span>
+        </a>
         <a class="btn-main-site" href="/" aria-label="Kembali ke Cardi Agent AI">
           <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_main">Cardi Agent AI</span>
         </a>

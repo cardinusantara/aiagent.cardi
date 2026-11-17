@@ -1,0 +1,8 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+const rawPath = path.resolve(process.cwd(), 'src/pages/aspri/_raw/en_index.html');
+const rawHtml = fs.readFileSync(rawPath, 'utf-8');
+---
+<Fragment set:html={rawHtml} />
