@@ -3926,84 +3926,6 @@
       </div>
     </section>
 
-    <!-- Dedicated Feature Banner: Cardi MoM Smart NFC Card -->
-    <section class="container" style="margin-top: 36px; margin-bottom: 24px;">
-      <div class="card-nfc-spotlight">
-        <div class="card-nfc-spotlight-inner">
-          <div class="card-nfc-content">
-            <div class="card-nfc-eyebrow">
-              <span class="spotlight-badge"><i class="fa-solid fa-bolt"></i> INTEGRASI HARDWARE &amp; AI</span>
-              <span class="spotlight-chip">NTAG215 ISO 14443-A</span>
-            </div>
-            <h2>Cardi MoM Smart NFC Card - <span class="accent-nfc">Satu Kartu Eksekutif untuk Seluruh Notulen &amp; Relasi Bisnis.</span></h2>
-            <p>
-              Cukup tempelkan kartu pintar ini ke smartphone rekan bisnis. Secara instan membuka profil eksekutif, sinkronisasi Google Calendar, dan menyambungkan rekaman audio rapat ke sistem AI Notulen Cardi MoM tanpa perlu install aplikasi.
-            </p>
-            <div class="card-nfc-features-mini">
-              <div class="nfc-mini-feat">
-                <i class="fa-solid fa-fingerprint"></i>
-                <div>
-                  <strong>Tap &amp; Share Instan</strong>
-                  <span>Kirim vCard, bio &amp; portofolio eksekutif</span>
-                </div>
-              </div>
-              <div class="nfc-mini-feat">
-                <i class="fa-solid fa-microphone-lines"></i>
-                <div>
-                  <strong>Akses Cepat AI Notulen</strong>
-                  <span>Mulai rekam rapat langsung dari profil</span>
-                </div>
-              </div>
-              <div class="nfc-mini-feat">
-                <i class="fa-solid fa-calendar-check"></i>
-                <div>
-                  <strong>Jadwal &amp; Google Calendar</strong>
-                  <span>Booking jadwal meeting 1 klik</span>
-                </div>
-              </div>
-            </div>
-            <div class="card-nfc-actions">
-              <a href="https://nfc.cardi.co.id" target="_blank" rel="noopener" class="btn-spotlight-primary">
-                <i class="fa-solid fa-id-card"></i> <span>Pelajari Smart NFC Card</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="https://nfc.cardi.co.id/activate" target="_blank" rel="noopener" class="btn-spotlight-secondary">
-                <i class="fa-solid fa-key"></i> <span>Aktivasi Kartu Fisik</span>
-              </a>
-              <a href="https://nfc.cardi.co.id/deo" target="_blank" rel="noopener" class="btn-spotlight-ghost">
-                <i class="fa-solid fa-circle-play"></i> <span>Lihat Demo Live</span>
-              </a>
-            </div>
-          </div>
-          <div class="card-nfc-visual">
-            <div class="nfc-card-card">
-              <div class="card-top-row">
-                <div class="card-brand-lockup">
-                  <img src="/logos/mom/logo-mom-card.png" alt="Cardi Agent MoM" class="card-chip-logo-full" />
-                </div>
-                <div class="card-wave-indicator">
-                  <i class="fa-solid fa-wifi"></i>
-                </div>
-              </div>
-              <div class="card-center-chip">
-                <div class="gold-chip"></div>
-                <span class="chip-label">NFC SMART CHIP</span>
-              </div>
-              <div class="card-bottom-row">
-                <div>
-                  <div class="card-holder-title">EXECUTIVE MEMBER</div>
-                  <div class="card-holder-name">DEO CARDI</div>
-                </div>
-                <div class="card-badge-secure">
-                  <span>SECURE NFC</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Key Features Section -->
     <section class="container section" id="features">
       <div class="section-head">
@@ -4057,7 +3979,7 @@
         </div>
 
         <!-- Chrome Web Extension Banner -->
-        <div class="carousel-ext-banner">
+        <div class="carousel-ext-banner" id="ekstensi-chrome">
           <div class="ext-banner-left">
             <span class="ext-badge-live"><img src="/cardi-circle-logo.svg" alt="Cardi" class="cardi-tag-icon" /> <span data-i18n="ext_banner_badge">Google Chrome Web Extension Live</span></span>
             <h3 data-i18n="ext_banner_title">Transkrip Rapat Zoom, Google Meet & YouTube Langsung dari Browser Chrome</h3>
@@ -4482,21 +4404,6 @@
           <div class="kicker" data-i18n="price_kicker">Langganan</div>
           <h2 data-i18n="price_head">Pilih paket langganan</h2>
           <p data-i18n="price_sub">1 coin ≈ 1 menit transkrip. Saldo terisi ulang otomatis tiap siklus tagihan lewat Google Play.</p>
-
-          <!-- Toggle between Coin Packages and NFC Card Bundling -->
-          <div class="pricing-toggle-wrap">
-            <div class="pricing-toggle" role="tablist" aria-label="Pilihan Model Harga">
-              <button type="button" class="pricing-toggle-btn active" id="tabCoinBtn" role="tab" aria-selected="true" aria-controls="gridCoin" onclick="switchPricingTab('coin')">
-                <i class="fa-solid fa-coins"></i>
-                <span data-i18n="tab_coins">Paket Koin Aplikasi</span>
-              </button>
-              <button type="button" class="pricing-toggle-btn" id="tabNfcBtn" role="tab" aria-selected="false" aria-controls="gridNfc" onclick="switchPricingTab('nfc')">
-                <i class="fa-solid fa-id-card"></i>
-                <span data-i18n="tab_nfc">Bundling Kartu NFC</span>
-                <span class="badge-saving" data-i18n="tab_nfc_badge">Populer</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         <!-- 1. Coin Packages Grid -->
@@ -4587,97 +4494,9 @@
           </article>
         </div>
 
-        <!-- 2. NFC Bundling Grid (Hidden by default) -->
-        <div class="price-grid hidden" id="gridNfc">
-          <!-- 1. Kartu Saja -->
-          <article class="price-card">
-            <div>
-              <h3 data-i18n="nfc_card_only_name">Kartu Saja</h3>
-              <div class="price"><span data-i18n="nfc_card_only_price">Rp 49.000</span><small data-i18n="nfc_card_only_period">/kartu</small></div>
-              <div class="unit-price" data-i18n="nfc_card_only_unit">0 Koin Bawaan</div>
-              <div class="coin-desc" data-i18n="nfc_card_only_desc">Kartu NFC + profil vCard + tap tanpa batas</div>
-              <ul class="price-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f1">1x Kartu Fisik Pintar NFC Eksklusif</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f2">Profil vCard Digital & Unlimited Tap</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f3">Cadangan QR Code Laser Engraved</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_card_only_f4">Tanpa kuota koin MoM (Top-up terpisah)</span></li>
-              </ul>
-            </div>
-            <button class="btn-plan" onclick="openWhatsApp('nfc_card_only')" data-i18n="nfc_card_only_btn">
-              Pesan Kartu Saja
-            </button>
-          </article>
-
-          <!-- 2. Kartu + Quick -->
-          <article class="price-card">
-            <div>
-              <h3 data-i18n="nfc_quick_name">Kartu + Quick</h3>
-              <div class="price"><span data-i18n="nfc_quick_price">Rp 139.000</span><small data-i18n="nfc_quick_period">/paket</small></div>
-              <div class="unit-price" data-i18n="nfc_quick_unit">Hemat Kuota Koin</div>
-              <div class="coin-desc" data-i18n="nfc_quick_desc">Kartu + 1 bulan Quick (500 coin)</div>
-              <ul class="price-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f1">1x Kartu Fisik Pintar NFC Eksklusif</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f2">500 Koin MoM langsung aktif (~100x rapat)</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f3">Profil vCard Digital & Unlimited Tap</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_quick_f4">Transkripsi & Notulen MoM AI Otomatis</span></li>
-                <li><img src="/cardi-circle-logo.svg" alt="Cardi" class="pricing-cardi-icon" /> <span data-i18n="nfc_quick_f5">Ekstensi Chrome Zoom, Meet & YouTube</span></li>
-              </ul>
-            </div>
-            <button class="btn-plan" onclick="openWhatsApp('nfc_quick')" data-i18n="nfc_quick_btn">
-              Pesan Kartu + Quick
-            </button>
-          </article>
-
-          <!-- 3. Kartu + Bulk (Star / Featured) -->
-          <article class="price-card featured">
-            <span class="popular" data-i18n="nfc_bulk_badge">KARTU GRATIS · PALING HEMAT</span>
-            <div>
-              <h3 data-i18n="nfc_bulk_name">Kartu + Bulk</h3>
-              <div class="price"><span data-i18n="nfc_bulk_price">Rp 399.000</span><small data-i18n="nfc_bulk_period">/paket</small></div>
-              <div class="unit-price text-emerald" data-i18n="nfc_bulk_unit">Kartu Fisik Gratis (Hemat Rp 50.000)</div>
-              <div class="coin-desc" data-i18n="nfc_bulk_desc">Kartu + 1 bulan Bulk (2.500 coin)</div>
-              <ul class="price-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f1">1x Kartu Fisik Pintar NFC (Gratis!)</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f2">2.500 Koin MoM langsung aktif (~500x rapat)</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f3">Profil vCard Digital & Unlimited Tap</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f4">Prioritas Pemrosesan AI Model Voice</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_bulk_f5">Auto Dispatch Notula ke WhatsApp</span></li>
-              </ul>
-            </div>
-            <button class="btn-plan" onclick="openWhatsApp('nfc_bulk')" data-i18n="nfc_bulk_btn">
-              Pesan Kartu + Bulk
-            </button>
-          </article>
-
-          <!-- 4. Custom Corporate -->
-          <article class="price-card">
-            <div>
-              <h3 data-i18n="nfc_custom_name">Custom Corporate</h3>
-              <div class="price"><span data-i18n="nfc_custom_price">Hubungi Tim</span><small data-i18n="nfc_custom_period">/dinegosiasi</small></div>
-              <div class="unit-price" data-i18n="nfc_custom_unit">Branding Khusus</div>
-              <div class="coin-desc" data-i18n="nfc_custom_desc">Kartu untuk tim + kuota coin bersama</div>
-              <ul class="price-list">
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f1">Desain Kartu Custom Full Branding Tim</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f2">Unlimited Pool Koin MoM untuk Seluruh Tim</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f3">Admin Central Dashboard & Lead Analytics</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f4">Integrasi API & Webhook ke CRM</span></li>
-                <li><i class="fa-solid fa-check"></i> <span data-i18n="nfc_custom_f5">Dedicated Account Manager & Invoice Resmi</span></li>
-              </ul>
-            </div>
-            <button class="btn-plan" onclick="openWhatsApp('nfc_custom')" data-i18n="nfc_custom_btn">
-              Konsultasi Tim Corporate
-            </button>
-          </article>
-        </div>
-
         <div class="pricing-play-footer" id="pricingFooterCoin">
           <i class="fa-brands fa-google-play"></i>
           <span data-i18n="price_play_footer">Pembayaran & perpanjangan otomatis lewat Google Play. Batalkan kapan saja dari Play Store.</span>
-        </div>
-
-        <div class="pricing-play-footer" id="pricingFooterNfc" style="display: none;">
-          <i class="fa-solid fa-truck-fast"></i>
-          <span data-i18n="price_nfc_footer">Pengiriman kartu fisik ke seluruh Indonesia. Kartu siap pakai dan langsung terhubung dengan akun MoM Anda.</span>
         </div>
       </div>
     </section>
@@ -4846,9 +4665,8 @@
       <div class="footer-col">
         <h4 data-i18n="ft_col_prod">Produk MoM</h4>
         <ul>
-          <li><a href="https://nfc.cardi.co.id" target="_blank" rel="noopener" style="color:#00C2D1;font-weight:700;">Smart NFC Card (Baru)</a></li>
-          <li><a href="https://nfc.cardi.co.id/activate" target="_blank" rel="noopener">Aktivasi Chip NFC</a></li>
-          <li><a href="https://nfc.cardi.co.id/login" target="_blank" rel="noopener">Portal Eksekutif</a></li>
+          <li><a href="#download-app" style="color:#00C2D1;font-weight:700;">Aplikasi Mobile (iOS &amp; Android)</a></li>
+          <li><a href="#ekstensi-chrome">Ekstensi Google Chrome</a></li>
           <li><a href="/mom/delete-account/">Penghapusan Akun &amp; Data</a></li>
           <li><a href="#features" data-i18n="ft_link_trans">Transkripsi Live</a></li>
           <li><a href="#features" data-i18n="ft_link_sum">AI Summarization</a></li>
@@ -5992,43 +5810,6 @@
       }
     };
 
-    function switchPricingTab(tab) {
-      const gridCoin = document.getElementById("gridCoin");
-      const gridNfc = document.getElementById("gridNfc");
-      const tabCoinBtn = document.getElementById("tabCoinBtn");
-      const tabNfcBtn = document.getElementById("tabNfcBtn");
-      const footerCoin = document.getElementById("pricingFooterCoin");
-      const footerNfc = document.getElementById("pricingFooterNfc");
-
-      if (tab === "coin") {
-        if (gridCoin) gridCoin.classList.remove("hidden");
-        if (gridNfc) gridNfc.classList.add("hidden");
-        if (tabCoinBtn) {
-          tabCoinBtn.classList.add("active");
-          tabCoinBtn.setAttribute("aria-selected", "true");
-        }
-        if (tabNfcBtn) {
-          tabNfcBtn.classList.remove("active");
-          tabNfcBtn.setAttribute("aria-selected", "false");
-        }
-        if (footerCoin) footerCoin.style.display = "flex";
-        if (footerNfc) footerNfc.style.display = "none";
-      } else {
-        if (gridCoin) gridCoin.classList.add("hidden");
-        if (gridNfc) gridNfc.classList.remove("hidden");
-        if (tabCoinBtn) {
-          tabCoinBtn.classList.remove("active");
-          tabCoinBtn.setAttribute("aria-selected", "false");
-        }
-        if (tabNfcBtn) {
-          tabNfcBtn.classList.add("active");
-          tabNfcBtn.setAttribute("aria-selected", "true");
-        }
-        if (footerCoin) footerCoin.style.display = "none";
-        if (footerNfc) footerNfc.style.display = "flex";
-      }
-    }
-
     function closeAllNavDropdowns() {
       closeLangDropdown();
     }
@@ -6313,7 +6094,6 @@
     window.toggleLangDropdown = toggleLangDropdown;
     window.setLanguage = setLanguage;
     window.openWhatsApp = openWhatsApp;
-    window.switchPricingTab = switchPricingTab;
     window.selectFeedbackCategory = selectFeedbackCategory;
     window.handleFeedbackSubmit = handleFeedbackSubmit;
     window.closeAllNavDropdowns = closeAllNavDropdowns;
